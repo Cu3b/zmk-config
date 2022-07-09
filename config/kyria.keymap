@@ -28,10 +28,10 @@
                          | LShft|  DEL | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  BT  | Mute |
                          |      |      |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
-&caps_word &kp Q &kp W      &kp F      &kp P   &kp B                                                &kp J     &kp L    &kp U      &kp Y     &kp F_ODIA &kp F_ARNG
-&kp ESC    &kp A &kp R      &kp S      &kp T   &kp G                                                &kp M     &kp N    &kp E      &kp I     &kp O      &kp SQT
-&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT     &kp LSHFT &to BASE  &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
-                             &kp LSHFT &kp DEL &kp BSPC &kp SPACE &kp RET       &kp RET   &sk LSHFT &kp LSHFT &kp BSPC &kp RALT
+&caps_word &kp Q &kp W      &kp F      &kp P   &kp B                        /**/                  &kp J     &kp L    &kp U      &kp Y     &kp F_ODIA &kp F_ARNG
+&kp ESC    &kp A &kp R      &kp S      &kp T   &kp G                        /**/                  &kp M     &kp N    &kp E      &kp I     &kp O      &kp SQT
+&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT /**/ &mo RGB &to BASE  &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
+                             &kp LSHFT &kp DEL &kp BSPC &kp SPACE &kp RET   /**/ &kp RET &sk LSHFT &kp LSHFT &kp BSPC &kp RALT
             >;
         };
 		
