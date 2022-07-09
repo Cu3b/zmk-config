@@ -10,28 +10,48 @@
 #include "FI_aliases.h"
 
 / {
-	keymap {
-		compatible = "zmk,keymap";
-		
-		default_layer {
-			label = "BASE";
-			bindings = <
+    keymap {
+        compatible = "zmk,keymap";
+        
+        default_layer {
+            label = "_BASE";
+            bindings = <
 /* Base layer (BASE), Colemak 
-   ,------------------------------------------.                                     ,-----------------------------------------------.
-   |CapsWrd|   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   Å    |
-   |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
-   |  Esc  | CAD/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E| RAlt/I|   O    |   '    |
-   |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
-   |MED/Tab|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    |   "    |  
-   `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
+ * ,------------------------------------------.                                     ,-----------------------------------------------.
+ * |CapsWrd|   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   Å    |
+ * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
+ * |  Esc  | CAD/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E| RAlt/I|   O    |   '    |
+ * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
+ * |MED/Tab|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    |   "    |  
+ * `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
                          | LShft|  DEL | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  NAV | Mute |
                          |      |      |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
-	&caps_word &kp Q &kp W      &kp F      &kp P   &kp B                                                &kp J     &kp L    &kp U      &kp Y     &kp F_ODIA &kp F_ARNG
-	&kp ESC    &kp A &kp R      &kp S      &kp T   &kp G                                                &kp M     &kp N    &kp E      &kp I     &kp O      &kp SQT
-	&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT     &kp LSHFT &kp LSHFT &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
-	                             &kp LSHFT &kp DEL &kp BSPC &kp SPACE &kp RET       &kp RET   &sk LSHFT &kp LSHFT &kp BSPC &kp RALT
-			>;
-		};
-	};
+&caps_word &kp Q &kp W      &kp F      &kp P   &kp B                                                &kp J     &kp L    &kp U      &kp Y     &kp F_ODIA &kp F_ARNG
+&kp ESC    &kp A &kp R      &kp S      &kp T   &kp G                                                &kp M     &kp N    &kp E      &kp I     &kp O      &kp SQT
+&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT     &kp LSHFT &kp LSHFT &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
+                             &kp LSHFT &kp DEL &kp BSPC &kp SPACE &kp RET       &kp RET   &sk LSHFT &kp LSHFT &kp BSPC &kp RALT
+            >;
+        };
+        _SYM_layer {
+            label = "_SYM";
+            bindings = <
+/* Symbol layer (SYM)
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |  NA  |   <  |   {  |  NA  |  NA  |                              |  NA  |  NA  |   }  |  >   |  NA  |   NA   |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |   [  |   (  |   #  |   @  |  NA  |                              |  NA  |   ?  |   !  |  )   |  ]   |    ¨   |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |   _  |   ½  |   &  |   `  |  NA  |      |      |  |↓NumPd| BASE |  NA  |   ´  |   \  |  |   |  NA  |   NA   |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&caps_word &kp Q &kp W      &kp F      &kp P   &kp B                                                &kp J     &kp L    &kp U      &kp Y     &kp F_ODIA &kp F_ARNG
+&kp ESC    &kp A &kp R      &kp S      &kp T   &kp G                                                &kp M     &kp N    &kp E      &kp I     &kp O      &kp SQT
+&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT     &kp LSHFT &kp LSHFT &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
+                             &kp LSHFT &kp DEL &kp BSPC &kp SPACE &kp RET       &kp RET   &sk LSHFT &kp LSHFT &kp BSPC &kp RALT
+            >;
+        };
+    };
 };

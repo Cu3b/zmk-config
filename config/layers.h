@@ -5,9 +5,17 @@
 *
 */
 
-#define BASE    0
-#define SYM     1
-#define NUM     2
-#define FKEYS   3
-#define NAV     4
-#define SHC     5
+#define _BASE    0
+#define _SYM     1
+#define _NUM     2
+#define _ARR
+#define _PAD1
+#define _PAD2
+#define _SHC
+#define _FKEYS
+#define _RGB
+#define _GAME1   
+#define _GAME2 
+#define _MEDIA
+#define _CAD
+#define _BT
