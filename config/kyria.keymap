@@ -6,15 +6,17 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+
 #include "layers.h"
 #include "FI_aliases.h"
+
 
 / {
     keymap {
         compatible = "zmk,keymap";
         
         default_layer {
-            label = "_BASE";
+            label = "BASE";
             bindings = <
 /* Base layer (BASE), Colemak 
  * ,------------------------------------------.                                     ,-----------------------------------------------.
@@ -24,17 +26,18 @@
  * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
  * |MED/Tab|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    |   "    |  
  * `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
-                         | LShft|  DEL | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  NAV | Mute |
+                         | LShft|  DEL | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  BT  | Mute |
                          |      |      |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
 &caps_word &kp Q &kp W      &kp F      &kp P   &kp B                                                &kp J     &kp L    &kp U      &kp Y     &kp F_ODIA &kp F_ARNG
 &kp ESC    &kp A &kp R      &kp S      &kp T   &kp G                                                &kp M     &kp N    &kp E      &kp I     &kp O      &kp SQT
-&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT     &kp LSHFT &kp LSHFT &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
+&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT     &kp LSHFT &to BASE  &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
                              &kp LSHFT &kp DEL &kp BSPC &kp SPACE &kp RET       &kp RET   &sk LSHFT &kp LSHFT &kp BSPC &kp RALT
             >;
         };
-        _SYM_layer {
-            label = "_SYM";
+		
+        SYM_layer {
+            label = "SYM";
             bindings = <
 /* Symbol layer (SYM)
  * ,-------------------------------------------.                              ,-------------------------------------------.
@@ -47,10 +50,10 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      | 	   |
  *                        `----------------------------------'  `----------------------------------' */
-&caps_word &kp Q &kp W      &kp F      &kp P   &kp B                                                &kp J     &kp L    &kp U      &kp Y     &kp F_ODIA &kp F_ARNG
-&kp ESC    &kp A &kp R      &kp S      &kp T   &kp G                                                &kp M     &kp N    &kp E      &kp I     &kp O      &kp SQT
-&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT     &kp LSHFT &kp LSHFT &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
-                             &kp LSHFT &kp DEL &kp BSPC &kp SPACE &kp RET       &kp RET   &sk LSHFT &kp LSHFT &kp BSPC &kp RALT
+&trans     &none       &kp F_LABK &kp F_LBRC &none     &none                                           &none     &none      &kp F_RBRC &kp F_RABK &none      &none
+&trans     &kp F_LBKT  &kp F_LPRN &kp F_HASH &kp F_AT  &none                                           &none     &kp F_QUES &kp F_EXLM &kp F_RPRN &kp F_RBKT &kp F_DIAE
+&trans     &kp F_UNDS  &kp F_HALF &kp F_AMPR &kp F_GRV &none  &trans &trans        &kp LSHFT &kp LSHFT &none     &kp F_ACUT &kp F_BSLH &kp F_PIPE &none      &none
+                                  &trans     &trans    &trans &trans &trans        &trans    &trans    &trans    &trans     &trans
             >;
         };
     };
