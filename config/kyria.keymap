@@ -18,7 +18,7 @@
         default_layer {
             label = "BASE";
             bindings = <
-/* Base layer (BASE), Colemak 
+/* Base layer, modifid colemak DHm 
  * ,------------------------------------------.                                     ,-----------------------------------------------.
  * |CapsWrd|   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   Å    |
  * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
@@ -39,7 +39,7 @@
         SYM_layer {
             label = "SYM";
             bindings = <
-/* Symbol layer (SYM)
+/* Symbol layer
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |        |  NA  |   <  |   {  |  NA  |  NA  |                              |  NA  |  NA  |   }  |  >   |  NA  |   NA   |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
@@ -50,10 +50,241 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      | 	   |
  *                        `----------------------------------'  `----------------------------------' */
-&trans     &none       &kp F_LABK &kp F_LBRC &none     &none                                           &none     &none      &kp F_RBRC &kp F_RABK &none      &none
-&trans     &kp F_LBKT  &kp F_LPRN &kp F_HASH &kp F_AT  &none                                           &none     &kp F_QUES &kp F_EXLM &kp F_RPRN &kp F_RBKT &kp F_DIAE
-&trans     &kp F_UNDS  &kp F_HALF &kp F_AMPR &kp F_GRV &none  &trans &trans        &kp LSHFT &kp LSHFT &none     &kp F_ACUT &kp F_BSLH &kp F_PIPE &none      &none
-                                  &trans     &trans    &trans &trans &trans        &trans    &trans    &trans    &trans     &trans
+&trans &none       &kp F_LABK &kp F_LBRC &none     &none                                          &none     &none      &kp F_RBRC &kp F_RABK &none      &none
+&trans &kp F_LBKT  &kp F_LPRN &kp F_HASH &kp F_AT  &none                                          &none     &kp F_QUES &kp F_EXLM &kp F_RPRN &kp F_RBKT &kp F_DIAE
+&trans &kp F_UNDS  &kp F_HALF &kp F_AMPR &kp F_GRV &none  &trans &trans        &kp LSHFT &to BASE &none     &kp F_ACUT &kp F_BSLH &kp F_PIPE &none      &none
+                              &trans     &trans    &trans &trans &trans        &trans    &trans   &trans    &trans     &trans
+            >;
+        };
+
+        NUM_layer {
+            label = "NUM";
+            bindings = <
+/* Numbers layer
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        PAD1_layer {
+            label = "PAD1";
+            bindings = <
+/* Numpad layer
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        PAD2_layer {
+            label = "PAD2";
+            bindings = <
+/* Numpad2 layer
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        SHC_layer {
+            label = "SHC";
+            bindings = <
+/* Shortcut layer
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        FKEYS_layer {
+            label = "FKEYS";
+            bindings = <
+/* Function keys
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        RGB_layer {
+            label = "RGB";
+            bindings = <
+/* RGB adjustment layer
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        GAME1_layer {
+            label = "GAME1";
+            bindings = <
+/* Gaming layer 1
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        GAME2_layer {
+            label = "GAME2";
+            bindings = <
+/* Gaming layer 2
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        MEDIA_layer {
+            label = "MEDIA";
+            bindings = <
+/* Media layer
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        CAD_layer {
+            label = "CAD";
+            bindings = <
+/* CAD layer
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        BT_layer {
+            label = "BT";
+            bindings = <
+/* Bluetooth settings layer
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      | 	   |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
             >;
         };
     };
