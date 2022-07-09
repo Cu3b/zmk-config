@@ -6,11 +6,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-
-#include "layers.h"
-// #include "FI_aliases.h" 
 
 
 / {
@@ -31,10 +26,10 @@
 //                        |LShift| LAlt/|OSSYM | Nav/  |OSShft|  | BSpc/|OSShft|Enter | RALT/| Vol  |
 //                        |      | Tab  |      | Space |      |  | NUM  |      |      | Tab  | Mute |
 //                        `-----------------------------------'  `----------------------------------' 
-	&kp DEL         &kp Q &kp V     &kp K        &kp P         &kp F                                                             &kp B   &kp R         &kp U     &kp Y    &kp P    &kp BSLH
-	&lt SHC FI_MINS &kp A &kp S     &kp L        &kp T         &kp J                                                             &kp W   &kp N         &kp E     &kp I    &kp O    &kp FI_QUOT
-	&mt LCTRL ESC   &kp Z &kp C     &kp H        &kp D         &kp COMMA &kp LGUI      &tog NUM        &tog GAME     &sl FKEYS   &kp DOT &kp M         &kp A     &kp G    &kp X    &kp CLCK
-	                                &kp LSHFT    &mt LALT TAB  &sl SYM   &lt NAV SPACE &sk LSHFT       &lt NUM BSPC  &sk RSHFT   &kp RET &mt RALT TAB  &kp C_MUTE
+	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
+	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
 			>;
 		};
 	
