@@ -30,7 +30,7 @@
                          `---------------------------------------'  `-------------------------------------' */
 &caps_word    &kp Q     &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &kp DQT
 &kp ESC       &kp A     &kp R      &kp S       &kp T       &kp G                                   /**/                   &kp M   &kp N       &kp E       &kp I      &kp O      &kp SQT
-&lt MEDIA TAB &kp X     &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &kp F_ARNG
+&kp MEDIA TAB &kp X     &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &kp F_ARNG
                                    &kp LSHFT   &lt CAD DEL &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &sl BT      &kp C_MUTE
             >;
         };
@@ -68,8 +68,8 @@
  *                        |      |      |      |       |       |   |      |      |      |      |      |
  *                        |      |      |      |       |       |   |      |      |      |      |      | 
  *                        `------------------------------------'   `----------------------------------' */
-&trans &none      &kp F_LPRN  &kp F_PERC   &kp F_EQL    &kp F_PND                /**/                 &none      &none        &kp F_TILD   &F_RPRN     &kp F_CURR &none 
-&trans &kp N1     &kp N2      &kp N3       &kpN4        &kp F_EURO              /**/                  &kp F_CIRC &kp N7       &kp N8       &kp N9      &kp N0     &kp F_SECT 
+&trans &none      &kp F_LPRN  &kp F_PERC   &kp F_EQL    &kp F_PND                /**/                 &none      &none        &kp F_TILD   &kp F_RPRN     &kp F_CURR &none 
+&trans &kp N1     &kp N2      &kp N3       &kpN4        &kp F_EURO               /**/                 &kp F_CIRC &kp N7       &kp N8       &kp N9      &kp N0    &kp F_SECT 
 &trans &kp F_MINS &kp F_COMM  &kp F_PLUS   &kp N5       &kp F_DLR  &trans &trans /**/ &trans &to BASE &none      &kp N6       &kp F_FSLH   &kp F_DOT   &kp F_ASTR &none 
                               &trans       &trans       &trans     &trans &trans /**/ &trans &trans   &trans     &trans       &trans
             >;
