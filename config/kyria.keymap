@@ -28,10 +28,10 @@
                          | LShft|  DEL | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  BT  | Mute |
                          |      |      |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
-&caps_word &kp Q &kp W      &kp F      &kp P   &kp B                        /**/                  &kp J     &kp L    &kp U      &kp Y     &kp F_ODIA &kp F_ARNG
-&kp ESC    &kp A &kp R      &kp S      &kp T   &kp G                        /**/                  &kp M     &kp N    &kp E      &kp I     &kp O      &kp SQT
-&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT /**/ &mo RGB &to BASE  &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
-                             &kp LSHFT &kp DEL &kp BSPC &kp SPACE &kp RET   /**/ &kp RET &sk LSHFT &kp LSHFT &kp BSPC &kp RALT
+&caps_word  &kp Q     &kp W      &kp F      &kp P       &kp B                                  /**/                   &kp J   &kp L       &kp U      &kp Y      &kp F_ODIA &kp F_ARNG
+&kp ESC     &lt CAD A &mt LALT R &mt LCTL S &mt LSHFT T &kp G                                  /**/                   &kp M   &mt RSHFT N &mt RCTL E &mt RALT I &kp O      &kp SQT
+&lt MED TAB &kp X     &kp F_COMM &kp C      &kp D       &kp V        &kp LGUI      &kp LSHFT   /**/ &mo RGB &to BASE  &kp K   &kp H       &kp F_ADIA &kp F_DOT  &kp Z      &kp DQT
+                                &kp LSHFT  &kp DEL     &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &sl BT      &kp C_MUTE
             >;
         };
 		
@@ -48,10 +48,10 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      | 	   |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &none       &kp F_LABK &kp F_LBRC &none     &none                                          &none     &none      &kp F_RBRC &kp F_RABK &none      &none
-&trans &kp F_LBKT  &kp F_LPRN &kp F_HASH &kp F_AT  &none                                          &none     &kp F_QUES &kp F_EXLM &kp F_RPRN &kp F_RBKT &kp F_DIAE
-&trans &kp F_UNDS  &kp F_HALF &kp F_AMPR &kp F_GRV &none  &trans &trans        &kp LSHFT &to BASE &none     &kp F_ACUT &kp F_BSLH &kp F_PIPE &none      &none
-                              &trans     &trans    &trans &trans &trans        &trans    &trans   &trans    &trans     &trans
+&trans &none      &kp F_LABK &kp F_LBRC &none     &none                /**/                   &none  &none      &kp F_RBRC &kp F_RABK &none      &none
+&trans &kp F_LBKT &kp F_LPRN &kp F_HASH &kp F_AT  &none                /**/                   &none  &kp F_QUES &kp F_EXLM &kp F_RPRN &kp F_RBKT &kp F_DIAE
+&trans &kp F_UNDS &kp F_HALF &kp F_AMPR &kp F_GRV &none  &trans &trans /**/ &to PAD1 &to BASE &none  &kp F_ACUT &kp F_BSLH &kp F_PIPE &none      &none
+                             &trans     &trans    &trans &trans &trans /**/ &trans   &trans   &trans &trans     &trans
             >;
         };
 
@@ -63,15 +63,15 @@
  * |--------+------+------+------+------+------|                                 |------+------+------+------+------+--------|
  * |        |   1  | Alt/2|LCtl/3|LSft/4|   €  |                                 |   ^  |RSft/7|RCtl/8|RAlt/9|   0  |    §   |  
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+------+------+------+------+--------|
- * |        |   -  |   ,  |   +  |   5  |   $  |       | BASE  |   |      | BASE |  NA  |   6  |   /  |   .  |   *  |   NA   |
+ * |        |   -  |   ,  |   +  |   5  |   $  |       |       |   |      | BASE |  NA  |   6  |   /  |   .  |   *  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+------+------+----------------------'
- *                        |      |      |      |       |       |   |      |      |      | GAME |      |
+ *                        |      |      |      |       |       |   |      |      |      |      |      |
  *                        |      |      |      |       |       |   |      |      |      |      |      | 
  *                        `------------------------------------'   `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &none      &kp F_LPRN  &kp F_PERC  &kp F_EQL    &kp F_PND                /**/                 &none      &none        &kp F_TILD   &F_RPRN     &kp F_CURR &none 
+&trans &kp N1     &mt LALT N2 &mt LCTL N3 &mt LSHFT N4 &kp F_EURO               /**/                 &kp F_CIRC &mt LSHFT N7 &mt RCTL N8  &mt RALT N9 &kp N0     &trans 
+&trans &kp F_MINS &kp F_COMM  &kp F_PLUS  &kp N5       &kp F_DLR  &trans &trans /**/ &trans &to BASE &none      &kp N6       &kp F_FSLH   &kp F_DOT   &kp F_ASTR &none 
+                              &trans      &trans       &trans     &trans &trans /**/ &trans &trans   &trans     &trans       &trans
             >;
         };
 		
@@ -88,10 +88,10 @@
  *                        |      |      |      |       |       |   |      |      |      |       |         |
  *                        |      |      |      |       |       |   |      |      |      |       |         | 
  *                        `------------------------------------'   `--------------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
             >;
         };
 		
@@ -108,10 +108,10 @@
  *                        |      |      |      |      |P2/Ent|   | BASE |      |      |      |      |
  *                        |      |      |      |      |      |   |      |      |      |      |      |
  *                        `----------------------------------'   `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
             >;
         };
 
@@ -128,10 +128,10 @@
  *                        |NumLck|      |      |      |      |   |      |      |      |      |      |
  *                        |      |      |      |      |      |   |      |      |      |      |      |
  *                        `----------------------------------'   `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans 
             >;
         };
 
@@ -148,10 +148,10 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
             >;
         };
 
@@ -168,10 +168,10 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
             >;
         };
 
@@ -188,10 +188,10 @@
  *                          |      |        |      |      |      |  |↑NumPd|      |      |      |      |
  *                          |      |        |      |      |      |  |      |      |      |      |      |
  *                          `------------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
             >;
         };
 
@@ -208,10 +208,10 @@
  *                        |      | LAlt |   I  | Space | OS   |  |      |      |      |      |      |
  *                        |      |      |      |       | Game2|  |      |      |      |      |      |
  *                        `-----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans 
             >;
         };
 
@@ -228,10 +228,10 @@
  *                        |      |      |      |      |      |   |      |      | BSpc |      |      |
  *                        |      |      |      |      |      |   |      |      |      |      |      |
  *                        `----------------------------------'   `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans 
             >;
         };
 
@@ -248,10 +248,10 @@
  *                        |      |      |      |      |      |  |      |      |      |      |LShift|
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
             >;
         };
 
@@ -268,10 +268,10 @@
  *                      |      |      |Delete|      |      |  |      |      |      |      |      |
  *                      |      |      |      |      |      |  |      |      |      |      |      |
  *                      `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
             >;
         };
 
@@ -288,10 +288,10 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      | 	   |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans                               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
             >;
         };
     };

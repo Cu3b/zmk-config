@@ -51,7 +51,7 @@
 #define F_RBKT  (RA(N9))                 // ]
 #define F_RBRC  (RA(N0))                 // }
 #define F_BSLH  (RA(MINUS))              // (backslash)
-#define F_TILDE (RA(RBKT))               // ~ (dead)
+#define F_TILD  (RA(RBKT))               // ~ (dead)
 #define F_PIPE  (RA(NON_US_BSLH))        // |
 #define F_MICR  (RA(M))                  // µ
 // Shortcuts:
