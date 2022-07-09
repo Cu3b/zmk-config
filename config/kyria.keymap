@@ -68,10 +68,10 @@
  *                        |      |      |      |       |       |   |      |      |      |      |      |
  *                        |      |      |      |       |       |   |      |      |      |      |      | 
  *                        `------------------------------------'   `----------------------------------' */
-&trans &none      &kp F_LPRN  &kp F_PERC  &kp F_EQL    &kp F_PND                /**/                 &none      &none        &kp F_TILD   &F_RPRN     &kp F_CURR &none 
-&trans &kp N1     &mt LALT N2 &mt LCTL N3 &mt LSHFT N4 &kp F_EURO               /**/                 &kp F_CIRC &mt LSHFT N7 &mt RCTL N8  &mt RALT N9 &kp N0     &trans 
-&trans &kp F_MINS &kp F_COMM  &kp F_PLUS  &kp N5       &kp F_DLR  &trans &trans /**/ &trans &to BASE &none      &kp N6       &kp F_FSLH   &kp F_DOT   &kp F_ASTR &none 
-                              &trans      &trans       &trans     &trans &trans /**/ &trans &trans   &trans     &trans       &trans
+&trans &none      &kp F_LPRN  &kp F_PERC   &kp F_EQL    &kp F_PND                /**/                 &none      &none        &kp F_TILD   &F_RPRN     &kp F_CURR &none 
+&trans &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_EURO              /**/                  &kp F_CIRC &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &kp N0     &trans 
+&trans &kp F_MINS &kp F_COMM  &kp F_PLUS   &kp N5       &kp F_DLR  &trans &trans /**/ &trans &to BASE &none      &kp N6       &kp F_FSLH   &kp F_DOT   &kp F_ASTR &none 
+                              &trans       &trans       &trans     &trans &trans /**/ &trans &trans   &trans     &trans       &trans
             >;
         };
 		
