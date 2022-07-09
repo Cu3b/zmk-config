@@ -16,21 +16,21 @@
 		default_layer {
 			label = "BASE";
 			bindings = <
-// Colemak
-// ,-------------------------------------------.                               ,-------------------------------------------.
-// | Delete |   Q  |   V  |   K  |   P  |   F  |                               |   B  |   R  |   U  |   Y  |   Ö  |   Å    |
-// |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
-// |  SHC/- |   A  |   S  |   L  |   T  |   J  |                               |   W  |   N  |   E  |   I  |   O  |  SC/'  |
-// |--------+------+------+------+------+------+--------------.  ,-------------+------+------+------+------+------+--------|
-// | CtlEsc |   Z  |   C  |   H  |   D  |  ,;  |  LGUI |NUMPAD|  | Game |FKeys |  .:  |   M  |   Ä  |   G  |   X  | CtlCaps|
-// `----------------------+------+------+------+-------+------|  |------+------+------+------+------+----------------------'
-//                        |LShift| LAlt/|OSSYM | Nav/  |OSShft|  | BSpc/|OSShft|Enter | RALT/| Vol  |
-//                        |      | Tab  |      | Space |      |  | NUM  |      |      | Tab  | Mute |
-//                        `-----------------------------------'  `----------------------------------' 
-	&kp FI_ARNG   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp FI_ARNG
-	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &kp SPACE &kp ESC        &kp RET  &kp SPACE  &kp TAB &kp BSPC &kp RALT
+/* Base layer (BASE), Colemak 
+   ,------------------------------------------.                                     ,-----------------------------------------------.
+   |CapsWrd|   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   Å    |
+   |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
+   |  Esc  | CAD/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E| RAlt/I|   O    |   '    |
+   |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
+   |MED/Tab|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    |   "    |  
+   `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
+                         | LShft|  DEL | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  NAV | Mute |
+                         |      |      |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
+                         `---------------------------------------'  `-------------------------------------' */
+	&caps_word &kp Q &kp W      &kp F      &kp P   &kp B                                                &kp J     &kp L    &kp U      &kp Y     &kp F_ODIA &kp F_ARNG
+	&kp ESC    &kp A &kp R      &kp S      &kp T   &kp G                                                &kp M     &kp N    &kp E      &kp I     &kp O      &kp SQT
+	&kp TAB    &kp X &kp F_COMM &kp C      &kp D   &kp V    &kp LGUI  &kp LSHFT     &kp LSHFT &kp LSHFT &kp K     &kp H    &kp F_ADIA &kp F_DOT &kp Z      &kp DQT
+	                             &kp LSHFT &kp DEL &kp BSPC &kp SPACE &kp RET       &kp RET   &sk LSHFT &kp LSHFT &kp BSPC &kp RALT
 			>;
 		};
 	};
