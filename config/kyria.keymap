@@ -29,9 +29,9 @@
                          |      |  DEL |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
 &caps_word    &kp Q     &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &kp DQT
-&kp ESC       &kp A     &kp R      &kp S       &kp T       &kp G                                   /**/                   &kp M   &kp N       &kp E       &kp I      &kp O      &kp SQT
+&kp ESC       &lt CAD A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M   &mt LSHFT N &mt LCTRL E &mt LALT I &kp O      &kp SQT
 &lt MEDIA TAB &kp X     &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &kp F_ARNG
-                                   &kp LSHFT   &lt CAD DEL &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &sl BT      &kp C_MUTE
+                                   &kp LSHFT   &lt CAD DEL &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &mo BT      &kp C_MUTE
             >;
         };
 		
