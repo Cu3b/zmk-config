@@ -19,17 +19,17 @@
             label = "BASE";
             bindings = <
 /* ,------------------------------------------.                                     ,-----------------------------------------------.
- * |CapsWrd|   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   "    |
+ * |  Esc  |   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |CapsWrd |
  * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
- * |  Esc  | CAD/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E| RAlt/I|   O    |   '    |
+ * |  Del  | CAD/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E| RAlt/I|   O    |   '    |
  * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
  * |MED/Tab|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    |   Å    |  
  * `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
                          | LShft|  CAD | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  BT  | Mute |
                          |      |  DEL |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
-&caps_word    &kp Q     &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &kp DQT
-&kp ESC       &lt CAD A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M   &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &kp SQT
+&kp ESC       &kp Q     &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &caps_word
+&kp DEL       &lt CAD A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M   &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &kp SQT
 &lt MEDIA TAB &kp X     &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &kp F_ARNG
                                    &kp LSHFT   &lt CAD DEL &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &mo BT      &kp C_MUTE
             >;
@@ -79,18 +79,18 @@
             label = "ARR";
             bindings = <
 /* ,-------------------------------------------.                                 ,--------------------------------------------------.
- * |   NA   |ClsDst|NewDst|PrvDst|NxtDst|TaskVw|                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
+ * |        |ClsDst|NewDst|PrvDst|NxtDst|TaskVw|                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+-------+---------+---------+------+--------|
- * | ShwDstp|LShift|   ←  |Ctrl/↑|   →  | PgUp |                                 |  NA  |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
+ * |        |LShift|   ←  |Ctrl/↑|   →  | PgUp |                                 |  NA  |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+-------+---------+---------+------+--------|
- * |   NA   |LCtrl | Home |   ↓  |  End | PgDn |       |       |   |      | BASE |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
+ * | ShwDstp|LCtrl | Home |   ↓  |  End | PgDn |       |       |   |      | BASE |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+-------+---------+-------------------------'
  *                        |      |      |      |       |       |   |      |      |      |       |         |
  *                        |      |      |      |       |       |   |      |      |      |       |         | 
  *                        `------------------------------------'   `--------------------------------------' */
-&none       &kp ClsDstp &kp NewDstp   &kp PrvDstp  &kp NxtDstp &kp TskView               /**/                 &trans &trans        &trans         &trans           &trans    &trans 
-&kp ShwDstp &kp LSHFT   &mt LALT LEFT &mt LCTRL UP &kp RIGHT   &kp PG_UP                 /**/                 &trans &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK  &trans 
-&none       &kp LCTRL   &kp HOME      &kp DOWN     &kp END     &kp PG_DN   &trans &trans /**/ &trans &to BASE &trans &trans        &trans         &trans           &trans    &trans 
+&trans      &kp ClsDstp &kp NewDstp   &kp PrvDstp  &kp NxtDstp &kp TskView               /**/                 &trans &trans        &trans         &trans           &trans    &trans 
+&trans      &kp LSHFT   &mt LALT LEFT &mt LCTRL UP &kp RIGHT   &kp PG_UP                 /**/                 &trans &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK  &trans 
+&kp ShwDstp &kp LCTRL   &kp HOME      &kp DOWN     &kp END     &kp PG_DN   &trans &trans /**/ &trans &to BASE &trans &trans        &trans         &trans           &trans    &trans 
                                       &trans       &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans        &trans
             >;
         };
