@@ -6,6 +6,8 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 #include "layers.h"
 #include "F_aliases.h"
@@ -123,7 +125,7 @@
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
  * |    ,   |   P  |   (  |   )  |   ^  |  NA  |                               | PgUp |   ←  |Ctrl/↑|   →  |RShift|  Del   |
  * |--------+------+------+------+------+------+-------------.   ,-------------+------+------+------+------+------+--------|
- * |        |   .  |   $  |   €  |   £  |  NA  |      |      |   | BASE | BASE | PgDn | Home |   ↓  |  End |RCtrl |  Tab   |
+ * |        |   .  |   $  |   €  |   £  |  NA  |      |NumLck|   | BASE | BASE | PgDn | Home |   ↓  |  End |RCtrl |  Tab   |
  * `----------------------+------+------+------+------+------|   |------+------+------+------+------+----------------------'
  *                        |NumLck|      |      |      |      |   | BASE |      |      |      |      |
  *                        |      |      |      |      |      |   |      |      |      |      |      |
@@ -148,9 +150,9 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&kp SC_Clse    &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp PSCRN                 /**/                 &trans &trans &trans &trans &trans &trans 
-&kp C_AL_FILES &kp SC_Undo &kp SC_Cut  &kp SC_Copy &kp SC_Pste &kp SC_Redo               /**/                 &trans &trans &trans &trans &trans &trans 
-&kp C_AL_CALC  &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Snip &trans &trans /**/ &trans &to BASE &trans &trans &trans &trans &trans &trans 
+&kp SC_Clse    &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp PSCRN                 /**/                 &none  &none  &none  &none  &none  &none  
+&kp C_AL_FILES &kp SC_Undo &kp SC_Cut  &kp SC_Copy &kp SC_Pste &kp SC_Redo               /**/                 &none  &none  &none  &none  &none  &none  
+&kp C_AL_CALC  &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Snip &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
                                        &trans      &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans &trans
             >;
         };
@@ -168,30 +170,30 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
+&trans &kp F12 &kp F7 &kp F8 &kp F9 &none                /**/                    &none  &none     &none     &none    &none    &none  
+&trans &kp F10 &kp F4 &kp F5 &kp F6 &none                /**/                    &none  &kp RSHFT &kp RCTRL &kp RALT &kp LALT &none  
+&trans &kp F11 &kp F1 &kp F2 &kp F3 &none  &trans &trans /**/ &to GAME1 &to BASE &none  &none     &none     &none    &none    &none  
+                      &trans &trans &trans &trans &trans /**/ &trans    &trans   &trans &trans    &trans
             >;
         };
 
         RGB_layer {
             label = "RGB";
             bindings = <
-/* ,-----------------------------------------------.                              ,-----------------------------------------.
- * |RGBTggle| Brgth+ | Sat+ | Hue+ |RGBCycl→|  NA  |                              |PwrOff| Break|  NA  |  NA  |  NA  |  NA  |
- * |--------+--------+------+------+--------+------|                              |------+------+------+------+------+------|
- * | Static | Brgth- | Sat- | Hue- |RGBCycl←|  NA  |                              | Sleep| Pause|  NA  |  NA  |  NA  |  NA  |
- * |--------+--------+------+------+--------+------+-------------.  ,-------------+------+------+------+------+------+------|
- * |    NA  |   NA   |  NA  |  NA  |   NA   |  NA  |      |GAME →|  |      | BASE |W Lock|  NA  |  NA  |  NA  |  NA  |  NA  |
- * `------------------------+------+--------+------+------+------|  |------+------+------+------+------+--------------------'
- *                          |      |        |      |      |      |  |↑NumPd|      |      |      |      |
- *                          |      |        |      |      |      |  |      |      |      |      |      |
- *                          `------------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
+/* ,------------------------------------------------.                              ,-----------------------------------------.
+ * |RGBonSoft | Brgth+ | Sat+ | Hue+ |RGBCycl→|Speed+|                              |PwrOff| Break|  NA  |  NA  |  NA  |  NA  |
+ * |----------+--------+------+------+--------+------|                              |------+------+------+------+------+------|
+ * |RGBPwrOff | Brgth- | Sat- | Hue- |RGBCycl←|Speed-|                              | Sleep| Pause|  NA  |  NA  |  NA  |  NA  |
+ * |----------+--------+------+------+--------+------+-------------.  ,-------------+------+------+------+------+------+------|
+ * |RGBoffSoft|   NA   |  NA  |  NA  |   NA   |  NA  |      |GAME →|  |      | BASE |W Lock|  NA  |  NA  |  NA  |  NA  |  NA  |
+ * `--------------------------+------+--------+------+------+------|  |------+------+------+------+------+--------------------'
+ *                            |      |        |      |      |      |  |↑NumPd|      |      |      |      |
+ *                            |      |        |      |      |      |  |      |      |      |      |      |
+ *                            `------------------------------------'  `----------------------------------' */
+&rgb_ug RGB_ON	                &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI                  /**/               &trans &trans &trans &trans &trans &trans 
+&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD                  /**/               &trans &trans &trans &trans &trans &trans 
+&rgb_ug RGB_OFF                 &trans          &trans          &trans          &trans          &trans          &trans &to GAME1 /**/ &trans   &trans &trans &trans &trans &trans &trans &trans 
+                                                                &trans          &trans          &trans          &trans &trans    /**/ &to PAD1 &trans &trans &trans &trans
             >;
         };
 
