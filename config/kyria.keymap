@@ -148,10 +148,10 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
+&kp SC_Clse    &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp PSCRN                 /**/                 &trans &trans &trans &trans &trans &trans 
+&kp C_AL_FILES &kp SC_Undo &kp SC_Cut  &kp SC_Copy &kp SC_Pste &kp SC_Redo               /**/                 &trans &trans &trans &trans &trans &trans 
+&kp C_AL_CALC  &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Snip &trans &trans /**/ &trans &to BASE &trans &trans &trans &trans &trans &trans 
+                                       &trans      &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans &trans
             >;
         };
 

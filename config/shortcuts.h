@@ -16,13 +16,13 @@
 #define PrvDstp (LG(LC(LEFT)))    // Previous virtual desktop
 #define NxtDstp (LG(LC(RIGHT)))    // Next virtual desktop
 
+#define SC_Clse (LA(F4))          // Close window
+#define ClseTab (LC(W))           // Close tab
+#define RestTab (LC(LS(T)))       // Restore tab
 #define PrevTab (LC(PG_UP))       // Previous tab
 #define NextTab (LC(PG_DN))       // Next tab
-#define RestTab (LC(LS(T)))       // Restore tab
-#define ClseTab (LC(W))           // Close tab
 
 #define SC_Lock (LG(L))           // Lock windows
-#define SC_Clse (LA(F4))          // Close window
 #define SC_Snip (LG(LS(S)))       // Windows snipping tool
 
 #define SC_Psth (LG(V))           // Paste with history
