@@ -79,18 +79,18 @@
             label = "ARR";
             bindings = <
 /* ,-------------------------------------------.                                 ,--------------------------------------------------.
- * |        |ClsDst|NewDst|PrvDst|NxtDst|TaskVw|                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
+ * |ShwDstp |ClsDst|NewDst|PrvDst|NxtDst|TaskVw|                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+-------+---------+---------+------+--------|
- * |        |LShift|   ←  |Ctrl/↑|   →  | PgUp |                                 |  NA  |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
+ * |   Del  |LShift|   ←  |Ctrl/↑|   →  | PgUp |                                 |  NA  |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+-------+---------+---------+------+--------|
- * | ShwDstp|LCtrl | Home |   ↓  |  End | PgDn |       |       |   |      | BASE |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
+ * |   Tab  |LCtrl | Home |   ↓  |  End | PgDn |       |       |   |      | BASE |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+-------+---------+-------------------------'
  *                        |      |      |      |       |       |   |      |      |      |       |         |
  *                        |      |      |      |       |       |   |      |      |      |       |         | 
  *                        `------------------------------------'   `--------------------------------------' */
-&trans      &kp ClsDstp &kp NewDstp &kp PrvDstp  &kp NxtDstp     &kp TskView               /**/                 &trans &trans        &trans         &trans           &trans    &trans 
-&trans      &kp LSHFT   &kp LEFT    &mt LCTRL UP &kp RIGHT       &kp PG_UP                 /**/                 &trans &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK  &trans 
-&kp ShwDstp &kp LCTRL   &kp HOME    &kp DOWN     &kp END         &kp PG_DN   &trans &trans /**/ &trans &to BASE &trans &trans        &trans         &trans           &trans    &trans 
+&kp ShwDstp &kp ClsDstp &kp NewDstp &kp PrvDstp  &kp NxtDstp     &kp TskView               /**/                 &trans &trans        &trans         &trans           &trans    &trans 
+&kp DEL     &kp LSHFT   &kp LEFT    &mt LCTRL UP &kp RIGHT       &kp PG_UP                 /**/                 &trans &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK  &trans 
+&kp TAB     &kp LCTRL   &kp HOME    &kp DOWN     &kp END         &kp PG_DN   &trans &trans /**/ &trans &to BASE &trans &trans        &trans         &trans           &trans    &trans 
                                     &trans       &trans          &trans      &trans &trans /**/ &trans &trans   &trans &trans        &trans
             >;
         };
@@ -111,7 +111,7 @@
 &kp F_EQL &kp KP_MINUS &kp KP_N7      &kp KP_N8       &kp KP_N9 &kp KP_PLUS                         /**/                   &kp TskView &kp NxtDstp &kp PrvDstp  &kp NewDstp &kp ClsDstp &kp ESC
 &kp COMMA &kp KP_N0    &mt LALT KP_N4 &mt LCTRL KP_N5 &kp KP_N6 &kp KP_SLASH                        /**/                   &kp PG_UP   &kp LEFT    &mt RCTRL UP &kp RIGHT   &kp RSHFT   &kp DEL
 &kp TAB   &kp KP_DOT   &kp KP_N1      &kp KP_N2       &kp KP_N3 &kp KP_ASTERISK &trans &kp KP_NLCK  /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &kp RCTRL   &kp TAB
-                                      &KP_NLCK        &trans    &trans          &trans &lt PAD2 RET /**/ &to BASE &trans   &trans      &trans      &trans
+                                      &kp KP_NLCK     &trans    &trans          &trans &lt PAD2 RET /**/ &to BASE &trans   &trans      &trans      &trans
             >;
         };
 
