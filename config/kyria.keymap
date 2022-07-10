@@ -31,6 +31,8 @@
 	continue-list = <UNDER MINUS BSPC RSHFT LSHFT F_UNDS>;
 };
 
+&left_encoder { resolution = <2>; };
+&right_encoder { resolution = <2>; };
 
 / {
     keymap {
