@@ -301,15 +301,15 @@
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |        | BT 0 | BT 1 | BT 2 | BT D3|      |                              |      |      |      |      |      |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      | BT D4|      |      |      |  |      | BASE |      |      |      |      |      |        |
+ * |        |      |      |      | BT D4|      |      |      |  |      | BASE |      | BT D5|      |      |      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      | 	   |
  *                        `----------------------------------'  `----------------------------------' */
-&bt BT_CLR &none        &bt BT_PRV   &none        &bt BT_NXT   &none                /**/                 &none  &none  &none  &none  &none  &none  
-&none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none                /**/                 &none  &none  &none  &none  &none  &none  
-&none      &none        &none        &none        &bt BT_SEL 4 &none  &none  &none  /**/ &none  &to BASE &none  &none  &none  &none  &none  &none  
-                                     &none        &none        &none  &none  &none  /**/ &none  &none    &none  &none  &none 
+&bt BT_CLR &none        &bt BT_PRV   &none        &bt BT_NXT   &none                /**/                 &none  &none         &none  &none  &none  &none  
+&none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none                /**/                 &none  &none         &none  &none  &none  &none  
+&none      &none        &none        &none        &bt BT_SEL 4 &none  &none  &none  /**/ &none  &to BASE &none  &bt BT_SEL 5  &none  &none  &none  &none  
+                                     &none        &none        &none  &none  &none  /**/ &none  &none    &none  &none         &none 
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
         };
