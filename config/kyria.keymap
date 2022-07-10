@@ -29,7 +29,7 @@
                          |      |  DEL |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
 &caps_word    &kp Q     &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &kp DQT
-&kp ESC       &lt CAD A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M   &mt LSHFT N &mt LCTRL E &mt LALT I &kp O      &kp SQT
+&kp ESC       &lt CAD A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M   &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &kp SQT
 &lt MEDIA TAB &kp X     &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &kp F_ARNG
                                    &kp LSHFT   &lt CAD DEL &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &mo BT      &kp C_MUTE
             >;
@@ -41,17 +41,17 @@
 /* ,-------------------------------------------.                              ,-------------------------------------------.
  * |        |  NA  |   <  |   {  |  NA  |  NA  |                              |  NA  |  NA  |   }  |  >   |  NA  |   NA   |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |   [  |   (  |   #  |   @  |   `  |                              |   ´  |   ?  |   !  |  )   |  ]   |    ¨   |
+ * |        | CAD/[| Alt/(|LCtl/#|Shft/@|   `  |                              |   ´  |Shft/?|LCtl/!|Alt/) |  ]   |    ¨   |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |        |  NA  |   ½  |   &  |   _  |  NA  |      |      |  |↓NumPd| BASE |  NA  |   "  |   \  |  |   |  NA  |   NA   |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      | 	   |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &none      &kp F_LABK &kp F_LBRC &none      &none                   /**/                   &none      &none      &kp F_RBRC &kp F_RABK &none      &none
-&trans &kp F_LBKT &kp F_LPRN &kp F_HASH &kp F_AT   &kp F_GRV               /**/                   &kp F_ACUT &kp F_QUES &kp F_EXLM &kp F_RPRN &kp F_RBKT &kp F_DIAE
-&trans &none      &kp F_HALF &kp F_AMPR &kp F_UNDS &none     &trans &trans /**/ &to PAD1 &to BASE &none      &kp DQT    &kp F_BSLH &kp F_PIPE &none      &none
-                             &trans     &trans     &trans    &trans &trans /**/ &trans   &trans   &trans     &trans     &trans
+&trans &none          &kp F_LABK      &kp F_LBRC       &none          &none                   /**/                   &none      &none            &kp F_RBRC       &kp F_RABK      &none      &none
+&trans &lt CAD F_LBKT &mt LALT F_LPRN &mt LCTRL F_HASH &mt LSHFT F_AT &kp F_GRV               /**/                   &kp F_ACUT &mt RSHFT F_QUES &mt RCTRL F_EXLM &mt RALT F_RPRN &kp F_RBKT &kp F_DIAE
+&trans &none          &kp F_HALF      &kp F_AMPR       &kp F_UNDS     &none     &trans &trans /**/ &to PAD1 &to BASE &none      &kp DQT          &kp F_BSLH       &kp F_PIPE      &none      &none
+                                      &trans           &trans         &trans    &trans &trans /**/ &trans   &trans   &trans     &trans           &trans
             >;
         };
 
@@ -69,7 +69,7 @@
  *                        |      |      |      |       |       |   |      |      |      |      |      | 
  *                        `------------------------------------'   `----------------------------------' */
 &trans &none      &kp F_LPRN  &kp F_PERC   &kp F_EQL    &kp F_PND                /**/                 &none      &none        &kp F_TILD   &kp F_RPRN  &kp F_CURR &none 
-&trans &kp N1     &kp N2      &kp N3       &kp N4       &kp F_EURO               /**/                 &kp F_CIRC &kp N7       &kp N8       &kp N9      &kp N0     &kp F_SECT 
+&trans &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_EURO               /**/                 &kp F_CIRC &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &kp N0     &kp F_SECT 
 &trans &kp F_MINS &kp F_COMM  &kp F_PLUS   &kp N5       &kp F_DLR  &trans &trans /**/ &trans &to BASE &none      &kp N6       &kp F_FSLH   &kp F_DOT   &kp F_ASTR &none 
                               &trans       &trans       &trans     &trans &trans /**/ &trans &trans   &trans     &trans       &trans
             >;
