@@ -15,7 +15,32 @@
 #include "shortcuts.h"
 
 &mt {
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <125>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&kp>;
+};
+&lt {
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <125>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&kp>;
+};
+&sl {
+    #binding-cells = <2>;
     tapping-term-ms = <175>;
+    quick-tap-ms = <125>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&kp>;
+};
+&sk {
+    #binding-cells = <2>;
+    tapping-term-ms = <175>;
+    quick-tap-ms = <125>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&kp>;
 };
 
 / {
