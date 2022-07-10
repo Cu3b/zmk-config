@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
@@ -186,14 +187,14 @@
  * |----------+--------+------+------+--------+------|                              |------+------+------+------+------+-------|
  * |RGBPwrTggl| Brgth- | Sat- | Hue- |RGBCycl←|Speed-|                              | Sleep| Pause|  NA  |  NA  |  NA  |DBrgth-|
  * |----------+--------+------+------+--------+------+-------------.  ,-------------+------+------+------+------+------+-------|
- * |RGBoffSoft|   NA   |  NA  |  NA  |   NA   |  NA  |      |GAME →|  |      | BASE |W Lock|  NA  |  NA  |  NA  |  NA  |  NA   |
+ * |RGBoffSoft|   NA   |  NA  |  NA  |   NA   |  NA  |  NA  |GAME →|  |      | BASE |W Lock|  NA  |  NA  |  NA  |  NA  |  NA   |
  * `--------------------------+------+--------+------+------+------|  |------+------+------+------+------+---------------------'
  *                            |      |        |      |      |      |  |↑NumPd|      |      |      |      |
  *                            |      |        |      |      |      |  |      |      |      |      |      |
  *                            `------------------------------------'  `----------------------------------' */
-&rgb_ug RGB_ON	                &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI                  /**/                   &kp C_PWR   &kp F_BRK       &trans &trans &trans &kp C_BRI_UP 
-&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD                  /**/                   &kp C_SLEEP &kp PAUSE_BREAK &trans &trans &trans &kp C_BRI_DN 
-&rgb_ug RGB_OFF                 &trans          &trans          &trans          &trans          &trans          &trans &to GAME1 /**/ &trans   &to BASE &kp SC_Lock &trans          &trans &trans &trans &trans 
+&rgb_ug RGB_ON	                &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI                  /**/                   &kp C_PWR   &kp F_BRK       &none  &none  &none  &kp C_BRI_UP 
+&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD                  /**/                   &kp C_SLEEP &kp PAUSE_BREAK &none  &none  &none  &kp C_BRI_DN 
+&rgb_ug RGB_OFF                 &none           &none           &none           &none           &none           &none  &to GAME1 /**/ &trans   &to BASE &kp SC_Lock &none           &none  &none  &none  &none  
                                                                 &trans          &trans          &trans          &trans &trans    /**/ &to PAD1 &trans   &trans      &trans          &trans
             >;
         };
@@ -251,9 +252,9 @@
  *                        | Mute |      |      |      |      |  |      |      |      |      |LShift|
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &trans &kp C_RW   &none      &kp C_FF   &none                      /**/                 &trans &trans &trans &trans &trans &trans 
-&trans &trans &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_VOL_UP               /**/                 &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans     &kp C_STOP &kp C_MUTE &kp C_VOL_DN &trans &trans /**/ &trans &to BASE &trans &trans &trans &trans &trans &trans 
+&trans &none  &kp C_RW   &none      &kp C_FF   &none                      /**/                 &none  &none  &none  &none  &none  &none  
+&trans &none  &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_VOL_UP               /**/                 &none  &none  &none  &none  &none  &none  
+&trans &none  &none      &kp C_STOP &kp C_MUTE &kp C_VOL_DN &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
                          &kp C_MUTE     &trans     &trans   &trans &trans /**/ &trans &trans   &trans &trans &kp LSHFT
             >;
         };
@@ -283,19 +284,19 @@
             label = "BT";
             bindings = <
 /* ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |BT Clear|      |BT Prv|      |BT Nxt|      |                              |      |      |      |      |      |        |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |        | BT 0 | BT 1 | BT 2 | BT D3|      |                              |      |      |      |      |      |        |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * |        |      |      |      | BT D4|      |      |      |  |      | BASE |      |      |      |      |      |        |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      | 	   |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
+&bt BT_CLR &none        &bt BT_PRV   &none        &bt BT_NXT   &none                /**/                 &none  &none  &none  &none  &none  &none  
+&none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none                /**/                 &none  &none  &none  &none  &none  &none  
+&none      &none        &none        &none        &bt BT_SEL 4 &none  &none  &none  /**/ &none  &to BASE &none  &none  &none  &none  &none  &none  
+                                     &none        &none        &none  &none  &none  /**/ &none  &none    &none  &none  &none 
             >;
         };
     };
