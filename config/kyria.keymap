@@ -26,6 +26,7 @@
  * |  Del  | CAD/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E| RAlt/I|   O    |   '    |
  * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
  * |MED/Tab|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    |   Å    |  
+   |       |      |      |      |      |      |       |     GAME→|  |←GAME   |      |   J   |   L  |   U  |   Y   |   Ö    |CapsWrd |
  * `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
                          | LShft|  CAD | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  BT  | Mute |
                          |      |  DEL |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
@@ -183,17 +184,17 @@
 /* ,------------------------------------------------.                              ,-----------------------------------------.
  * |RGBonSoft | Brgth+ | Sat+ | Hue+ |RGBCycl→|Speed+|                              |PwrOff| Break|  NA  |  NA  |  NA  |  NA  |
  * |----------+--------+------+------+--------+------|                              |------+------+------+------+------+------|
- * |RGBPwrOff | Brgth- | Sat- | Hue- |RGBCycl←|Speed-|                              | Sleep| Pause|  NA  |  NA  |  NA  |  NA  |
+ * |RGBPwrTggl| Brgth- | Sat- | Hue- |RGBCycl←|Speed-|                              | Sleep| Pause|  NA  |  NA  |  NA  |  NA  |
  * |----------+--------+------+------+--------+------+-------------.  ,-------------+------+------+------+------+------+------|
  * |RGBoffSoft|   NA   |  NA  |  NA  |   NA   |  NA  |      |GAME →|  |      | BASE |W Lock|  NA  |  NA  |  NA  |  NA  |  NA  |
  * `--------------------------+------+--------+------+------+------|  |------+------+------+------+------+--------------------'
  *                            |      |        |      |      |      |  |↑NumPd|      |      |      |      |
  *                            |      |        |      |      |      |  |      |      |      |      |      |
  *                            `------------------------------------'  `----------------------------------' */
-&rgb_ug RGB_ON	                &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI                  /**/               &trans &trans &trans &trans &trans &trans 
-&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD                  /**/               &trans &trans &trans &trans &trans &trans 
-&rgb_ug RGB_OFF                 &trans          &trans          &trans          &trans          &trans          &trans &to GAME1 /**/ &trans   &trans &trans &trans &trans &trans &trans &trans 
-                                                                &trans          &trans          &trans          &trans &trans    /**/ &to PAD1 &trans &trans &trans &trans
+&rgb_ug RGB_ON	                &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI                  /**/                   &kp C_PWR   &kp F_BRK       &trans &trans &trans &trans 
+&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD                  /**/                   &kp C_SLEEP &kp PAUSE_BREAK &trans &trans &trans &trans 
+&rgb_ug RGB_OFF                 &trans          &trans          &trans          &trans          &trans          &trans &to GAME1 /**/ &trans   &to BASE &kp SC_Lock &trans          &trans &trans &trans &trans 
+                                                                &trans          &trans          &trans          &trans &trans    /**/ &to PAD1 &trans   &trans      &trans          &trans
             >;
         };
 
