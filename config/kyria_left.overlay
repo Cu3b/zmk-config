@@ -20,21 +20,8 @@
 
 / {
 	left_encoder: encoder_left {
-		compatible = "alps,ec11";
-		label = "LEFT_ENCODER";
 		resolution = <2>;
 		status = "okay";
 	};
 
-	right_encoder: encoder_right {
-		compatible = "alps,ec11";
-		label = "RIGHT_ENCODER";
-		resolution = <2>;
-		status = "okay";
-	};
-
-	sensors {
-		compatible = "zmk,keymap-sensors";
-		sensors = <&left_encoder &right_encoder>;
-	};
 };
