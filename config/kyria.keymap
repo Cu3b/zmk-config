@@ -14,15 +14,16 @@
 #include "F_aliases.h"
 #include "shortcuts.h"
 
-gqt: global-quick-tap {
-    compatible = "zmk,behavior-hold-tap";
-    label = "GLOBAL_QUICK_TAP";
-    #binding-cells = <2>;
-    flavor = "tap-preferred";
-    tapping-term-ms = <175>;
-    quick-tap-ms = <125>;
-    global-quick-tap;
-    bindings = <&kp>, <&kp>;
+&lt {
+	flavor = "tap-preferred";
+	tapping-term-ms = <175>;
+	quick-tap-ms = <125>;
+};
+
+&mt {
+	flavor = "tap-preferred";
+	tapping-term-ms = <175>;
+	quick-tap-ms = <125>;
 };
 
 &caps_word {
