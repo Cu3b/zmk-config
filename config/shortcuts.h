@@ -5,15 +5,17 @@
 *
 */
 
-#define CtlNBsp (LC(BSPC))
-#define CtlNDel (LC(DEL))
-#define TskView (LG(TAB))
+#define CtlNBsp (LC(BSPC))        // Ctrl + Bspc, bspc word
+#define CtlNDel (LC(DEL))         // Ctrl + Del, del word
+#define TskView (LG(TAB))         // Task view
 #define TaskMgr LC(LS(ESC))       // Task manager
 
+#define ShwDstp (LG(D))           // Show desktop
+#define ClsDstp (LG(LC(F4)))      // Close virtual desktop
+#define NewDstp (LG(LC(D)))       // New virtual desktop
 #define PrvDstp (LG(LC(LEFT)))    // Previous virtual desktop
 #define NxtDstp (LG(LC(RGHT)))    // Next virtual desktop
-#define NewDstp (LG(LC(D)))       // New virtual desktop
-#define ClsDstp (LG(LC(F4)))      // Close virtual desktop
+
 #define PrevTab (LC(PG_UP))       // Previous tab
 #define NextTab (LC(PG_DN))       // Next tab
 #define RestTab (LC(LS(T)))       // Restore tab
@@ -21,7 +23,6 @@
 
 #define SC_Lock (LG(L))           // Lock windows
 #define SC_Clse (LA(F4))          // Close window
-#define SC_Dtop (LG(D))           // Show desktop
 #define SC_Snip (LG(LS(S)))       // Windows snipping tool
 
 #define SC_Psth (LG(V))           // Paste with history

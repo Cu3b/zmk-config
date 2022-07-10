@@ -81,17 +81,17 @@
 /* ,-------------------------------------------.                                 ,--------------------------------------------------.
  * |   NA   |ClsDst|NewDst|PrvDst|NxtDst|TaskVw|                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+-------+---------+---------+------+--------|
- * | LGUI+D |LShift|   ←  |Ctrl/↑|   →  | PgUp |                                 |  NA  |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
+ * | ShwDstp|LShift|   ←  |Ctrl/↑|   →  | PgUp |                                 |  NA  |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+-------+---------+---------+------+--------|
  * |   NA   |LCtrl | Home |   ↓  |  End | PgDn |       |       |   |      | BASE |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+-------+---------+-------------------------'
  *                        |      |      |      |       |       |   |      |      |      |       |         |
  *                        |      |      |      |       |       |   |      |      |      |       |         | 
  *                        `------------------------------------'   `--------------------------------------' */
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
+&none       &kp ClsDstp &kp NewDstp &kp PrvDstp  &NxtDstp  &kp TskView               /**/                 &trans &trans        &trans         &trans           &trans    &trans 
+&kp ShwDstp &kp LSHFT   &kp LEFT    &mt LCTRL UP &kp RIGHT &kp PG_UP                 /**/                 &trans &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK  &trans 
+&none       &kp LCTRL   &kp HOME    &kp DOWN     &kp END   &kp PG_DN   &trans &trans /**/ &trans &to BASE &trans &trans        &trans         &trans           &trans    &trans 
+                                    &trans       &trans    &trans      &trans &trans /**/ &trans &trans   &trans &trans        &trans
             >;
         };
 		
