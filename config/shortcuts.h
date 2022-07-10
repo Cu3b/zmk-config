@@ -14,7 +14,7 @@
 #define ClsDstp (LG(LC(F4)))      // Close virtual desktop
 #define NewDstp (LG(LC(D)))       // New virtual desktop
 #define PrvDstp (LG(LC(LEFT)))    // Previous virtual desktop
-#define NxtDstp (LG(LC(RGHT)))    // Next virtual desktop
+#define NxtDstp (LG(LC(RIGHT)))    // Next virtual desktop
 
 #define PrevTab (LC(PG_UP))       // Previous tab
 #define NextTab (LC(PG_DN))       // Next tab
