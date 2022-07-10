@@ -176,9 +176,9 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&kp SC_Clse    &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp PSCRN                 /**/                 &none  &none  &none  &none  &none  &none  
-&kp C_AL_FILES &kp SC_Undo &kp SC_Cut  &kp SC_Copy &kp SC_Pste &kp SC_Redo               /**/                 &none  &none  &none  &none  &none  &none  
-&kp C_AL_CALC  &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Snip &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
+&kp SC_Clse          &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp PSCRN                 /**/                 &none  &none  &none  &none  &none  &none  
+&kp C_AL_MY_COMPUTER &kp SC_Undo &kp SC_Cut  &kp SC_Copy &kp SC_Pste &kp SC_Redo               /**/                 &none  &none  &none  &none  &none  &none  
+&kp C_AL_CALC        &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Snip &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
                                        &trans      &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans &trans
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
