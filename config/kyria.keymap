@@ -21,19 +21,19 @@
             label = "BASE";
             bindings = <
 /* ,------------------------------------------.                                     ,-----------------------------------------------.
- * |  Esc  |   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |CapsWrd |
+ * |  Esc  |   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   Å    |
  * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
- * |  Del  | CAD/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E| RAlt/I|   O    |   '    |
+ * |CapsWrd| CAD/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E| RAlt/I|   O    |   '    |
  * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
- * |MED/Tab|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    |   Å    |  
-   |       |      |      |      |      |      |       |     GAME→|  |←GAME   |      |   J   |   L  |   U  |   Y   |   Ö    |CapsWrd |
+ * |MED/Tab|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    |  Enter |  
+   |       |      |      |      |      |      |       |     GAME→|  |←GAME   |      |       |      |      |       |        |        |
  * `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
                          | LShft|  CAD | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  BT  | Mute |
                          |      |  DEL |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
-&kp ESC       &kp Q     &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &caps_word
-&kp DEL       &lt CAD A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M   &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &kp SQT
-&lt MEDIA TAB &kp X     &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &kp F_ARNG
+&kp ESC       &kp Q     &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &kp F_ARNG
+&caps_word    &lt CAD A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M   &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &kp F_QUOT
+&lt MEDIA TAB &kp X     &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &kp RET
                                    &kp LSHFT   &lt CAD DEL &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &mo BT      &kp C_MUTE
             >;
         };
@@ -53,7 +53,7 @@
  *                        `----------------------------------'  `----------------------------------' */
 &trans &none          &kp F_LABK      &kp F_LBRC       &none          &none                   /**/                   &none      &none            &kp F_RBRC       &kp F_RABK      &none      &none
 &trans &lt CAD F_LBKT &mt LALT F_LPRN &mt LCTRL F_HASH &mt LSHFT F_AT &kp F_GRV               /**/                   &kp F_ACUT &mt RSHFT F_QUES &mt RCTRL F_EXLM &mt RALT F_RPRN &kp F_RBKT &kp F_DIAE
-&trans &none          &kp F_HALF      &kp F_AMPR       &kp F_UNDS     &none     &trans &trans /**/ &to PAD1 &to BASE &none      &kp DQT          &kp F_BSLH       &kp F_PIPE      &none      &none
+&trans &none          &kp F_HALF      &kp F_AMPR       &kp F_UNDS     &none     &trans &trans /**/ &to PAD1 &to BASE &none      &kp F_DQUO       &kp F_BSLH       &kp F_PIPE      &none      &none
                                       &trans           &trans         &trans    &trans &trans /**/ &trans   &trans   &trans     &trans           &trans
             >;
         };
@@ -64,7 +64,7 @@
 /* ,-------------------------------------------.                                 ,-------------------------------------------.
  * |        |  NA  |   (  |   %  |   =  |   £  |                                 |  NA  |  NA  |   ~  |   )  |   ¤  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+------+------+------+------+--------|
- * |        |   1  | Alt/2|LCtl/3|LSft/4|   €  |                                 |   ^  |RSft/7|RCtl/8|RAlt/9|   0  |    §   |  
+ * |        |   1  | Alt/2|LCtl/3|LSft/4|   €  |                                 |   ^  |RSft/7|RCtl/8|RAlt/9|   0  |   §    |  
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+------+------+------+------+--------|
  * |        |   -  |   ,  |   +  |   5  |   $  |       |       |   |      | BASE |  NA  |   6  |   /  |   .  |   *  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+------+------+----------------------'
@@ -211,10 +211,10 @@
  *                        |      | LAlt |   I  | Space | OS   |  |      |      |      |      |      |
  *                        |      |      |      |       | Game2|  |      |      |      |      |      |
  *                        `-----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans 
+&kp ESC &kp N1    &kp N2 &kp N3     &kp N4   &kp N5                     /**/                 &kp Y  &kp Y  &kp Y  &kp Y  &kp Y      &kp F_ARNG 
+&kp M   &kp LSHFT &kp A  &kp W      &kp D    &kp E                      /**/                 &trans &trans &trans &trans &trans     &kp F_ADIA 
+&kp TAB &kp LCTRL &kp Q  &kp S      &kp R    &kp F  &kp T     &kp RET   /**/ &trans &to BASE &trans &trans &trans &trans &kp F_QUOT &kp F_SECT 
+                         &kp C_MUTE &kp LALT &kp I  &kp SPACE &sl GAME2 /**/ &trans &trans   &trans &trans &trans 
             >;
         };
 
