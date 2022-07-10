@@ -181,18 +181,18 @@
         RGB_layer {
             label = "RGB";
             bindings = <
-/* ,------------------------------------------------.                              ,-----------------------------------------.
- * |RGBonSoft | Brgth+ | Sat+ | Hue+ |RGBCycl→|Speed+|                              |PwrOff| Break|  NA  |  NA  |  NA  |  NA  |
- * |----------+--------+------+------+--------+------|                              |------+------+------+------+------+------|
- * |RGBPwrTggl| Brgth- | Sat- | Hue- |RGBCycl←|Speed-|                              | Sleep| Pause|  NA  |  NA  |  NA  |  NA  |
- * |----------+--------+------+------+--------+------+-------------.  ,-------------+------+------+------+------+------+------|
- * |RGBoffSoft|   NA   |  NA  |  NA  |   NA   |  NA  |      |GAME →|  |      | BASE |W Lock|  NA  |  NA  |  NA  |  NA  |  NA  |
- * `--------------------------+------+--------+------+------+------|  |------+------+------+------+------+--------------------'
+/* ,------------------------------------------------.                              ,------------------------------------------.
+ * |RGBonSoft | Brgth+ | Sat+ | Hue+ |RGBCycl→|Speed+|                              |PwrOff| Break|  NA  |  NA  |  NA  |DBrgth+|
+ * |----------+--------+------+------+--------+------|                              |------+------+------+------+------+-------|
+ * |RGBPwrTggl| Brgth- | Sat- | Hue- |RGBCycl←|Speed-|                              | Sleep| Pause|  NA  |  NA  |  NA  |DBrgth-|
+ * |----------+--------+------+------+--------+------+-------------.  ,-------------+------+------+------+------+------+-------|
+ * |RGBoffSoft|   NA   |  NA  |  NA  |   NA   |  NA  |      |GAME →|  |      | BASE |W Lock|  NA  |  NA  |  NA  |  NA  |  NA   |
+ * `--------------------------+------+--------+------+------+------|  |------+------+------+------+------+---------------------'
  *                            |      |        |      |      |      |  |↑NumPd|      |      |      |      |
  *                            |      |        |      |      |      |  |      |      |      |      |      |
  *                            `------------------------------------'  `----------------------------------' */
-&rgb_ug RGB_ON	                &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI                  /**/                   &kp C_PWR   &kp F_BRK       &trans &trans &trans &trans 
-&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD                  /**/                   &kp C_SLEEP &kp PAUSE_BREAK &trans &trans &trans &trans 
+&rgb_ug RGB_ON	                &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI                  /**/                   &kp C_PWR   &kp F_BRK       &trans &trans &trans &kp C_BRI_UP 
+&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD                  /**/                   &kp C_SLEEP &kp PAUSE_BREAK &trans &trans &trans &kp C_BRI_DN 
 &rgb_ug RGB_OFF                 &trans          &trans          &trans          &trans          &trans          &trans &to GAME1 /**/ &trans   &to BASE &kp SC_Lock &trans          &trans &trans &trans &trans 
                                                                 &trans          &trans          &trans          &trans &trans    /**/ &to PAD1 &trans   &trans      &trans          &trans
             >;
@@ -206,15 +206,15 @@
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
  * |    M   | Shift|   A  |   W  |   D  |   E  |                               |   H  |   J  |   K  |   L  |   Ö  |   Ä    |
  * |--------+------+------+------+------+------+--------------.  ,-------------+------+------+------+------+------+--------|
- * |   Tab  | Ctrl |   Q  |   S  |   R  |   F  |   T   | Ent  |  |      | BASE |   N  |   M  |  ,;  |  .:  |   '  |   §    |
+ * |   Tab  | Ctrl |   Q  |   S  |   R  |   F  |   T   | Ent  |  |FKEYS | BASE |   N  |   M  |  ,;  |  .:  |   '  |   §    |
  * `----------------------+------+------+------+-------+------|  |------+------+------+------+------+----------------------'
- *                        |      | LAlt |   I  | Space | OS   |  |      |      |      |      |      |
+ *                        |      | LAlt |   I  | Space | OS   |  |      |      |BSpace|      |      |
  *                        |      |      |      |       | Game2|  |      |      |      |      |      |
  *                        `-----------------------------------'  `----------------------------------' */
-&kp ESC &kp N1    &kp N2 &kp N3     &kp N4   &kp N5                     /**/                 &kp Y  &kp Y  &kp Y  &kp Y  &kp Y      &kp F_ARNG 
-&kp M   &kp LSHFT &kp A  &kp W      &kp D    &kp E                      /**/                 &trans &trans &trans &trans &trans     &kp F_ADIA 
-&kp TAB &kp LCTRL &kp Q  &kp S      &kp R    &kp F  &kp T     &kp RET   /**/ &trans &to BASE &trans &trans &trans &trans &kp F_QUOT &kp F_SECT 
-                         &kp C_MUTE &kp LALT &kp I  &kp SPACE &sl GAME2 /**/ &trans &trans   &trans &trans &trans 
+&kp ESC &kp N1    &kp N2 &kp N3     &kp N4   &kp N5                     /**/                    &kp Y    &kp U  &kp I      &kp O     &kp P      &kp F_ARNG 
+&kp M   &kp LSHFT &kp A  &kp W      &kp D    &kp E                      /**/                    &kp H    &kp J  &kp K      &kp L     &kp F_ODIA &kp F_ADIA 
+&kp TAB &kp LCTRL &kp Q  &kp S      &kp R    &kp F  &kp T     &kp RET   /**/ &mo FKEYS &to BASE &kp N    &kp M  &kp F_COMM &kp F_DOT &kp F_QUOT &kp F_SECT 
+                         &kp C_MUTE &kp LALT &kp I  &kp SPACE &sl GAME2 /**/ &trans    &trans   &kp BSPC &trans &trans 
             >;
         };
 
@@ -222,19 +222,19 @@
             label = "GAME2";
             bindings = <
 /* ,-------------------------------------------.                               ,-------------------------------------------.
- * |   Esc  |   0  |   9  |   8  |   7  |   6  |                               |  NA  |  NA  |  NA  |  NA  |  NA  |   NA   |
+ * | BSpace |   0  |   9  |   8  |   7  |   6  |                               |  NA  |  NA  |  NA  |  NA  |  NA  |   NA   |
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
  * |    N   |   Z  |   X  |   C  |   V  |   B  |                               |  NA  |  NA  |  NA  |  NA  |  NA  |   NA   |   
  * |--------+------+------+------+------+------+-------------.   ,-------------+------+------+------+------+------+--------|
  * |    U   |   ←  |   ↓  |   ↑  |   →  |   G  |   P  |      |   |      | BASE |  NA  |  NA  |  NA  |  NA  |  NA  |CapsLock|
  * `----------------------+------+------+------+------+------|   |------+------+------+------+------+----------------------'
- *                        |      |      |      |      |      |   |      |      | BSpc |      |      |
+ *                        |      |      |      |      |      |   |      |      |Delete|      |      |
  *                        |      |      |      |      |      |   |      |      |      |      |      |
  *                        `----------------------------------'   `----------------------------------' */
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans 
+&kp BSPC &kp N0   &kp N9   &kp N8  &kp N7    &kp N6               /**/                 &none   &none  &none  &none  &none  &none 
+&kp N    &kp Z    &kp X    &kp C   &kp V     &kp B                /**/                 &none   &none  &none  &none  &none  &none 
+&kp U    &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp G  &kp P  &trans /**/ &trans &to BASE &none   &none  &none  &none  &none  &kp CLCK 
+                           &C_MUTE &trans    &trans &trans &trans /**/ &trans &trans   &kp DEL &trans &trans 
             >;
         };
 
@@ -242,39 +242,40 @@
             label = "MEDIA";
             bindings = <
 /* ,-------------------------------------------.                              ,-----------------------------------------.
- * |        |  NA  |  NA  |  NA  |  NA  |  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |        |  NA  |Rewind|  NA  |FastFw|  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |        |  NA  |M Prev|M Play|M Next| Vol+ |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------| 
  * |        |  NA  |  NA  |M Stop| Mute | Vol- |      |      |  |      | BASE |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
- *                        |      |      |      |      |      |  |      |      |      |      |LShift|
+ *                        | Mute |      |      |      |      |  |      |      |      |      |LShift|
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
+&trans &trans &kp C_RW   &none      &kp C_FF   &none                      /**/                 &trans &trans &trans &trans &trans &trans 
+&trans &trans &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_VOL_UP               /**/                 &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans     &kp C_STOP &kp C_MUTE &kp C_VOL_DN &trans &trans /**/ &trans &to BASE &trans &trans &trans &trans &trans &trans 
+                         &kp C_MUTE     &trans     &trans   &trans &trans /**/ &trans &trans   &trans &trans &kp LSHFT
             >;
         };
 
         CAD_layer {
             label = "CAD";
             bindings = <
+// Software shortcuts to be added sometime, so mostly just transparent now excluding delete
 /* ,-----------------------------------------.                              ,-----------------------------------------.
- * |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
  * |------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------| 
- * |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |      |      |  |      | BASE |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |      |      |      |      |      |      |      |      |  |      | BASE |      |      |      |      |      |      |
  * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                      |      |      |Delete|      |      |  |      |      |      |      |      |
  *                      |      |      |      |      |      |  |      |      |      |      |      |
  *                      `----------------------------------'  `----------------------------------' */
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans               /**/               &trans &trans &trans &trans &trans &trans 
-&trans &trans &trans &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans &trans &trans &trans 
-                     &trans &trans &trans &trans &trans /**/ &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               /**/                  &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans               /**/                  &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans  &trans &trans /**/ &trans &to BASE &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &kp DEL &trans &trans /**/ &trans &trans   &trans &trans &trans
             >;
         };
 
