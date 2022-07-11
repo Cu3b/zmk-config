@@ -72,34 +72,14 @@
     combos {
         compatible = "zmk,combos";
 		// combos left 
-        // diagonal
-        combo_labk {
-            timeout-ms = <40>;
-            key-positions = <13 26>;
-            bindings = <&kp F_LABK>;
-        };
-        combo_lbkt {
-            timeout-ms = <40>;
-            key-positions = <14 27>;
-            bindings = <&kp F_LBKT>;
-        };
-        combo_lprn {
-            timeout-ms = <40>;
-            key-positions = <15 28>;
-            bindings = <&kp F_LPRN>;
-        };
-        combo_lbrc {
-            timeout-ms = <40>;
-            key-positions = <16 27>;
-            bindings = <&kp F_LBRC>;
-        };
+		// combos horizontal
 		// row1
-        combo_mins {
+        combo_tilde {
             timeout-ms = <40>;
             key-positions = <1 2>;
             bindings = <&kp F_TILD>;
         };
-        combo_mins {
+        combo_minus {
             timeout-ms = <40>;
             key-positions = <2 3>;
             bindings = <&kp F_MINS>;
@@ -132,37 +112,16 @@
             bindings = <&kp TAB>;
         };
 		//combos right
-        // diagonal
-        combo_labk {
-            timeout-ms = <40>;
-            key-positions = <20 35>;
-            bindings = <&kp F_RABK>;
-        };
-        combo_lbkt {
-            timeout-ms = <40>;
-            key-positions = <21 36>;
-            bindings = <&kp F_RBKT>;
-        };
-        combo_lprn {
-            timeout-ms = <40>;
-            key-positions = <22 37>;
-            bindings = <&kp F_RPRN>;
-        };
-        combo_lbrc {
-            timeout-ms = <40>;
-            key-positions = <19 36>;
-            bindings = <&kp F_RBRC>;
-        };
 		// row1
         combo_fslh {
             timeout-ms = <40>;
             key-positions = <7 8>;
             bindings = <&kp F_FSLH>;
         };
-        combo_mins {
+        combo_astr {
             timeout-ms = <40>;
             key-positions = <8 9>;
-            bindings = <&kp F_MINS>;
+            bindings = <&kp F_ASTR>;
         };
         combo_eql {
             timeout-ms = <40>;
