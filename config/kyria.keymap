@@ -180,6 +180,11 @@
             key-positions = <21 22>;
             bindings = <&kp F_ARNG>;
         };
+        combo_winlock {
+            timeout-ms = <40>;
+            key-positions = <33 46>;
+            bindings = <&kp SC_Lock>;
+        };
     };
 };
 
