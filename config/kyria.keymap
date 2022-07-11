@@ -254,10 +254,10 @@
  *                        |      |      |      |      |P2/Ent|   | BASE |      |      |      |      |
  *                        |      |      |      |      |      |   |      |      |      |      |      |
  *                        `----------------------------------'   `----------------------------------' */
-&trans     &kp KP_MINUS &kp KP_N7      &kp KP_N8       &kp KP_N9 &kp KP_PLUS                         /**/                   &kp TskView &kp NxtDstp &kp PrvDstp  &kp NewDstp &kp ClsDstp &kp ESC
-&kp COMMA  &kp KP_N0    &mt LALT KP_N4 &mt LCTRL KP_N5 &kp KP_N6 &kp KP_SLASH                        /**/                   &kp PG_UP   &kp LEFT    &mt RCTRL UP &kp RIGHT   &kp RSHFT   &kp DEL
-&kp F_EQL   &kp KP_DOT   &kp KP_N1      &kp KP_N2       &kp KP_N3 &kp KP_ASTERISK &trans &kp KP_NLCK  /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &kp RCTRL   &kp TAB
-                                      &kp KP_NLCK     &trans    &trans          &trans &lt PAD2 RET /**/ &to BASE &trans   &trans      &trans      &trans
+&trans     &kp KP_MINUS &kp N7      &kp N8       &kp N9 &kp KP_PLUS                         /**/                   &kp TskView &kp NxtDstp &kp PrvDstp  &kp NewDstp &kp ClsDstp &kp ESC
+&kp COMMA  &kp KP_N0    &mt LALT N4 &mt LCTRL N5 &kp N6 &kp KP_SLASH                        /**/                   &kp PG_UP   &kp LEFT    &mt RCTRL UP &kp RIGHT   &kp RSHFT   &kp DEL
+&kp F_EQL  &kp KP_DOT   &kp N1      &kp N2       &kp N3 &kp KP_ASTERISK &trans &kp KP_NLCK  /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &kp RCTRL   &kp TAB
+                              &kp KP_NLCK     &trans    &trans          &trans &lt PAD2 RET /**/ &to BASE &trans   &trans      &trans      &trans
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
         };
