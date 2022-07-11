@@ -6,6 +6,6 @@
 */
 
 // Hold tap key timers
-#define QUICK_TAP    135
+#define QUICK_TAP    175
 #define TAPPING_TERM 200
-#define SHIFT_TAPPING_TERM 160
+#define SHIFT_TAPPING_TERM 150
