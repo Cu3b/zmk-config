@@ -36,35 +36,35 @@
 
 /* Combos
  * ,-----------------------------------------.                              ,-----------------------------------------.
- * |   1  |   2  |  3   |   4  |   5  |   6  |                              |   7  |   8  |   9  |  10  |  11  |  12  |
+ * |   0  |   1  |   2  |  3   |   4  |   5  |                              |   6  |   7  |   8  |   9  |  10  |  11  | 
  * |      |   ~  _  ~ min ~ plus  ~   |      |                              |      |   ~  /   ~  *   ~  =   ~  |      |
  * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |  13  |  14  |  15  |  16  |  17  |  18  |                              |  19  |  20  |  21  |  22  |  23  |  24  |
+ * |  12  |  13  |  14  |  15  |  16  |  17  |                              |  18  |  19  |  20  |  21  |  22  |  23  |
  * |      |   ~  Z   ~  X  ~  ESC  ~  |      |                              |      |   ~  "   ~  '   ~  Å   ~  |      |
  * |      |   \   \  \   \  \   \     |      |                              |      |     /   /  /   /  /   /   |      |
  * |------+----  <  --  [  --  (  ----+------+-------------.  ,-------------+------+----- )  --  ]  --  >  ----+------|
- * |  25  |     \   \  \   \  \   \   |  30  |  31  |  32  |  |  33  |  34  |  35  |   /   /  /   /  /   /     |  41
- * |      |      |   ~ ESC ~  TAB  ~  |      |      |      |  |      |      |      |      |      |      |      |      |
- * |      |  26  |  27  |  28  |  29  |      |      |      |  |      |      |      |  36  |  37  |  38  |  40  |      |
+ * |  24  |     \   \  \   \  \   \   |  29  |  30  |  31  |  |  32  |  33  |  34  |   /   /  /   /  /   /     |  39
+ * |      |      |      |  ~  TAB  ~  |      |      |      |  |      |      |      |      |      |      |      |      |
+ * |      |  25  |  26  |  27  |  28  |      |      |      |  |      |      |      |  35  |  36  |  37  |  38  |      |
  * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
- *                      |  41  |  42  |  43  |  44  |  45  |  |  46  |  47  |  48  |  49  |  50  |
+ *                      |  40  |  41  |  42  |  43  |  44  |  |  45  |  46  |  47  |  48  |  49  |
  *                      |      |      |      |      |      |  |      |      |      |      |      |
  *                      `----------------------------------'  `----------------------------------' 
  * ,-----------------------------------------.                              ,-----------------------------------------.
- * |   1  |   2  |  3   |   4  |   5  |   6  |                              |   7  |   8  |   9  |  10  |  11  |  12  |
+ * |   0  |   1  |   2  |  3   |   4  |   5  |                              |   6  |   7  |   8  |   9  |  10  |  11  | 
  * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
  * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |  13  |  14  |  15  |  16  |  17  |  18  |                              |  19  |  20  |  21  |  22  |  23  |  24  |
+ * |  12  |  13  |  14  |  15  |  16  |  17  |                              |  18  |  19  |  20  |  21  |  22  |  23  |
  * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
  * |      |      |      |     /   /   |      |                              |      |   \   \     |      |      |      |
  * |------+------+------+---  {  -----+------+-------------.  ,-------------+------+-----  } -----------+------+------|
- * |  25  |  26  |  27  |  /   /      |  30  |  31  |  32  |  |  33  |  34  |  35  |      \   \  |  38  |  39  |  40  |
+ * |  24  |  25  |  26  |  /   /      |  29  |  30  |  31  |  |  32  |  33  |  34  |      \   \  |  37  |  38  |  39  |
  * |      |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |      |
- * |      |      |      |  28  |  29  |      |      |      |  |      |      |      |  36  |  37  |      |      |      |
+ * |      |      |      |  27  |  28  |      |      |      |  |      |      |      |  35  |  36  |      |      |      |
  * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
- *                      |  41  |  42  |  43  |  44  |  45  |  |  46  |  47  |  48  |  49  |  50  |
+ *                      |  40  |  41  |  42  |  43  |  44  |  |  45  |  46  |  47  |  48  |  49  |
  *                      |      |      |      |      |      |  |      |      |      |      |      |
  *                      `----------------------------------'  `----------------------------------' */
 
@@ -75,38 +75,38 @@
         // diagonal
         combo_labk {
             timeout-ms = <40>;
-            key-positions = <14 27>;
+            key-positions = <13 26>;
             bindings = <&kp F_LABK>;
         };
         combo_lbkt {
             timeout-ms = <40>;
-            key-positions = <15 28>;
+            key-positions = <14 27>;
             bindings = <&kp F_LBKT>;
         };
         combo_lprn {
             timeout-ms = <40>;
-            key-positions = <16 29>;
+            key-positions = <15 28>;
             bindings = <&kp F_LPRN>;
         };
         combo_lbrc {
             timeout-ms = <40>;
-            key-positions = <17 28>;
+            key-positions = <16 27>;
             bindings = <&kp F_LBRC>;
         };
 		// row1
         combo_unds {
             timeout-ms = <40>;
-            key-positions = <2 3>;
+            key-positions = <1 2>;
             bindings = <&kp F_UNDS>;
         };
         combo_mins {
             timeout-ms = <40>;
-            key-positions = <3 4>;
+            key-positions = <2 3>;
             bindings = <&kp F_MINS>;
         };
         combo_plus {
             timeout-ms = <40>;
-            key-positions = <4 5>;
+            key-positions = <3 4>;
             bindings = <&kp F_PLUS>;
         };
 		// row2
@@ -120,20 +120,15 @@
             key-positions = <14 15>;
             bindings = <&kp X>;
         };
-        combo_enter {
-            timeout-ms = <40>;
-            key-positions = <15 16>;
-            bindings = <&kp RET>;
-        };
-		// row3
         combo_esc {
             timeout-ms = <40>;
-            key-positions = <25 26>;
+            key-positions = <15 16>;
             bindings = <&kp ESC>;
-			
+        };
+		// row3
         combo_tab {
             timeout-ms = <40>;
-            key-positions = <26 27>;
+            key-positions = <27 28>;
             bindings = <&kp TAB>;
 		//combos right
         // diagonal
@@ -205,15 +200,15 @@
  * |  ESC  | MED/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E|RAlt/I |   O    |   '    |
  * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
  * |MED/ENT|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    | CapsWrd|  
-   |       |      |      |      |      |      |       |     GAME→|  |←GAME   |      |       |      |      |       |        |        |
+ * |       |      |      |      |      |      |       |     GAME→|  |←GAME   |      |       |      |      |       |        |        |
  * `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
                          | LShft|  CAD | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  BT  | Mute |
-                         |      |      |BSpace| Space |  Del     |  |OSSYM   |      |       |      |      |
+                         |      |      |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
-&kp TAB &kp Q &kp W       &kp F      &kp P       &kp B                                               /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &kp F_ARNG
+&kp TAB       &kp Q       &kp W       &kp F      &kp P       &kp B                                   /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &kp F_ARNG
 &kp ESC       &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M   &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &kp F_QUOT
 &lt MEDIA RET &kp X       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &caps_word
-                                     &kp LSHFT   &sl CAD     &lt SHC BSPC &lt ARR SPACE &lt PAD1 DEL /**/ &sl SYM &sk LSHFT &sl NUM &mo BT      &kp C_MUTE
+                                     &kp LSHFT   &sl CAD     &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &mo BT      &kp C_MUTE
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
         };
@@ -438,13 +433,13 @@
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------| 
  * |        |  NA  |  NA  |M Stop| Mute | Vol- |      |      |  |      | BASE |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
- *                        | Mute |      |      |      |      |  |      |      |      |      |LShift|
+ *                        | Mute |      |Delete|      |      |  |      |      |      |      |LShift|
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
 &trans &none  &kp C_RW   &none      &kp C_FF   &none                      /**/                 &none  &none  &none  &none  &none  &none  
 &trans &none  &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_VOL_UP               /**/                 &none  &none  &none  &none  &none  &none  
 &trans &none  &none      &kp C_STOP &kp C_MUTE &kp C_VOL_DN &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
-                         &kp C_MUTE     &trans     &trans   &trans &trans /**/ &trans &trans   &trans &trans &kp LSHFT
+                         &kp C_MUTE     &trans     &kp DEL  &trans &trans /**/ &trans &trans   &trans &trans &kp LSHFT
             >;
 			sensor-bindings = <&inc_dec_cp M_VOLU M_VOLD &inc_dec_kp PGUP PGDN>;
         };
