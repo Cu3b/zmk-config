@@ -19,8 +19,3 @@
 #define MEDIA 11
 #define CAD   12
 #define BT    13
-
-// Hold tap key timers
-#define QUICK_TAP    135
-#define TAPPING_TERM 200
-#define SHIFT_TAPPING_TERM 160
