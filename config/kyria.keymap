@@ -269,9 +269,9 @@
  *                        |      |      |      |       |       |   |      |      |      |      |      |
  *                        |      |      |      |       |       |   |      |      |      |      |      | 
  *                        `------------------------------------'   `----------------------------------' */
-&none  &kp F_UNDS &kp F_AMPR  &kp F_HASH   &kp F_AT     &kp F_PIPE                    /**/             &kp F_CURR &kp F_DLR    &kp F_EURO   &kp F_PND   &kp F_HALF  &none 
-&none  &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_GRV                /**/                  &kp F_ACUT &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &kp N0 &none
-&none  &kp none   &kp F_COMM  &kp F_PERC   &kp N5       &kp F_TILD &trans &trans /**/ &trans  &to BASE &kp F_SECT &kp N6       &F_CIRC      &kp F_DOT   &none  &none 
+&none &kp F_UNDS &kp F_AMPR  &kp F_HASH   &kp F_AT     &kp F_PIPE               /**/                  &kp F_CURR &kp F_DLR    &kp F_EURO   &kp F_PND   &kp F_HALF &none 
+&none &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_GRV                /**/                  &kp F_ACUT &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &kp N0     &none
+&none &kp none   &kp F_COMM  &kp F_PERC   &kp N5       &kp F_TILD &trans &trans /**/ &trans  &to BASE &kp F_SECT &kp N6       &kp F_CIRC   &kp F_DOT   &none      &none 
                               &trans       &trans       &trans     &trans &trans /**/ &trans  &trans   &trans     &trans       &trans
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
@@ -290,9 +290,9 @@
  *                        |      |      |      |       |       |   |      |      |      |       |         |
  *                        |      |      |      |       |       |   |      |      |      |       |         | 
  *                        `------------------------------------'   `--------------------------------------' */
-&none &kp ClsDstp &kp NewDstp &kp PrvDstp  &kp NxtDstp     &kp TskView               /**/                 &none  &none         &none          &none            &none     &none 
-&none &kp LSHFT   &kp LEFT    &mt LCTRL UP &kp RIGHT       &kp PG_UP                 /**/                 &none  &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK  &none 
-&none &none       &kp HOME    &kp DOWN     &kp END         &kp PG_DN   &trans &trans /**/ &trans &to BASE &none  &kp ShwDstp   &none          &none            &none     &none 
+&none &kp ClsDstp &kp NewDstp &kp PrvDstp  &kp NxtDstp     &kp TskView               /**/                 &none  &none         &none          &none            &none    &none 
+&none &kp LSHFT   &kp LEFT    &mt LCTRL UP &kp RIGHT       &kp PG_UP                 /**/                 &none  &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK &none 
+&none &none       &kp HOME    &kp DOWN     &kp END         &kp PG_DN   &trans &trans /**/ &trans &to BASE &none  &kp ShwDstp   &none          &none            &none    &none 
                               &trans       &trans          &trans      &trans &trans /**/ &trans &trans   &trans &trans        &trans
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
