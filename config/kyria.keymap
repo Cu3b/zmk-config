@@ -34,6 +34,7 @@
 &left_encoder { resolution = <2>; };
 &right_encoder { resolution = <2>; };
 
+
 /* Combos
  * ,-----------------------------------------.                              ,-----------------------------------------.
  * |   0  |   1  |   2  |  3   |   4  |   5  |                              |   6  |   7  |   8  |   9  |  10  |  11  | 
@@ -71,7 +72,6 @@
     combos {
         compatible = "zmk,combos";
 		// combos left 
-		// combos horizontal
 		// row1
         combo_unds {
             timeout-ms = <45>;
@@ -118,6 +118,7 @@
             timeout-ms = <45>;
             key-positions = <14 16>;
             bindings = <&kp TAB>;
+        };
         combo_esc {
             timeout-ms = <45>;
             key-positions = <15 16>;
@@ -238,7 +239,7 @@
 &lt MEDIA RET &kp X       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &caps_word
                                      &kp LSHFT   &sl CAD     &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &mo BT      &kp C_MUTE
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
         SYM_layer {
@@ -259,7 +260,7 @@
 &trans &none            &kp F_HALF      &kp F_AMPR       &kp F_UNDS     &none     &trans &trans /**/ &to PAD1 &to BASE &none      &kp F_DQUO       &kp F_BSLH       &kp F_PIPE      &none      &none
                                         &trans           &trans         &trans    &trans &trans /**/ &trans   &trans   &trans     &trans           &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
         NUM_layer {
@@ -280,7 +281,7 @@
 &trans &kp F_MINS &kp F_COMM  &kp F_PLUS   &kp N5       &kp F_DLR  &trans &trans /**/ &trans &to BASE &none      &kp N6       &kp F_FSLH   &kp F_DOT   &kp F_ASTR &none 
                               &trans       &trans       &trans     &trans &trans /**/ &trans &trans   &trans     &trans       &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
         ARR_layer {
@@ -301,7 +302,7 @@
 &trans      &kp LCTRL   &kp HOME    &kp DOWN     &kp END         &kp PG_DN   &trans &trans /**/ &trans &to BASE &trans &trans        &trans         &trans           &trans    &trans 
                                     &trans       &trans          &trans      &trans &trans /**/ &trans &trans   &trans &trans        &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
         PAD1_layer {
@@ -322,7 +323,7 @@
 &kp F_EQL  &kp KP_DOT   &kp N1      &kp N2       &kp N3 &kp KP_ASTERISK &trans &kp KP_NLCK  /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &kp RCTRL   &kp TAB
                               &kp KP_NLCK     &trans    &trans          &trans &lt PAD2 RET /**/ &to BASE &trans   &trans      &trans      &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
         PAD2_layer {
@@ -343,7 +344,7 @@
 &kp F_EQL    &kp KP_DOT &kp F_DLR  &kp F_EURO  &kp F_PND  &none  &trans &kp KP_NLCK /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &kp RCTRL   &kp TAB
                                 &kp KP_NLCK &trans     &trans &trans &trans      /**/ &to BASE &trans   &trans      &trans      &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
         SHC_layer {
@@ -364,7 +365,7 @@
 &kp C_AL_CALC        &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Snip &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
                                        &trans      &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
         FKEYS_layer {
@@ -385,7 +386,7 @@
 &trans &kp F11 &kp F1 &kp F2 &kp F3 &none  &trans &trans /**/ &to GAME1 &to BASE &none  &none     &none     &none    &none    &none  
                       &trans &trans &trans &trans &trans /**/ &trans    &trans   &trans &trans    &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
         RGB_layer {
@@ -406,7 +407,7 @@
 &rgb_ug RGB_OFF                 &none           &none           &none           &none           &none           &none  &to GAME1 /**/ &trans   &to BASE &kp SC_Lock &none           &none  &none  &none  &none  
                                                                 &trans          &trans          &trans          &trans &trans    /**/ &to PAD1 &trans   &trans      &trans          &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
         GAME1_layer {
@@ -427,7 +428,7 @@
 &kp TAB &kp LCTRL &kp Q  &kp S      &kp R    &kp F  &kp T     &kp RET   /**/ &mo FKEYS &to BASE &kp N    &kp M  &kp F_COMM &kp F_DOT &kp F_QUOT &kp F_SECT 
                          &kp C_MUTE &kp LALT &kp I  &kp SPACE &sl GAME2 /**/ &trans    &trans   &kp BSPC &trans &trans 
             >;
-			sensor-bindings = <&inc_dec_cp M_VOLU M_VOLD &inc_dec_kp PGUP PGDN>;
+			sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
         };
 
         GAME2_layer {
@@ -448,7 +449,7 @@
 &kp U    &kp LEFT &kp DOWN &kp UP     &kp RIGHT &kp G  &kp P  &trans /**/ &trans &to BASE &none   &none  &none  &none  &none  &kp CLCK 
                            &kp C_MUTE &trans    &trans &trans &trans /**/ &trans &trans   &kp DEL &trans &trans 
             >;
-			sensor-bindings = <&inc_dec_cp M_VOLU M_VOLD &inc_dec_kp PGUP PGDN>;
+			sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
         };
 
         MEDIA_layer {
@@ -469,7 +470,7 @@
 &trans &none  &none      &kp C_STOP &kp C_MUTE &kp C_VOL_DN &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
                          &kp C_MUTE     &trans     &kp DEL  &trans &trans /**/ &trans &trans   &trans &trans &kp LSHFT
             >;
-			sensor-bindings = <&inc_dec_cp M_VOLU M_VOLD &inc_dec_kp PGUP PGDN>;
+			sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
         };
 
         CAD_layer {
@@ -491,7 +492,7 @@
 &trans &trans &trans &trans &trans &trans  &trans &trans /**/ &trans &to BASE &trans &trans &trans &trans &trans &trans 
                      &trans &trans &kp DEL &trans &trans /**/ &trans &trans   &trans &trans &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
         BT_layer {
@@ -512,7 +513,7 @@
 &none      &none        &none        &none        &bt BT_SEL 4 &none  &none  &none  /**/ &none  &to BASE &none  &bt BT_SEL 5  &none  &none  &none  &none  
                                      &none        &none        &none  &none  &none  /**/ &none  &none    &none  &none         &none 
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
 /* Layer tempate
@@ -535,7 +536,7 @@
 &trans &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans &trans 
                      &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans
             >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLU M_VOLD>;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 delete line */
     };
