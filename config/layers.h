@@ -6,15 +6,13 @@
 */
 
 #define BASE  0
-#define NUM   2
-#define ARR   3
-#define PAD1  4
-#define PAD2  5
-#define SHC   6
-#define FKEYS 7
-#define RGB   8
-#define GAME1 9 
-#define GAME2 10
-#define MEDIA 11
-#define CAD   12
-#define BT    13
+#define NUM   1
+#define ARR   2
+#define PAD1  3
+#define SHC   4
+#define FKEYS 5
+#define RGB   6
+#define GAME1 7 
+#define GAME2 8
+#define MEDIA 9
+#define BT    10
