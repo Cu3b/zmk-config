@@ -114,7 +114,7 @@
         combo_tab {
             timeout-ms = <45>;
             key-positions = <27 28>;
-            bindings = <&kp tab>;
+            bindings = <&kp TAB>;
         };
         combo_closewndw {
             timeout-ms = <45>;
