@@ -105,7 +105,7 @@
             key-positions = <16 27>;
             bindings = <&kp F_LBRC>;
         };
-		// row3
+		// row3 
         combo_scln {
             timeout-ms = <45>;
             key-positions = <26 27>;
