@@ -39,11 +39,6 @@
         compatible = "zmk,combos";
 		// combos left 
 		// row1
-        combo_unds {
-            timeout-ms = <45>;
-            key-positions = <1 2>;
-            bindings = <&kp F_UNDS>;
-        };
         combo_plus {
             timeout-ms = <45>;
             key-positions = <2 3>;
