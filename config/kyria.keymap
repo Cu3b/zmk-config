@@ -34,40 +34,6 @@
 &left_encoder { resolution = <2>; };
 &right_encoder { resolution = <2>; };
 
-
-/* Combos
- * ,-----------------------------------------.                              ,-----------------------------------------.
- * |   0  |   1  |   2  |  3   |   4  |   5  |                              |   6  |   7  |   8  |   9  |  10  |  11  | 
- * |      |    AltF4  plus     /      |      |                              |      |      |      |      |      |      |
- * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
- * |------+------+----↓    TAB    ↓---+------|                              |------+------+------+------+------+------|
- * |  12  |  13  |  14  |  15  |  16  |  17  |                              |  18  |  19  |  20  |  21  |  22  |  23  |
- * |      |   ~  Z   ~  X   ~ ESC  ~  |      |                              |      |   ~  "   ~  '   ~  Å   ~  |      |
- * |      |      |  \   \  \   \      |      |                              |      |     /   /  /   /   |      |      |
- * |------+------+---- [  --  (   ----+------+-------------.  ,-------------+------+----- )  --  ]  ----+------+------|
- * |  24  |      |    \   \  \   \    |  29  |  30  |  31  |  |  32  |  33  |  34  |   /   /  /   /     |      |  39
- * |      |      |  ~   ;  ~   !  ~   |      |      |      |  |      |      |      |   ~  ?   ~  :  ~   |      |      |
- * |      |  25  |  26  |  27  |  28  |      |      |      |  |      |      |      |  35  |  36  |  37  |  38  |      |
- * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
- *                      |  40  |  41  |  42  |  43  |  44  |  |  45  |  46  |  47  |  48  |  49  |
- *                      |      |      |      |      |      |  |      |      |      |      |      |
- *                      `----------------------------------'  `----------------------------------' 
- * ,-----------------------------------------.                              ,-----------------------------------------.
- * |   0  |   1  |   2  |  3   |   4  |   5  |                              |   6  |   7  |   8  |   9  |  10  |  11  | 
- * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
- * |      |     /   /   |    \   \    |      |                              |      |      |      |      |      |      |
- * |------+---- min -----+----  * -----+------|                              |------+------+------+------+------+------|
- * |  12  |   /   / 14  |  15  \   \  |  17  |                              |  18  |  19  |  20  |  21  |  22  |  23  |
- * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
- * |      |  13  |    /   /  /   /16  |      |                              |      |   \   \   \   \    |      |
- * |------+------+---- <  --  {  -----+------+-------------.  ,-------------+------+-----  } ---- >  ---+------+------|
- * |  24  |  25  |  /   /  /   /      |  29  |  30  |  31  |  |  32  |  33  |  34  |      \   \  \   \  |  38  |  39  |
- * |      |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |      |
- * |      |      |  26  |  27  |  28  |      |      |      |  |      |      |      |  35  |  36  |  37  |      |      |
- * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
- *                      |  40  |  41  |  42  |  43  |  44  |  |  45  |  46  |  47  |  48  |  49  |
- *                      |      |      |      |      |      |  |      |      |      |      |      |
- *                      `----------------------------------'  `----------------------------------' */
 / {
     combos {
         compatible = "zmk,combos";
@@ -83,15 +49,15 @@
             key-positions = <2 3>;
             bindings = <&kp F_PLUS>;
         };
-        combo_fslh {
-            timeout-ms = <45>;
-            key-positions = <3 4>;
-            bindings = <&kp F_FSLH>;
-        };
         combo_astr {
             timeout-ms = <45>;
-            key-positions = <3 16>;
+            key-positions = <3 4>;
             bindings = <&kp F_ASTR>;
+        };
+        combo_fslh {
+            timeout-ms = <45>;
+            key-positions = <3 16>;
+            bindings = <&kp F_FSLH>;
         };
         combo_eql {
             timeout-ms = <45>;
@@ -161,6 +127,16 @@
             bindings = <&kp SC_Clse>;
         };
 		//combos right
+        combo_BSLH {
+            timeout-ms = <45>;
+            key-positions = <8 19>;
+            bindings = <&kp F_BSLH>;
+        };
+         combo_capsword {
+            timeout-ms = <45>;
+            key-positions = <8 19>;
+            bindings = <&caps_word>;
+        };
 		// row2
         combo_dquote {
             timeout-ms = <45>;
@@ -213,9 +189,46 @@
             key-positions = <35 36>;
             bindings = <&kp F_QUES>;
         };
+        combo_numpad{
+            timeout-ms = <50>;
+            key-positions = <32 45>;
+            bindings = <&to PAD1>;
+        };
     };
 };
-
+/* Combos
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * |   0  |   1  |   2  |  3   |   4  |   5  |                              |   6  |   7  |   8  |   9  |  10  |  11  | 
+ * |      |   ↓AltF4 ↓  +   ↓  *   ↓  |      |                              |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |------+------+----↓    TAB    ↓---+------|                              |------+------+------+------+------+------|
+ * |  12  |  13  |  14  |  15  |  16  |  17  |                              |  18  |  19  |  20  |  21  |  22  |  23  |
+ * |      |   ↓  Z   ↓  X   ↓ ESC  ↓  |      |                              |      |   ↓  "   ↓  '  ↓   Å  ↓   |      |
+ * |      |      |  \   \  \   \      |      |                              |      |     /   /  /   /   |      |      |
+ * |------+------+---\ [ \--\ ( \ ----+------+-------------.  ,-------------+------+----/ ) /--/ ] /----+------+------|
+ * |  24  |      |    \   \  \   \    |  29  |  30  |  31  |  |  32  |  33  |  34  |   /   /  /   /     |      |  39
+ * |      |      |   ↓  ;   ↓  !   ↓  |      |      |      |  |      |      |      |   ↓  ?   ↓  :  ↓   |      |      |
+ * |      |  25  |  26  |  27  |  28  |      |      |      |  |    ← |      |      |  35  |  36  |  37  |  38  |      |
+ * `--------------------+------+------+------+------+------|  |Numpad+------+------+------+------+--------------------'
+ *                      |  40  |  41  |  42  |  43  |  44  |  |    ← |  46  |  47  |  48  |  49  |
+ *                      |      |      |      |      |      |  |  45  |      |      |      |      |
+ *                      `----------------------------------'  `----------------------------------' 
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * |   0  |   1  |   2  |  3   |   4  |   5  |                              |   6  |   7  |   8  |   9  |  10  |  11  | 
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |      |     /   /   |    \   \    |      |                              |      |     /   /   |  \Caps\     |      |
+ * |------+----/ - /----+-----\ / \---+------|                              |------+----/ \ /----+---\Word\----+------|
+ * |  12  |   /   / 14  |  15  \   \  |  17  |                              |  18  | 19/   / 20  |  21\    \22 |  23  |
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |      |  13  |    /   /  /   /16  |      |                              |      |   \   \  \   \     |      |      |
+ * |------+------+---/ < /--/ {  -----+------+-------------.  ,-------------+------+----\ } \--\ > \----+------+------|
+ * |  24  |  25  |  /   /  /   /      |  29  |  30  |  31  |  |  32  |  33  |  34  |     \   \  \   \   |  38  |  39  |
+ * |      |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |      |
+ * |      |      |  26  |  27  |  28  |      |      |      |  |      |      |      |  35  |  36  |  37  |      |      |
+ * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
+ *                      |  40  |  41  |  42  |  43  |  44  |  |  45  |  46  |  47  |  48  |  49  |
+ *                      |      |      |      |      |      |  |      |      |      |      |      |
+ *                      `----------------------------------'  `----------------------------------' */
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -224,62 +237,41 @@
             label = "BASE";
             bindings = <
 /* ,------------------------------------------.                                     ,-----------------------------------------------.
- * |  Tab  |   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   Å    |
+ * |   NA  |   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   NA   |
  * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
- * |  ESC  | MED/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E|RAlt/I |   O    |   '    |
+ * |   NA  | MED/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E|RAlt/I |   O    |   NA   |
  * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
- * |MED/ENT|   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |   Z    | CapsWrd|  
+ * |   NA  |  NA  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB↓NumP| BASE |   K   |   H  |   Ä  |  .:   |  NA    |   NA   |  
  * |       |      |      |      |      |      |       |     GAME→|  |←GAME   |      |       |      |      |       |        |        |
  * `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
-                         | LShft|  CAD | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft|OS NUM |  BT  | Mute |
-                         |      |      |BSpace| Space |  Enter   |  |OSSYM   |      |       |      |      |
+                         | LShft|  CAD | SHC/ |  ARR/ | NumPad/  |  |   ↑NumP|OSShft| Delete|  BT  |Ctrl+D|
+                         |      |      |BSpace| Space |  Enter   |  |OS NUM  |      |       |      |      |
                          `---------------------------------------'  `-------------------------------------' */
-&kp TAB       &kp Q       &kp W       &kp F      &kp P       &kp B                                   /**/                   &kp J   &kp L       &kp U       &kp Y      &kp F_ODIA &kp F_ARNG
-&kp ESC       &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M   &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &kp F_QUOT
-&lt MEDIA RET &kp X       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K   &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &caps_word
-                                     &kp LSHFT   &sl CAD     &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl SYM &sk LSHFT &sl NUM &mo BT      &kp C_MUTE
+&none &kp Q       &kp W       &kp F      &kp P       &kp B                                   /**/                   &kp J     &kp L       &kp U       &kp Y      &kp F_ODIA &none
+&none &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M     &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &none
+&none &none       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K     &kp H       &kp F_ADIA  &kp F_DOT  &none      &none
+                                     &kp LSHFT   &sl CAD     &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl NUM   &sk LSHFT &kp DEL     &mo BT      &kp LC(D)
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
-        SYM_layer {
-            label = "SYM";
-            bindings = <
-/* ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |  NA  |   <  |   {  |  NA  |  NA  |                              |  NA  |  NA  |   }  |  >   |  NA  |   NA   |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        | MED/[| Alt/(|LCtl/#|Shft/@|   `  |                              |   ´  |Shft/?|LCtl/!|Alt/) |  ]   |    ¨   |
- * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |  NA  |   ½  |   &  |   _  |  NA  |      |      |  |↓NumPd| BASE |  NA  |   "  |   \  |  |   |  NA  |   NA   |
- * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |      |      |      |      |      |  |      |      |      |      |      |
- *                        |      |      |      |      |      |  |      |      |      |      | 	   |
- *                        `----------------------------------'  `----------------------------------' */
-&trans &none            &kp F_LABK      &kp F_LBRC       &none          &none                   /**/                   &none      &none            &kp F_RBRC       &kp F_RABK      &none      &none
-&trans &lt MEDIA F_LBKT &mt LALT F_LPRN &mt LCTRL F_HASH &mt LSHFT F_AT &kp F_GRV               /**/                   &kp F_ACUT &mt RSHFT F_QUES &mt RCTRL F_EXLM &mt RALT F_RPRN &kp F_RBKT &kp F_DIAE
-&trans &none            &kp F_HALF      &kp F_AMPR       &kp F_UNDS     &none     &trans &trans /**/ &to PAD1 &to BASE &none      &kp F_DQUO       &kp F_BSLH       &kp F_PIPE      &none      &none
-                                        &trans           &trans         &trans    &trans &trans /**/ &trans   &trans   &trans     &trans           &trans
-            >;
-            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
-        };
-
         NUM_layer {
             label = "NUM";
             bindings = <
 /* ,-------------------------------------------.                                 ,-------------------------------------------.
- * |        |  NA  |   (  |   %  |   =  |   £  |                                 |  NA  |  NA  |   ~  |   )  |   ¤  |   NA   |
+ * |    NA  |   ½  |   &  |   #  |  @   |  NA  |                                 |   ¤  |   $  |   €  |   £  |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+------+------+------+------+--------|
- * |        |   1  | Alt/2|LCtl/3|LSft/4|   €  |                                 |   ^  |RSft/7|RCtl/8|RAlt/9|   0  |   §    |  
+ * |    NA  |   1  | Alt/2|LCtl/3|LSft/4|   `  |                                 |   ´  |RSft/7|RCtl/8|RAlt/9|   0  |   NA   |  
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+------+------+------+------+--------|
- * |        |   -  |   ,  |   +  |   5  |   $  |       |       |   |      | BASE |  NA  |   6  |   /  |   .  |   *  |   NA   |
+ * |    NA  |  NA  |   ,  |   %  |   5  |   ~  |       |       |   |↓NumPd| BASE |   §  |   6  |   ^  |   .  |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+------+------+----------------------'
  *                        |      |      |      |       |       |   |      |      |      |      |      |
  *                        |      |      |      |       |       |   |      |      |      |      |      | 
  *                        `------------------------------------'   `----------------------------------' */
-&trans &none      &kp F_LPRN  &kp F_PERC   &kp F_EQL    &kp F_PND                /**/                 &none      &none        &kp F_TILD   &kp F_RPRN  &kp F_CURR &none 
-&trans &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_EURO               /**/                 &kp F_CIRC &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &kp N0     &kp F_SECT 
-&trans &kp F_MINS &kp F_COMM  &kp F_PLUS   &kp N5       &kp F_DLR  &trans &trans /**/ &trans &to BASE &none      &kp N6       &kp F_FSLH   &kp F_DOT   &kp F_ASTR &none 
-                              &trans       &trans       &trans     &trans &trans /**/ &trans &trans   &trans     &trans       &trans
+&none  &F_HALF    &F_AMPR     &kp F_HASH   &kp F_AT     &none                    /**/                   &kp F_CURR &kp F_DLR    &kp F_EURO   &kp F_PND   &none  &none 
+&none  &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_GRV                /**/                   &kp F_ACUT &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &kp N0 &none
+&none  &kp none   &kp F_COMM  &kp F_PERC   &kp N5       &kp F_TILD &trans &trans /**/ &to PAD1 &to BASE &kp F_SECT &kp N6       &F_CIRC      &kp F_DOT   &none  &none 
+                              &trans       &trans       &trans     &trans &trans /**/ &trans   &trans   &trans     &trans       &trans
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };

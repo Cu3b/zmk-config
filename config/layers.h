@@ -6,7 +6,6 @@
 */
 
 #define BASE  0
-#define SYM   1
 #define NUM   2
 #define ARR   3
 #define PAD1  4
