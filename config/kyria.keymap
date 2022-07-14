@@ -62,7 +62,7 @@
 		// row2
         combo_mins {
             timeout-ms = <40>;
-            key-positions = <12 13>;
+            key-positions = <13 14>;
             bindings = <&kp F_MINS>;
         };
         combo_unds {
