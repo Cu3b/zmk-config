@@ -154,20 +154,20 @@
             bindings = <&caps_word>;
         };
 		// row2
-        combo_dquote {
+        combo_arng {
             timeout-ms = <40>;
             key-positions = <19 20>;
-            bindings = <&kp F_DQUO>;
+            bindings = <&kp F_ARNG>;
         };
         combo_quote {
             timeout-ms = <40>;
             key-positions = <20 21>;
             bindings = <&kp F_QUOT>;
         };
-        combo_arng {
+        combo_dquo {
             timeout-ms = <40>;
             key-positions = <21 22>;
-            bindings = <&kp F_ARNG>;
+            bindings = <&kp F_DQUO>;
         };
         combo_RPRN {
             timeout-ms = <40>;
