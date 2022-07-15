@@ -75,15 +75,15 @@
             key-positions = <2 15>;
             bindings = <&kp F_PLUS>;
         };
-        combo_z {
+        combo_x {
             timeout-ms = <40>;
             key-positions = <14 15>;
-            bindings = <&kp Z>;
+            bindings = <&kp X>;
         };
-        combo_X {
+        combo_z {
             timeout-ms = <40>;
             key-positions = <15 16>;
-            bindings = <&kp X>;
+            bindings = <&kp Z>;
         };
         combo_LBKT {
             timeout-ms = <40>;
