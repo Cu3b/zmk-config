@@ -165,7 +165,7 @@
         };
         combo_dquo {
             timeout-ms = <40>;           // "
-            key-positions = <19 20>>;
+            key-positions = <19 20>;
             bindings = <&kp F_DQUO>;
         };
         combo_coln {
