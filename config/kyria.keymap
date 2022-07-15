@@ -105,26 +105,31 @@
             key-positions = <16 27>;
             bindings = <&kp F_LBRC>;
         };
+        combo_del {
+            timeout-ms = <40>;
+            key-positions = <14 16>;
+            bindings = <&kp DEL>;
+        };
 		// row3 
         combo_esc {
             timeout-ms = <40>;
             key-positions = <13 14>;
             bindings = <&kp ESC>;
         };
-        combo_tab {
+        combo_scln {
             timeout-ms = <40>;
             key-positions = <26 27>;
-            bindings = <&kp TAB>;
+            bindings = <&kp F_SCLN>;
         };
         combo_closewndw {
             timeout-ms = <40>;
             key-positions = <1 2>;
             bindings = <&kp SC_Clse>;
         };
-        combo_mycomp {
+        combo_tab {
             timeout-ms = <40>;
             key-positions = <27 28>;
-            bindings = <&kp DEL>;
+            bindings = <&kp TAB>;
         };
 		
 		//combos right
@@ -184,26 +189,32 @@
             key-positions = <20 37>;
             bindings = <&kp F_RABK>;
         };
-        //row3
-        combo_winlock {
+        //rowc
+        combo_calc{
             timeout-ms = <40>;
-            key-positions = <33 46>;
-            bindings = <&kp SC_Lock>;
+            key-positions = <13 26>;
+            bindings = <&kp C_AL_CALC>;
         };
         combo_coln {
             timeout-ms = <40>;
             key-positions = <36 37>;
             bindings = <&kp F_COLN>;
         };
-        combo_numpad{
-            timeout-ms = <50>;
-            key-positions = <32 40>;
-            bindings = <&to PAD1>;
-        };
-        combo_calc{
+        combo_winlock {
             timeout-ms = <50>;
             key-positions = <31 44>;
-            bindings = <&kp C_AL_CALC>;
+            bindings = <&kp SC_Lock>;
+        };
+
+        combo_numpad{
+            timeout-ms = <50>;
+            key-positions = <32 45>;
+            bindings = <&tog PAD1>;
+        };
+        combo_bt{
+            timeout-ms = <50>;
+            key-positions = <33 46>;
+            bindings = <&mo BT>;
         };
     };
 };
@@ -218,9 +229,9 @@
  * |      |      |14\   \  \   \      |      |                              |      |     /   /  /   /   |      |      |
  * |------+------+---\ [ \--\ ( \ ----+------+-------------.  ,-------------+------+----/ ) /--/ ] /----+------+------|
  * |  24  |      |    \   \  \   \    |  29  |  30  |  31  |  |  32  |  33  |  34  |   /   /  /   /     |      |  39
- * |      |      |   ↓  TAB ↓ Delete↓ |      |      |      |  |      |      |      |      |   ↓  :  ↓   |      |      |
+ * |      |      |   ↓  ; ↓  TAB  ↓   |      |      |      |  |      |      |      |      |   ↓  :  ↓   |      |      |
  * |      |  25  |  26  |  27  |  28  |      |      |    ← |  |    ← |    ← |      |  35  |  36  |  37  |  38  |      |
- * `--------------------+------+------+------+------+ Calc |  |Numpad+LockWn+------+------+------+--------------------'
+ * `--------------------+------+------+------+------+LckWin|  |Numpad+  BT  +------+------+------+--------------------'
  *                      |  40  |  41  |  42  |  43  |    ← |  |    ← |    ← |  47  |  48  |  49  |
  *                      |      |      |      |      |  44  |  |  45  |  46  |      |      |      |
  *                      `----------------------------------'  `----------------------------------' 
@@ -230,10 +241,10 @@
  * |      |      |   \   \   \   \    |      |                              |      |     /   /   |  \Caps\     |      |
  * |------+------+----\ + \---\ / \---+------|                              |------+----/ \ /----+---\Word\----+------|
  * |  12  |      |     \   \   \   \  |  17  |                              |  18  | 19/   / 20  |  21\    \22 |  23  |
- * |      |      |      |  15  |      |      |                              |      |      |      |      |      |      |
- * |      |  13  | 14 /   /  /   /16  |      |                              |      |   \   \  \   \     |      |      |
- * |------+------+---/ < /--/ { /-----+------+-------------.  ,-------------+------+----\ } \--\ > \----+------+------|
- * |  24  |  25  |  /   /  /   /      |  29  |  30  |  31  |  |  32  |  33  |  34  |     \   \  \   \   |  38  |  39  |
+ * |      |      |    ↓___Delete__↓   |      |                              |      |      |      |      |      |      |
+ * |      | 13\   \14 /   /15/   /16  |      |                              |      |   \   \  \   \     |      |      |
+ * |------+----\Clc\-/ < /--/ { /-----+------+-------------.  ,-------------+------+----\ } \--\ > \----+------+------|
+ * |  24  |  25 \   V   /  /   /      |  29  |  30  |  31  |  |  32  |  33  |  34  |     \   \  \   \   |  38  |  39  |
  * |      |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |      |
  * |      |      |  26  |  27  |  28  |      |      |      |  |      |      |      |  35  |  36  |  37  |      |      |
  * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
@@ -261,7 +272,7 @@
 &none &kp Q       &kp W       &kp F      &kp P       &kp B                                   /**/                   &kp J     &kp L       &kp U       &kp Y      &kp F_ODIA &none
 &none &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M     &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &none
 &none &none       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K     &kp H       &kp F_ADIA  &kp F_DOT  &none      &none
-                             &kp LSHFT   &none    &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl NUM &sk LSHFT &kp DEL   &mo BT      &kp LC(D)
+                             &kp LSHFT   &mo BT       &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &sl NUM &sk LSHFT &kp DEL   &mo BT      &kp LC(D)
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
@@ -459,7 +470,7 @@
             label = "BT";
             bindings = <
 /* ,------------------------------------------.                              ,-------------------------------------------.
- * |       |      |      |      |      |      |                              |      |      |      |      |BT Clr|        |
+ * |       |      |      |      |      |BT Clr|                              |      |      |      |      |BT Clr|        |
  * |-------+------+------+------+------+------|                              |------+------+------+------+------+--------|
  * |       | BT 0 | BT 1 | BT 2 | BT D3|BT Nxt|                              |      |      |      |      |      |        |
  * |-------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
@@ -470,7 +481,7 @@
  *                       `----------------------------------'  `----------------------------------' */
 &none  &none        &none        &none        &none        &none                     /**/                 &none  &none         &none  &none  &bt BT_CLR &none  
 &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_PRV                /**/                 &none  &none         &none  &none  &none      &none  
-&none  &none        &none        &none        &bt BT_SEL 4 &bt BT_NXT  &none  &none  /**/ &none  &to BASE &none  &bt BT_SEL 5  &none  &none  &none      &none  
+&none  &none        &none        &bt BT_SEL 5 &bt BT_SEL 4 &bt BT_NXT  &none  &none  /**/ &none  &to BASE &none  &bt BT_SEL 5  &none  &none  &none      &none  
                                  &none        &none        &none       &none  &none  /**/ &none  &none    &none  &none         &none 
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
