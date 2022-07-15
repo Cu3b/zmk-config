@@ -28,7 +28,7 @@
 
 &caps_word {
 	continue-list = <F_UNDS F_MINS BSPC RSHFT LSHFT F_UNDS F_ADIA F_ODIA F_ARNG>;
-};a
+};
 &left_encoder { resolution = <2>; };
 &right_encoder { resolution = <2>; };
 
@@ -86,7 +86,7 @@
 &none &kp Q       &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J     &kp L       &kp U       &kp Y      &kp F_ODIA &none
 &none &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M     &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &none
 &none &kp Z       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K     &kp H       &kp F_ADIA  &kp F_DOT  &kp X      &none
-                             &kp LSHFT   &none      &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &kp DEL &sk LSHFT &sl NUM    &none       &kp LC(D)
+                             &kp LSHFT   &none       &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &kp DEL &sk LSHFT &sl NUM   &none       &kp LC(D)
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
