@@ -96,18 +96,18 @@
             label = "NUM";
             bindings = <
 /* ,-------------------------------------------.                                 ,-------------------------------------------.
- * |    NA  |  NA  |   &  |   #  |  @   |  NA  |                                 |   ¤  |   £  |   $  |   §  |  NA  |   NA   |
+ * |    NA  |   |  |   &  |   #  |  @   |  NA  |                                 |   ¤  |   £  |   $  |   §  |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+------+------+------+------+--------|
  * |    NA  |   1  | Alt/2|LCtl/3|LSft/4|   `  |                                 |   ´  |RSft/7|RCtl/8|RAlt/9|   0  |   NA   |  
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+------+------+------+------+--------|
- * |    NA  |  NA  |   ,  |   %  |   5  |   |  |       |       |   |      | BASE |  NA  |   6  |   €  |   .  |  NA  |   NA   |
+ * |    NA  |  NA  |   ,  |   %  |   5  |   ½  |       |       |   |      | BASE |  NA  |   6  |   €  |   .  |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+------+------+----------------------'
  *                        |      |      |      |       |       |   |      |      |      |      |      |
  *                        |      |      |      |       |       |   |      |      |      |      |      | 
  *                        `------------------------------------'   `----------------------------------' */
-&none &kp F_HALF &kp F_AMPR  &kp F_HASH   &kp F_AT     &kp F_PIPE               /**/                  &kp F_CURR &kp F_PND    &kp F_DLR   &kp F_SECT   &none  &none 
+&none &kp F_PIPE &kp F_AMPR  &kp F_HASH   &kp F_AT     &kp F_PIPE               /**/                  &kp F_CURR &kp F_PND    &kp F_DLR   &kp F_SECT   &none  &none 
 &none &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_GRV                /**/                  &kp F_ACUT &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &kp N0 &none
-&none &none      &kp F_COMM  &kp F_PERC   &kp N5       &kp F_TILD &trans &trans /**/ &trans  &to BASE &none      &kp N6       &kp F_EURO   &kp F_DOT   &none  &none 
+&none &none      &kp F_COMM  &kp F_PERC   &kp N5       &kp F_HALF &trans &trans /**/ &trans  &to BASE &none      &kp N6       &kp F_EURO   &kp F_DOT   &none  &none 
                          &trans       &trans       &trans     &trans &trans /**/ &trans  &trans   &trans     &trans       &trans
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
