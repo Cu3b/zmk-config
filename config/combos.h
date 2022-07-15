@@ -14,40 +14,47 @@
 		// row1
         combo_mins {
             timeout-ms = <40>;           // -
-            key-positions = <2 3>;
+            key-positions = <3 4>;
             bindings = <&kp F_MINS>;
+        };
+        combo_plus {
+            timeout-ms = <40>;           // +
+            key-positions = <4 15>;
+            bindings = <&kp F_PLUS>;
         };
         combo_unds {
             timeout-ms = <40>;           // _
-            key-positions = <3 14>;
+            key-positions = <2 15>;
             bindings = <&kp F_UNDS>;
         };
         combo_astr {
             timeout-ms = <40>;           // *
-            key-positions = <3 4>;
+            key-positions = <3 14>;
             bindings = <&kp F_ASTR>;
         };
         combo_fslh {
             timeout-ms = <40>;           // /
-            key-positions = <3 16>;
+            key-positions = <2 3>;
             bindings = <&kp F_FSLH>;
         };
         combo_eql {
             timeout-ms = <40>;           // =
-            key-positions = <4 15>;
+            key-positions = <3 16>;
             bindings = <&kp F_EQL>;
         };
+        combo_BSLH {
+            timeout-ms = <40>;           // Backslash
+            key-positions = <8 9>;
+            bindings = <&kp F_BSLH>;
+        };
+		
         combo_mycomp {
             timeout-ms = <40>;           // Open "This PC"
             key-positions = <2 13>;
             bindings = <&kp C_AL_MY_COMPUTER >;
         };
-		// row2
-        combo_plus {
-            timeout-ms = <40>;           // +
-            key-positions = <2 15>;
-            bindings = <&kp F_PLUS>;
-        };
+
+
         combo_x {
             timeout-ms = <40>;
             key-positions = <14 15>;
@@ -83,7 +90,27 @@
             key-positions = <14 16>;
             bindings = <&kp DEL>;
         };
-		// row3 
+        combo_RPRN {
+            timeout-ms = <40>;           // )
+            key-positions = <19 36>;
+            bindings = <&kp F_RPRN>;
+        };
+        combo_RBKT {
+            timeout-ms = <40>;           // ]
+            key-positions = <20 37>;
+            bindings = <&kp F_RBKT>;
+        };
+        combo_RBRC {
+            timeout-ms = <40>;           // }
+            key-positions = <20 35>;
+            bindings = <&kp F_RBRC>;
+        };
+        combo_RABK {
+            timeout-ms = <40>;           // >
+            key-positions = <21 36>;
+            bindings = <&kp F_RABK>;
+        };
+
         combo_tab {
             timeout-ms = <40>;           // Tab
             key-positions = <13 14>;
@@ -105,21 +132,16 @@
             bindings = <&kp ESC>;
         };
 		
-		//combos right
+
         combo_ques {
             timeout-ms = <40>;           // ?
-            key-positions = <7 8>;
+            key-positions = <35 36>;
             bindings = <&kp F_QUES>;
         };
 		combo_exlm {
             timeout-ms = <40>;           // !
-            key-positions = <8 9>;
+            key-positions = <7 8>;
             bindings = <&kp F_EXLM>;
-        };
-        combo_BSLH {
-            timeout-ms = <40>;           // Backslash
-            key-positions = <8 19>;
-            bindings = <&kp F_BSLH>;
         };
          combo_capsword {
             timeout-ms = <40>;           // &CapsWord
@@ -142,27 +164,6 @@
             key-positions = <21 22>;
             bindings = <&kp F_DQUO>;
         };
-        combo_RPRN {
-            timeout-ms = <40>;           // )
-            key-positions = <19 36>;
-            bindings = <&kp F_RPRN>;
-        };
-        combo_RBKT {
-            timeout-ms = <40>;           // ]
-            key-positions = <20 37>;
-            bindings = <&kp F_RBKT>;
-        };
-        combo_RBRC {
-            timeout-ms = <40>;           // }
-            key-positions = <20 35>;
-            bindings = <&kp F_RBRC>;
-        };
-        combo_RABK {
-            timeout-ms = <40>;           // >
-            key-positions = <21 36>;
-            bindings = <&kp F_RABK>;
-        };
-        //rowc
         combo_calc{
             timeout-ms = <40>;           // Open calculator
             key-positions = <13 26>;
