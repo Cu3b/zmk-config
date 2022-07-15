@@ -27,15 +27,15 @@
             key-positions = <2 15>;
             bindings = <&kp F_UNDS>;
         };
-        combo_astr {
-            timeout-ms = <40>;           // *
-            key-positions = <3 14>;
-            bindings = <&kp F_ASTR>;
-        };
         combo_fslh {
             timeout-ms = <40>;           // /
             key-positions = <2 3>;
             bindings = <&kp F_FSLH>;
+        };
+        combo_astr {
+            timeout-ms = <40>;           // *
+            key-positions = <3 14>;
+            bindings = <&kp F_ASTR>;
         };
         combo_eql {
             timeout-ms = <40>;           // =
