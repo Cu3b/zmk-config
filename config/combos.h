@@ -12,6 +12,16 @@
         compatible = "zmk,combos";
 		// combos left 
 		// row1
+        combo_circ {
+            timeout-ms = <40>;           // ^
+            key-positions = <2 13>;
+            bindings = <&kp F_CIRC>;
+        };
+        combo_tild {
+            timeout-ms = <40>;           // ~
+            key-positions = <13 26>;
+            bindings = <&kp F_TILD>;
+        };
         combo_mins {
             timeout-ms = <40>;           // -
             key-positions = <2 3>;
@@ -49,12 +59,15 @@
         };
 		
         combo_mycomp {
-            timeout-ms = <40>;           // Open "This PC"
-            key-positions = <2 13>;
+            timeout-ms= <40>;           // Open "This PC"
+            key-positions = <16 17>;
             bindings = <&kp C_AL_MY_COMPUTER >;
         };
-
-
+        combo_calc{
+            timeout-ms = <40>;           // Open calculator
+            key-positions = <28 29>;
+            bindings = <&kp C_AL_CALC>;
+        };
         combo_x {
             timeout-ms = <40>;
             key-positions = <14 15>;
@@ -163,11 +176,6 @@
             timeout-ms = <40>;           // "
             key-positions = <21 22>;
             bindings = <&kp F_DQUO>;
-        };
-        combo_calc{
-            timeout-ms = <40>;           // Open calculator
-            key-positions = <13 26>;
-            bindings = <&kp C_AL_CALC>;
         };
         combo_coln {
             timeout-ms = <40>;           // :
