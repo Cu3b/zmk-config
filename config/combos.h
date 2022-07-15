@@ -80,43 +80,43 @@
         };
         combo_LPRN {
             timeout-ms = <40>;           // (
-            key-positions = <16 27>;
+            key-positions = <15 28>;
             bindings = <&kp F_LPRN>;
         };
         combo_LBKT {
             timeout-ms = <40>;           // [
-            key-positions = <15 26>;
+            key-positions = <14 27>;
             bindings = <&kp F_LBKT>;
         };
         combo_LBRC {
             timeout-ms = <40>;           // {
-            key-positions = <15 28>;
+            key-positions = <16 27>;
             bindings = <&kp F_LBRC>;
         };
         combo_LABK {
             timeout-ms = <40>;           // <
-            key-positions = <14 27>;
+            key-positions = <15 26>;
             bindings = <&kp F_LABK>;
         };
 
         combo_RPRN {
             timeout-ms = <40>;           // )
-            key-positions = <19 36>;
+            key-positions = <20 35>;
             bindings = <&kp F_RPRN>;
         };
         combo_RBKT {
             timeout-ms = <40>;           // ]
-            key-positions = <20 37>;
+            key-positions = <21 36>;
             bindings = <&kp F_RBKT>;
         };
         combo_RBRC {
             timeout-ms = <40>;           // }
-            key-positions = <20 35>;
+            key-positions = <19 36>;
             bindings = <&kp F_RBRC>;
         };
         combo_RABK {
             timeout-ms = <40>;           // >
-            key-positions = <21 36>;
+            key-positions = <20 37>;
             bindings = <&kp F_RABK>;
         };
 
