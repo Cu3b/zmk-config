@@ -24,12 +24,12 @@
         };
         combo_mins {
             timeout-ms = <40>;           // -
-            key-positions = <2 3>;
+            key-positions = <3 14>;
             bindings = <&kp F_MINS>;
         };
         combo_plus {
             timeout-ms = <40>;           // + 
-            key-positions = <3 14>;
+            key-positions = <2 3>;
             bindings = <&kp F_PLUS>;
         };
         combo_astr {
@@ -164,7 +164,7 @@
 		// row2
         combo_arng {
             timeout-ms = <40>;           // Å
-            key-positions = <19 20>;
+            key-positions = <21 22>;
             bindings = <&kp F_ARNG>;
         };
         combo_quote {
@@ -174,7 +174,7 @@
         };
         combo_dquo {
             timeout-ms = <40>;           // "
-            key-positions = <21 22>;
+            key-positions = <19 20>>;
             bindings = <&kp F_DQUO>;
         };
         combo_coln {
