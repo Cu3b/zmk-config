@@ -18,7 +18,7 @@
             bindings = <&kp F_MINS>;
         };
         combo_plus {
-            timeout-ms = <40>;           // +
+            timeout-ms = <40>;           // + 
             key-positions = <4 15>;
             bindings = <&kp F_PLUS>;
         };
