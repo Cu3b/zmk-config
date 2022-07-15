@@ -5,6 +5,19 @@
 *
 */
 
+// Layers:
+#define BASE  0
+#define NUM   1
+#define ARR   2
+#define PAD1  3
+#define SHC   4
+#define FKEYS 5
+#define RGB   6
+#define GAME1 7 
+#define GAME2 8
+#define MEDIA 9
+#define BT    10
+
 // Aliases for FI and SWE characters for corresponding KC-codes, windows environment.
 // Letters:
 #define F_ARNG  (LBKT)                   // Å
@@ -56,16 +69,32 @@
 #define F_MICR  (RA(M))                  // µ
 // Shortcuts:
 #define F_BRK   (LC(PAUSE_BREAK))        // break, ctrl + pause
-#define NextTab  (LC(PG_DN))              // Previous tab (win), ctrl + pgdn
-#define PrevTab  (LC(PG_UP))              // Previous tab (win), ctrl + pgup
-#define RestTab  (LC(LS(T)))              // Restore tab (Browser), ctrl + shift + T  toimiiko???
-#define ClseTab  (LC(W))                  // Close tab (Ctrl + W)
-#define SC_Undo  (LC(Z))
-#define SC_Cut   (LC(X))
-#define SC_Copy  (LC(C))
-#define SC_Pste  (LC(V))
-#define SC_SelA  (LC(A))
-#define SC_Find  (LC(F))
-#define SC_Rdo1  (LC(LS(Z)))
-#define SC_Rdo2  (LC(Y))
-#define SC_Save  (LC(S))
+
+#define TskView (LG(TAB))                // Task view
+#define TaskMgr LC(LS(ESC))              // Task manager
+
+#define ShwDstp (LG(D))                 // Show desktop
+#define ClsDstp (LG(LC(F4)))             // Close virtual desktop
+#define NewDstp (LG(LC(D)))              // New virtual desktop
+#define PrvDstp (LG(LC(LEFT)))           // Previous virtual desktop
+#define NxtDstp (LG(LC(RIGHT)))           // Next virtual desktop
+
+#define SC_Clse (LA(F4))                 // Close window
+#define PrevTab  (LC(PG_UP))             // Previous tab (win), ctrl + pgup
+#define NextTab  (LC(PG_DN))             // Next tab (win), ctrl + pgdn
+#define RestTab  (LC(LS(T)))             // Restore tab (Browser), ctrl + shift + T  toimiiko???
+#define ClseTab  (LC(W))                 // Close tab (Ctrl + W)
+
+#define SC_Lock (LG(L))                  // Lock windows
+#define SC_Snip (LG(LS(S)))              // Windows snipping tool
+
+#define SC_Psth (LG(V))                  // Paste with history
+#define SC_Undo (LC(Z))                  // Undo
+#define SC_Cut  (LC(X))                  // Cut
+#define SC_Copy (LC(C))                  // Copy
+#define SC_Pste (LC(V))                  // Paste
+#define SC_SelA (LC(A))                  // Select all
+#define SC_Find (LC(F))                  // Find
+#define SC_Redo (LC(LS(Z)))              // Redo
+#define SC_Save (LC(S))                  // Save
+
