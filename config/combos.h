@@ -14,28 +14,28 @@
 		// row1
         combo_mins {
             timeout-ms = <40>;           // -
-            key-positions = <3 4>;
+            key-positions = <2 3>;
             bindings = <&kp F_MINS>;
         };
         combo_plus {
             timeout-ms = <40>;           // + 
-            key-positions = <4 15>;
+            key-positions = <3 14>;
             bindings = <&kp F_PLUS>;
+        };
+        combo_astr {
+            timeout-ms = <40>;           // *
+            key-positions = <3 4>;
+            bindings = <&kp F_ASTR>;
+        };
+        combo_fslh {
+            timeout-ms = <40>;           // /
+            key-positions = <4 15>;
+            bindings = <&kp F_FSLH>;
         };
         combo_unds {
             timeout-ms = <40>;           // _
             key-positions = <2 15>;
             bindings = <&kp F_UNDS>;
-        };
-        combo_fslh {
-            timeout-ms = <40>;           // /
-            key-positions = <2 3>;
-            bindings = <&kp F_FSLH>;
-        };
-        combo_astr {
-            timeout-ms = <40>;           // *
-            key-positions = <3 14>;
-            bindings = <&kp F_ASTR>;
         };
         combo_eql {
             timeout-ms = <40>;           // =
@@ -44,7 +44,7 @@
         };
         combo_BSLH {
             timeout-ms = <40>;           // Backslash
-            key-positions = <8 9>;
+            key-positions = <7 20>;
             bindings = <&kp F_BSLH>;
         };
 		
