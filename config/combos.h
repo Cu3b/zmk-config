@@ -68,15 +68,15 @@
             key-positions = <28 29>;
             bindings = <&kp C_AL_CALC>;
         };
-        combo_x {
+        combo_del {
             timeout-ms = <40>;
             key-positions = <14 15>;
-            bindings = <&kp X>;
+            bindings = <&kp DEL>;
         };
-        combo_z {
+        combo_esc {
             timeout-ms = <40>;
             key-positions = <15 16>;
-            bindings = <&kp Z>;
+            bindings = <&kp ESC>;
         };
         combo_LPRN {
             timeout-ms = <40>;           // (
@@ -98,11 +98,7 @@
             key-positions = <14 27>;
             bindings = <&kp F_LABK>;
         };
-        combo_del {
-            timeout-ms = <40>;           // :
-            key-positions = <14 16>;
-            bindings = <&kp DEL>;
-        };
+
         combo_RPRN {
             timeout-ms = <40>;           // )
             key-positions = <19 36>;
@@ -139,23 +135,18 @@
             key-positions = <1 2>;
             bindings = <&kp SC_Clse>;
         };
-        combo_esc {
-            timeout-ms = <40>;           // Esc
+        combo_exlm {
+            timeout-ms = <40>;           // !
             key-positions = <27 28>;
-            bindings = <&kp ESC>;
+            bindings = <&kp F_EXLM>;
         };
-		
 
         combo_ques {
             timeout-ms = <40>;           // ?
             key-positions = <35 36>;
             bindings = <&kp F_QUES>;
         };
-		combo_exlm {
-            timeout-ms = <40>;           // !
-            key-positions = <7 8>;
-            bindings = <&kp F_EXLM>;
-        };
+
          combo_capsword {
             timeout-ms = <40>;           // &CapsWord
             key-positions = <9 22>;
