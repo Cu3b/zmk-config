@@ -78,8 +78,8 @@
         combo_RBRC { timeout-ms = <40>; key-positions = <19 36>; bindings = <&kp F_RBRC>; };             // }
         combo_RABK { timeout-ms = <40>; key-positions = <20 37>; bindings = <&kp F_RABK>; };             // >
         combo_del { timeout-ms = <40>; key-positions = <13 14>; bindings = <&kp DEL>; };                 // Tab
-        combo_z { timeout-ms = <40>; key-positions = <26 27>; bindings = <&kp Z>; };                     // z
-        combo_x { timeout-ms = <40>; key-positions = <27 28>; bindings = <&kp X>; };                     // x
+        combo_x { timeout-ms = <40>; key-positions = <26 27>; bindings = <&kp X>; };                     // z
+        combo_z { timeout-ms = <40>; key-positions = <27 28>; bindings = <&kp Z>; };                     // x
         combo_clswin { timeout-ms = <40>; key-positions = <1 2>; bindings = <&kp SC_Clse>; };            // Alt+F4
         combo_exlm { timeout-ms = <40>; key-positions = <7 8>; bindings = <&kp F_EXLM>; };               // !
         combo_ques { timeout-ms = <40>; key-positions = <35 36>; bindings = <&kp F_QUES>; };             // ?
@@ -102,7 +102,7 @@
  * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
  * |   NA  | MED/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E|RAlt/I |   O    |   NA   |
  * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
- * |   NA  |   Z  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB     | BASE |   K   |   H  |   Ä  |  .:   |   X    |   NA   |  
+ * |   NA  |   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB     | BASE |   K   |   H  |   Ä  |  .:   |   Z    |   NA   |  
  * |       |      |      |      |      |      |       |     GAME→|  |←GAME   |      |       |      |      |       |        |        |
  * `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
                          | LShft|  NA  | SHC/ |  ARR/ | NumPad/  |  |  Tab   |OSShft| OS NUM|  NA  |Ctrl+D|
@@ -110,7 +110,7 @@
                          `---------------------------------------'  `-------------------------------------' */
 &none &kp Q       &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J       &kp L       &kp U       &kp Y      &kp F_ODIA &none
 &none &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M       &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &none
-&none &kp Z       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K       &kp H       &kp F_ADIA  &kp F_DOT  &kp X      &none
+&none &kp X       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K       &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &none
                              &kp LSHFT   &none       &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &kp TAB &sk LSHFT &lt NUM DEL &none       &kp LC(D)
             >;
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
