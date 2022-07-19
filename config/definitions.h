@@ -18,6 +18,11 @@
 #define MEDIA 9
 #define BT    10
 
+// Hold tap key timers
+#define QUICK_TAP    300
+#define TAPPING_TERM 200
+#define SHIFT_TAPPING_TERM 150
+
 // Aliases for FI and SWE characters for corresponding KC-codes, windows environment.
 // Letters:
 #define F_ARNG  (LBKT)                   // Å
