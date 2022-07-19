@@ -55,8 +55,7 @@
  *                      |  40  |  41  |  42  |  43  |  44  |  |  45  |  46  |  47  |  48  |  49  |
  *                      |      |      |      |      |      |  |      |      |      |      |      |
  *                      `----------------------------------'  `----------------------------------' */
-/ {
-    combos { compatible = "zmk,combos"; 
+/ { combos { compatible = "zmk,combos"; 
 	combo_circ { timeout-ms = <40>; key-positions = <2 13>; bindings = <&kp F_CIRC>; };              // ^
         combo_tild { timeout-ms = <40>; key-positions = <13 26>; bindings = <&kp F_TILD>; };             // ~
         combo_mins { timeout-ms = <40>; key-positions = <3 14>; bindings = <&kp F_MINS>; };              // -
@@ -94,11 +93,9 @@
     };
 };
 / {
-    keymap {
-        compatible = "zmk,keymap";
+    keymap { compatible = "zmk,keymap";
         
-        default_layer {
-            bindings = <
+        default_layer { bindings = <
 /* ,------------------------------------------.                                     ,-----------------------------------------------.
  * |   NA  |   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   NA   |
  * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
@@ -118,8 +115,7 @@
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
-        NUM_layer {
-            bindings = <
+        NUM_layer { bindings = <
 /* ,-------------------------------------------.                                 ,-------------------------------------------.
  * |    NA  |   |  |   &  |   #  |  @   |  NA  |                                 |   ¤  |   £  |   $  |   §  |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+------+------+------+------+--------|
@@ -138,8 +134,7 @@
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
-        ARR_layer {
-            bindings = <
+        ARR_layer { bindings = <
 /* ,-------------------------------------------.                                 ,--------------------------------------------------.
  * |   NA   |ClsDst|NewDst|PrvDst|NxtDst|TaskVw|                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+-------+---------+---------+------+--------|
@@ -158,8 +153,7 @@
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
-        PAD1_layer {
-            bindings = <
+        PAD1_layer { bindings = <
 /* ,-------------------------------------------.                               ,-------------------------------------------.
  * |   NA   |  NA  |   7  |   8  |   9  |  NA  |                               |TaskVw|NxtDst|PrvDst|NewDst|ClsDst|   NA   |
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
@@ -178,8 +172,7 @@
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
-        SHC_layer {
-            bindings = <
+        SHC_layer { bindings = <
 /* ,-------------------------------------------.                              ,-----------------------------------------.
  * |   NA   |ClsTab|RstTab|PrvTab|NxtTab|PrtScr|                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
@@ -198,8 +191,7 @@
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
-        FKEYS_layer {
-            bindings = <
+        FKEYS_layer { bindings = <
 /* ,-------------------------------------------.                              ,-----------------------------------------.
  * |   NA   |  NA  |  F7  |  F8  |  F9  |  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
@@ -218,8 +210,7 @@
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
-        RGB_layer {
-            bindings = <
+        RGB_layer { bindings = <
 /* ,-----------------------------------------------------.                              ,------------------------------------------.
  * |   NA  | Brgth+ |    Sat+  |   Hue+  |RGBCycl→|Speed+|                              |PwrOff| Break|  NA  |  NA  |DBrgt+|  NA   |
  * |-------+--------+----------+---------+--------+------|                              |------+------+------+------+------+-------|
@@ -238,8 +229,7 @@
             sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
-        GAME1_layer {
-            bindings = <
+        GAME1_layer { bindings = <
 /* ,-------------------------------------------.                               ,-------------------------------------------.
  * |   Esc  |   1  |   2  |   3  |   4  |   5  |                               |   Y  |   U  |   I  |   O  |   P  |   Å    |
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
@@ -258,8 +248,7 @@
 			sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
         };
 
-        GAME2_layer {
-            bindings = <
+        GAME2_layer { bindings = <
 /* ,-------------------------------------------.                               ,-------------------------------------------.
  * | BSpace |   0  |   9  |   8  |   7  |   6  |                               |  NA  |  NA  |  NA  |  NA  |  NA  |   NA   |
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
@@ -278,8 +267,7 @@
 			sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
         };
 
-        MEDIA_layer {
-            bindings = <
+        MEDIA_layer { bindings = <
 /* ,-------------------------------------------.                              ,-----------------------------------------.
  * |   NA   |  NA  |Rewind|  NA  |FastFw|  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
@@ -298,8 +286,7 @@
 			sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
         };
 
-        BT_layer {
-            bindings = <
+        BT_layer { bindings = <
 /* ,------------------------------------------.                              ,-------------------------------------------.
  * |       |      |      |      |      |BT Clr|                              |      |      |      |      |BT Clr|        |
  * |-------+------+------+------+------+------|                              |------+------+------+------+------+--------|
@@ -330,8 +317,7 @@
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
 /* delete line
-        XXX_layer {
-            bindings = <
+        XXX_layer { bindings = <
 &trans &trans &trans &trans &trans &trans                                  &trans &trans &trans &trans &trans &trans 
 &trans &trans &trans &trans &trans &trans                                  &trans &trans &trans &trans &trans &trans 
 &trans &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans &trans 
