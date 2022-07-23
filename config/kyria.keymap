@@ -14,6 +14,7 @@
 
 &lt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
 &mt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
+&sk { release-after-ms = <TAPPING_TERM>; quick-release; /delete-property/ ignore-modifiers; };
 
 &caps_word { continue-list = <F_UNDS F_MINS BSPC RSHFT LSHFT F_UNDS F_ADIA F_ODIA F_ARNG>; };
 
@@ -32,9 +33,9 @@
  * |------+------+---\ { \--\ ( \ ----+------+-------------.  ,-------------+------+----/ ) /--/ } /----+------+------|
  * |  24  |      |    \   \  \   \    |  ↓29 |  30  |  31  |  |  32  |  33  |  34  |   /   /  /   /     |      |  39  |
  * |      |      |   ↓--;--↓--TAB--↓  |      |      |      |  |      |      |      |   ↓  ?   ↓  :  ↓   |      |      |
- * |      |  25  |  26  |  27  |  28  |      |      |    ← |  |    ← |    ← |      |  35  |  36  |  37  |  38  |      |
- * `--------------------+------+------+------+------+LckWin|  |Numpad+  BT  +------+------+------+--------------------'
- *                      |  40  |  41  |  42  |  43  |    ← |  |    ← |    ← |  47  |  48  |  49  |
+ * |      |  25  |  26  |  27  |  28  |      |      |    ← |  |      |    ← |      |  35  |  36  |  37  |  38  |      |
+ * `--------------------+------+------+------+------+Numpad|  |------+  BT  +------+------+------+--------------------'
+ *                      |  40  |  41  |  42  |  43  |    ← |  |      |    ← |  47  |  48  |  49  |
  *                      |      |      |      |      |  44  |  |  45  |  46  |      |      |      |
  *                      `----------------------------------'  `----------------------------------' 
  * ,-----------------------------------------.                              ,-----------------------------------------.
@@ -47,7 +48,7 @@
  * |      | 13\   \14 /   /15/   /16  |      |                              |      |   \   \  \   \     |      |      |
  * |------+----\ ~ \-/ < /--/ [ /-----+------+-------------.  ,-------------+------+----\ ] \--\ > \----+------+------|
  * |  24  |  25 \   V   /  /   /      |  29  |  30  |  31  |  |  32  |  33  |  34  |     \   \  \   \   |  38  |  39  |
- * |      |      |    ↓----DEL----↓   |      |      |  |      |      |      |      |   ↓------!-----↓   |      |      |
+ * |      |      |    ↓----DEL----↓   |      |      |      |  |      |      |      |   ↓------!-----↓   |      |      |
  * |      |      |  26  |  27  |  28  |      |      |      |  |      |      |      |  35  |  36  |  37  |      |      |
  * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                      |  40  |  41  |  42  |  43  |  44  |  |  45  |  46  |  47  |  48  |  49  |
@@ -63,12 +64,6 @@
         combo_unds { timeout-ms = <40>; key-positions = <2 15>; bindings = <&kp F_UNDS>; };              // _
         combo_eql { timeout-ms = <40>; key-positions = <3 16>; bindings = <&kp F_EQL>; };                // =
         combo_bslh { timeout-ms = <40>; key-positions = <8 21>; bindings = <&kp F_BSLH>; };              // Backslash	
-        combo_mycomp { timeout-ms= <40>; key-positions = <16 17>; bindings = <&kp C_AL_MY_COMPUTER >; }; // Open "This PC"
-        combo_calc{ timeout-ms = <40>; key-positions = <28 29>; bindings = <&kp C_AL_CALC>; };           // Open calculator
-        combo_tab { timeout-ms = <40>; key-positions = <27 28>; bindings = <&kp TAB>; };                 // Tab
-        combo_esc { timeout-ms = <40>; key-positions = <13 15>; bindings = <&kp ESC>; };                 // Esc
-        combo_ent { timeout-ms = <40>; key-positions = <14 16>; bindings = <&kp RET>; };                 // Enter
-        combo_del { timeout-ms = <40>; key-positions = <26 28>; bindings = <&kp DEL>; };                 // Del
         combo_LPRN { timeout-ms = <40>; key-positions = <15 28>; bindings = <&kp F_LPRN>; };             // (
         combo_LBKT { timeout-ms = <40>; key-positions = <16 27>; bindings = <&kp F_LBKT>; };             // [
         combo_LBRC { timeout-ms = <40>; key-positions = <14 27>; bindings = <&kp F_LBRC>; };             // {
@@ -86,34 +81,49 @@
         combo_dquo { timeout-ms = <40>; key-positions = <20 21>; bindings = <&kp F_DQUO>; };             // "
         combo_coln { timeout-ms = <40>; key-positions = <36 37>; bindings = <&kp F_COLN>; };             // :
         combo_scln { timeout-ms = <40>; key-positions = <26 27>; bindings = <&kp F_SCLN>; };             // ;
-        combo_winlck { timeout-ms = <50>; key-positions = <31 44>; bindings = <&kp SC_Lock>; };          // LGUI+L
-        combo_numpad { timeout-ms = <50>; key-positions = <32 45>; bindings = <&tog PAD1>; };            // Toggle numpad
-        combo_bt { timeout-ms = <50>; key-positions = <33 46>; bindings = <&mo BT>; };                   // BT layer, hold
+//
         combo_x { timeout-ms = <40>; key-positions = <13 14>; bindings = <&kp X>; };                     // z
         combo_z { timeout-ms = <40>; key-positions = <14 15>; bindings = <&kp Z>; };                     // x
         combo_j { timeout-ms = <40>; key-positions = <15 16>; bindings = <&kp J>; };                     // j		
         combo_b { timeout-ms = <40>; key-positions = <19 21>; bindings = <&kp B>; };                     // b
+//
+        combo_tab { timeout-ms = <40>; key-positions = <27 28>; bindings = <&kp TAB>; };                 // Tab
+        combo_esc { timeout-ms = <40>; key-positions = <13 15>; bindings = <&kp ESC>; };                 // Esc
+        combo_ent { timeout-ms = <40>; key-positions = <14 16>; bindings = <&kp RET>; };                 // Enter
+        combo_del { timeout-ms = <40>; key-positions = <26 28>; bindings = <&kp DEL>; };                 // Del
+//
+        combo_mycomp { timeout-ms= <40>; key-positions = <16 17>; bindings = <&kp C_AL_MY_COMPUTER >; }; // Open "This PC"
+        combo_calc{ timeout-ms = <40>; key-positions = <28 29>; bindings = <&kp C_AL_CALC>; };           // Open calculator
+        combo_pwr { timeout-ms = <50>; key-positions = <1 2 3 4>; bindings = <&kp C_PWR>; };             // power off
+        combo_winlck { timeout-ms = <50>; key-positions = <13 14 15 16>; bindings = <&kp SC_Lock>; };    // LGUI+L, lock windows
+        combo_sleep { timeout-ms = <50>; key-positions = <25 26 27 28>; bindings = <&kp C_SLEEP>; };     // sleep
+        combo_game { timeout-ms = <50>; key-positions = <7 8 9 10>; bindings = <&to GAME1>; };           // Game layer
+        combo_base { timeout-ms = <50>; key-positions = <19 20 21 22>; bindings = <&to BASE>; };         // Base layer
+        combo_rgb { timeout-ms = <50>; key-positions = <35 36 37 22>; bindings = <&mo RGB>; };           // rgb layer
+        combo_numpad { timeout-ms = <50>; key-positions = <31 44>; bindings = <&tog PAD1>; };            // Toggle numpad
+        combo_bt { timeout-ms = <50>; key-positions = <33 46>; bindings = <&mo BT>; };                   // BT layer, hold
+
     };
 };
 / {
     keymap { compatible = "zmk,keymap";
         
         default_layer { bindings = <
-/* ,------------------------------------------.                                     ,-----------------------------------------------.
- * |   NA  |   Q  |   W  |   F  |   P  |  NA  |                                     |   NA  |   L  |   U  |   Y   |   Ö    |   NA   |
- * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
- * |   NA  | MED/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E|RAlt/I | LGUI/O |   NA   |
- * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
- * |   NA  |  NA  |   ,  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB     | BASE |   K   |   H  |   Ä  |   .   |   NA   |   NA   |  
- * |       |      |      |      |      |      |       |     GAME→|  |←GAME   |      |       |      |      |       |        |        |
- * `---------------------+------+------+------+-------+----------|  |--------+------+-------+------+------+-------------------------'
-                         | LShft|  NA  | SHC/ |  ARR/ | NumPad   |  |   NA   |OSShft| OS NUM|  NA  |Ctrl+D|
-                         |      |      |BSpace| Space |          |  |        |      | Delete|      |      |
-                         `---------------------------------------'  `-------------------------------------' */
-&none &kp Q       &kp W      &kp F       &kp P       &none                                   /**/                   &none       &kp L       &kp U       &kp Y      &kp F_ODIA &none
-&none &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M       &mt RSHFT N &mt RCTRL E &mt RALT I &mt LGUI O &none
-&none &none       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K       &kp H       &kp F_ADIA  &kp F_DOT  &none      &none
-                             &kp LSHFT   &none       &lt SHC BSPC &lt ARR SPACE &sl PAD1     /**/ &none   &sk LSHFT &lt NUM DEL &none       &kp LC(D)
+/* ,------------------------------------------.                                  ,-----------------------------------------------.
+ * |   NA  |   Q  |   W  |   F  |   P  |  NA  |                                  |   NA  |   L  |   U  |   Y   |   Ö    |   NA   |
+ * |-------+------+------+------+------+------|                                  |-------+------+------+-------+--------+--------|
+ * |   NA  | MED/A| Alt/R|LCtl/S|Shft/T|   G  |                                  |   M   |RSft/N|RCtl/E|RAlt/I | LGUI/O |   NA   |
+ * |-------+------+------+------+------+------+---------------.  ,---------------+-------+------+------+-------+--------+--------|
+ * |   NA  |  NA  |   ,  |   C  |   D  |   V  |  LGUI |   NA  |  |   NA   |FKEYS |   K   |   H  |   Ä  |   .   |   NA   |   NA   |  
+ * |       |      |      |      |      |      |       |       |  |        |      |       |      |      |       |        |        |
+ * `---------------------+------+------+------+-------+-------|  |--------+------+-------+------+------+-------------------------'
+                         | LShft|  NA  | SHC/ |  ARR/ | NumPad|  |   NA   |OSShft| OS NUM|  NA  |Ctrl+D|
+                         |      |      |BSpace| Space |       |  |        |      | Delete|      |      |
+                         `------------------------------------'  `-------------------------------------' */
+&none &kp Q       &kp W      &kp F       &kp P       &none                               /**/                 &none       &kp L       &kp U       &kp Y      &kp F_ODIA &none
+&none &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                               /**/                 &kp M       &mt RSHFT N &mt RCTRL E &mt RALT I &mt LGUI O &none
+&none &none       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &none    /**/ &none &sl FKEYS &kp K       &kp H       &kp F_ADIA  &kp F_DOT  &none      &none
+                             &kp LSHFT   &none       &lt SHC BSPC &lt ARR SPACE &sl PAD1 /**/ &none &sk LSHFT &lt NUM DEL &none       &kp LC(D)
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
@@ -123,14 +133,14 @@
  * |--------+------+------+------+------+------|                                 |------+------+------+------+------+--------|
  * |    NA  |   1  | Alt/2|LCtl/3|LSft/4|   `  |                                 |   ´  |RSft/7|RCtl/8|RAlt/9|LGUI/0|   NA   |  
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+------+------+------+------+--------|
- * |    NA  |  NA  |   ,  |   %  |   5  |   |  |       |       |   |      | BASE |   ¤  |   6  |   €  |   .  |  NA  |   NA   |
+ * |    NA  |  NA  |   ,  |   %  |   5  |   |  |       |       |   |      |      |   ¤  |   6  |   €  |   .  |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+------+------+----------------------'
  *                        |      |      |      |       |       |   |      |      |      |      |      |
  *                        `------------------------------------'   `----------------------------------' */
-&none &kp F_HALF &kp F_AT    &kp F_HASH   &kp F_AMPR   &none                    /**/                  &none      &kp F_PND    &kp F_DLR   &kp F_SECT   &none       &none 
-&none &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_GRV                /**/                  &kp F_ACUT &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &mt LGUI N0 &none
-&none &none      &kp F_COMM  &kp F_PERC   &kp N5       &kp F_PIPE &trans &trans /**/ &trans  &to BASE &kp F_CURR &kp N6       &kp F_EURO   &kp F_DOT   &none       &none 
-                             &trans       &trans       &trans     &trans &trans /**/ &trans  &trans   &trans     &trans       &trans
+&none &kp F_HALF &kp F_AT    &kp F_HASH   &kp F_AMPR   &none                    /**/                &none      &kp F_PND    &kp F_DLR   &kp F_SECT   &none       &none 
+&none &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_GRV                /**/                &kp F_ACUT &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &mt LGUI N0 &none
+&none &none      &kp F_COMM  &kp F_PERC   &kp N5       &kp F_PIPE &trans &trans /**/ &trans  &trans &kp F_CURR &kp N6       &kp F_EURO   &kp F_DOT   &none       &none 
+                             &trans       &trans       &trans     &trans &trans /**/ &trans  &trans &trans     &trans       &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
@@ -140,14 +150,14 @@
  * |--------+------+------+------+------+------|                                 |------+-------+---------+---------+-----------+--------|
  * |   NA   |LShift|   ←  |Ctrl/↑|   →  | Redo |                                 | PgUp |Sft/Ins|RCtl/CLck|RAlt/NLck|LGUI/ScrLck|   NA   |   
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+-------+---------+---------+-----------+--------|
- * |   NA   |  NA  | Home |   ↓  |  End | Snip |       |       |   |      | BASE | PgDn |ShwDstp|    NA   |    NA   |     NA    |   NA   |
+ * |   NA   |  NA  | Home |   ↓  |  End | Snip |       |       |   |      |      | PgDn |ShwDstp|    NA   |    NA   |     NA    |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+-------+---------+------------------------------'
  *                        |      |      |      |       |       |   |      |      |      |       |         |
  *                        `------------------------------------'   `--------------------------------------' */
-&none &kp SC_Undo &kp SC_Cut &kp SC_Copy  &kp SC_Pste &none                     /**/                 &none     &none         &none          &none            &none         &none 
-&none &kp LSHFT   &kp LEFT   &mt LCTRL UP &kp RIGHT   &kp SC_Redo               /**/                 &kp PG_UP &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &mt LGUI SLCK &none 
-&none &none       &kp HOME   &kp DOWN     &kp END     &kp PG_DN   &trans &trans /**/ &trans &to BASE &kp PG_DN &kp ShwDstp   &none          &none            &none         &none 
-                             &trans       &trans      &kp SC_Snip      &trans &trans /**/ &trans &trans   &trans    &trans        &trans
+&none &kp SC_Undo &kp SC_Cut &kp SC_Copy  &kp SC_Pste &none                          /**/               &none     &none         &none          &none            &none         &none 
+&none &kp LSHFT   &kp LEFT   &mt LCTRL UP &kp RIGHT   &kp SC_Redo                    /**/               &kp PG_UP &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &mt LGUI SLCK &none 
+&none &none       &kp HOME   &kp DOWN     &kp END     &kp PG_DN   &trans &trans      /**/ &trans &trans &kp PG_DN &kp ShwDstp   &none          &none            &none         &none 
+                             &trans       &trans      &kp SC_Snip      &trans &trans /**/ &trans &trans &trans    &trans        &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
@@ -157,14 +167,14 @@
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
  * |   NA   |LGUI/0|LAlt/4|LCtl/5|LSft/6|   ,  |                               | PgUp |   ←  |Ctrl/↑|   →  |RShift|   NA   |
  * |--------+------+------+------+------+------+-------------.   ,-------------+------+------+------+------+------+--------|
- * |   NA   |  NA  |   1  |   2  |   3  |   .  |      |      |   | BASE | BASE | PgDn | Home |   ↓  |  End |  NA  |   NA   |
+ * |   NA   |  NA  |   1  |   2  |   3  |   .  |      |      |   | BASE |      | PgDn | Home |   ↓  |  End |  NA  |   NA   |
  * `----------------------+------+------+------+------+------|   |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |   | BASE |      |      |      |      |
  *                        `----------------------------------'   `----------------------------------' */
-&none &none       &kp N7      &kp N8       &kp N9       &none                   /**/                   &kp TskView &kp NxtDstp &kp PrvDstp  &kp NewDstp &kp ClsDstp &none
-&none &mt LGUI N0 &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp COMMA               /**/                   &kp PG_UP   &kp LEFT    &mt RCTRL UP &kp RIGHT   &kp RSHFT   &none
-&none &none       &kp N1      &kp N2       &kp N3       &kp DOT   &trans &trans /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &none       &none
-                              &kp KP_NLCK     &trans    &trans    &trans &trans /**/ &to BASE &trans   &trans      &trans      &trans
+&none &none       &kp N7      &kp N8       &kp N9       &none                   /**/                 &kp TskView &kp NxtDstp &kp PrvDstp  &kp NewDstp &kp ClsDstp &none
+&none &mt LGUI N0 &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp COMMA               /**/                 &kp PG_UP   &kp LEFT    &mt RCTRL UP &kp RIGHT   &kp RSHFT   &none
+&none &none       &kp N1      &kp N2       &kp N3       &kp DOT   &trans &trans /**/ &to BASE &trans &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &none       &none
+                              &kp KP_NLCK     &trans    &trans    &trans &trans /**/ &to BASE &trans &trans      &trans      &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
@@ -174,14 +184,14 @@
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |   NA   |ClsTab|RstTab|PrvTab|NxtTab|TaskVw|                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------| 
- * |   NA   |  NA  |Ctrl+F|Ctrl+S|LGUI+V|PrtScr|      |      |  |      | BASE |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |   NA   |  NA  |Ctrl+F|Ctrl+S|LGUI+V|PrtScr|      |      |  |      |      |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&none &kp ClsDstp &kp NewDstp &kp PrvDstp &kp NxtDstp &none                     /**/                 &none  &none  &none  &none  &none  &none  
-&none &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp TskView               /**/                 &none  &none  &none  &none  &none  &none  
-&none &none       &kp SC_Find &kp SC_Save &kp SC_Psth &kp PSCRN   &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
-                              &trans      &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans &trans
+&none &kp ClsDstp &kp NewDstp &kp PrvDstp &kp NxtDstp &none                     /**/               &none  &none  &none  &none  &none  &none  
+&none &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp TskView               /**/               &none  &none  &none  &none  &none  &none  
+&none &none       &kp SC_Find &kp SC_Save &kp SC_Psth &kp PSCRN   &trans &trans /**/ &trans &trans &none  &none  &none  &none  &none  &none  
+                              &trans      &trans      &trans      &trans &trans /**/ &trans &trans &trans &trans &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
@@ -191,31 +201,31 @@
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |   NA   |  F10 |  F4  |  F5  |  F6  |  F11 |                              |  NA  |RShift|RCtrl | LALT | LGUI |  NA  |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
- * |   NA   |  NA  |  F1  |  F2  |  F3  |  F12 |      |      |  |← GAME| BASE |  NA  |  NA  |  NA  | RALT |  NA  |  NA  |
+ * |   NA   |  NA  |  F1  |  F2  |  F3  |  F12 |      |      |  |      |      |  NA  |  NA  |  NA  | RALT |  NA  |  NA  |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&none  &none   &kp F7 &kp F8 &kp F9 &none                 /**/                    &none  &none     &none     &none    &none    &none  
-&none  &kp F10 &kp F4 &kp F5 &kp F6 &kp F11               /**/                    &none  &kp RSHFT &kp RCTRL &kp LALT &kp LGUI &none  
-&none  &none   &kp F1 &kp F2 &kp F3 &kp F12 &trans &trans /**/ &to GAME1 &to BASE &none  &none     &none     &kp RALT &none    &none  
-                      &trans &trans &trans  &trans &trans /**/ &trans    &trans   &trans &trans    &trans
+&none  &none   &kp F7 &kp F8 &kp F9 &none                 /**/               &none  &none     &none     &none    &none    &none  
+&none  &kp F10 &kp F4 &kp F5 &kp F6 &kp F11               /**/               &none  &kp RSHFT &kp RCTRL &kp LALT &kp LGUI &none  
+&none  &none   &kp F1 &kp F2 &kp F3 &kp F12 &trans &trans /**/ &trans &trans &none  &none     &none     &kp RALT &none    &none  
+                      &trans &trans &trans  &trans &trans /**/ &trans &trans &trans &trans    &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
         RGB_layer { bindings = <
 /* ,-----------------------------------------------------.                              ,------------------------------------------.
- * |   NA  | Brgth+ |    Sat+  |   Hue+  |RGBCycl→|  NA  |                              |  NA  |  NA  |  NA  |Speed+|DBrgt+|  NA   |
+ * |   NA  | Brgth+ |    Sat+  |   Hue+  |RGBCycl→|  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA   |
  * |-------+--------+----------+---------+--------+------|                              |------+------+------+------+------+-------|
- * |   NA  | Brgth- |    Sat-  |   Hue-  |RGBCycl←|Speed+|                              | Sleep| Pause|  NA  |Speed-|DBrgt-|  NA   |
+ * |   NA  | Brgth- |    Sat-  |   Hue-  |RGBCycl←|Speed+|                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA   |
  * |-------+--------+----------+---------+--------+------+-------------.  ,-------------+------+------+------+------+------+-------|
- * |   NA  |   NA   |RGBPwrTggl|RGBoffSft|RGBonSft|Speed-|  NA  |GAME →|  |      | BASE |PwrOff| Break|  NA  |  NA  |  NA  |  NA   |
+ * |   NA  |   NA   |RGBPwrTggl|RGBoffSft|RGBonSft|Speed-|Break |  NA  |  |      |      |  NA  |  NA  |  NA  |  NA  |  NA  |  NA   |
  * `---------------------------+---------+--------+------+------+------|  |------+------+------+------+------+---------------------'
- *                             |         |        |      |      |      |  |      |      |      |      |      |
+ *                             |         |        |DBrgt-|Pause |DBrgt+|  |      |      |      |      |      |
  *                             `---------------------------------------'  `----------------------------------' */
-&none  &rgb_ug RGB_BRI &rgb_ug RGB_SAI                 &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none                            /**/                  &none       &none           &none  &none  &kp C_BRI_UP &none 
-&none  &rgb_ug RGB_BRD &rgb_ug RGB_SAD                 &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPI                  /**/                  &kp C_SLEEP &kp PAUSE_BREAK &none  &none  &kp C_BRI_DN &none 
-&none &none            &ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_SPD &none  &to GAME1 /**/ &trans  &to BASE &kp C_PWR   &kp F_BRK       &none  &none  &none        &none  
-                                                       &trans          &trans          &trans          &trans &trans    /**/ &trans  &trans   &trans      &trans          &trans
+&none  &rgb_ug RGB_BRI &rgb_ug RGB_SAI                 &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none                                           /**/                &none  &none  &none  &none &none &none 
+&none  &rgb_ug RGB_BRD &rgb_ug RGB_SAD                 &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPI                                 /**/                &none  &none  &none  &none &none &none 
+&none &none            &ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_SPD &kp PAUSE_BREAK &none           /**/ &trans  &trans &none  &none  &none  &none &none &none  
+                                                       &trans          &trans          &kp C_BRI_DN    &kp F_BRK       &kp C_BRI_UP    /**/ &trans  &trans &trans &trans &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
@@ -273,18 +283,18 @@
 
         BT_layer { bindings = <
 /* ,------------------------------------------.                              ,------------------------------------------.
- * |   NA  |  NA  |  NA  |BT Prv|BT Nxt|BT Clr|                              |BT Clr|BT Prv|BT Nxt|  NA  |  NA  |  NA   |
+ * |   NA  |BT Clr|  NA  |BT Prv|BT Nxt|  NA  |                              |  NA  |BT Prv|BT Nxt|  NA  |BT Clr|  NA   |
  * |-------+------+------+------+------+------|                              |------+------+------+------+------+-------|
  * |   NA  | BT 0 | BT 1 | BT 2 | BT 3 |  NA  |                              |  NA  | BT 1 | BT 2 | BT 3 | BT 4 |  NA   |
  * |-------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
- * |   NA  |  NA  |  NA  | BT 5 | BT 4 |BT Prv|  NA  |  NA  |  |  NA  | BASE |  NA  | BT 0 | BT 5 |  NA  |  NA  |  NA   |
+ * |   NA  |  NA  |  NA  | BT 5 | BT 4 |  NA  |  NA  |  NA  |  |  NA  | BASE |  NA  | BT 0 | BT 5 |  NA  |  NA  |  NA   |
  * `---------------------+------+------+------+------+------|  |------+------+------+------+------+---------------------'
  *                       |  NA  |  NA  |  NA  |  NA  |  NA  |  |  NA  |  NA  |  NA  |  NA  |  NA  |
  *                       `----------------------------------'  `----------------------------------' */
-&none  &none        &none        &bt BT_PRV   &bt BT_NXT   &bt BT_CLR               /**/                 &bt BT_CLR &bt BT_PRV   &bt BT_NXT   &none        &none        &none  
-&none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none                    /**/                 &bt BT_NXT &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none  
-&none  &none        &none        &bt BT_SEL 5 &bt BT_SEL 4 &none      &none  &none  /**/ &none  &to BASE &bt BT_PRV &bt BT_SEL 0 &bt BT_SEL 5 &none        &none        &none  
-                                 &none        &none        &none      &none  &none  /**/ &none  &none    &none      &none        &none 
+&none  &bt BT_CLR   &none        &bt BT_PRV   &bt BT_NXT   &none                    /**/                 &none &bt BT_PRV   &bt BT_NXT   &none        &bt BT_CLR   &none  
+&none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none                    /**/                 &none &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none  
+&none  &none        &none        &bt BT_SEL 5 &bt BT_SEL 4 &none      &none  &none  /**/ &none  &to BASE &none &bt BT_SEL 0 &bt BT_SEL 5 &none        &none        &none  
+                                 &none        &none        &none      &none  &none  /**/ &none  &none    &none &none        &none 
             >;
         };
 		
