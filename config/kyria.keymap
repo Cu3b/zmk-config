@@ -91,8 +91,8 @@
         combo_bt { timeout-ms = <50>; key-positions = <33 46>; bindings = <&mo BT>; };                   // BT layer, hold
         combo_x { timeout-ms = <40>; key-positions = <27 28>; bindings = <&kp X>; };                     // z
         combo_z { timeout-ms = <40>; key-positions = <26 28>; bindings = <&kp Z>; };                     // x
-        combo_j { timeout-ms = <50>; key-positions = <19 21>; bindings = <&kp J>; };                     // j		
-        combo_b { timeout-ms = <50>; key-positions = <14 16>; bindings = <&kp B>; };                     // b
+        combo_j { timeout-ms = <40>; key-positions = <14 16>; bindings = <&kp J>; };                     // j		
+        combo_b { timeout-ms = <40>; key-positions = <19 21>; bindings = <&kp B>; };                     // b
     };
 };
 / {
