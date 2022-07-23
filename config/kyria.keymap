@@ -54,7 +54,7 @@
  *                      |      |      |      |      |      |  |      |      |      |      |      |
  *                      `----------------------------------'  `----------------------------------' */
 / { combos { compatible = "zmk,combos";
-	combo_circ { timeout-ms = <40>; key-positions = <2 13>; bindings = <&kp F_CIRC>; };                  // ^
+	    combo_circ { timeout-ms = <40>; key-positions = <2 13>; bindings = <&kp F_CIRC>; };              // ^
         combo_tild { timeout-ms = <40>; key-positions = <13 26>; bindings = <&kp F_TILD>; };             // ~
         combo_mins { timeout-ms = <40>; key-positions = <2 3>; bindings = <&kp F_MINS>; };               // -
         combo_plus { timeout-ms = <40>; key-positions = <3 4>; bindings = <&kp F_PLUS>; };               // + 
