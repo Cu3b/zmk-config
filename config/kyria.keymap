@@ -82,8 +82,8 @@
         combo_coln { timeout-ms = <40>; key-positions = <36 37>; bindings = <&kp F_COLN>; };             // :
         combo_scln { timeout-ms = <40>; key-positions = <26 27>; bindings = <&kp F_SCLN>; };             // ;
 //
-        combo_x { timeout-ms = <40>; key-positions = <13 14>; bindings = <&kp X>; };                     // z
-        combo_z { timeout-ms = <40>; key-positions = <14 15>; bindings = <&kp Z>; };                     // x
+        combo_z { timeout-ms = <40>; key-positions = <13 14>; bindings = <&kp Z>; };                     // z
+        combo_x { timeout-ms = <40>; key-positions = <14 15>; bindings = <&kp X>; };                     // x
         combo_j { timeout-ms = <40>; key-positions = <15 16>; bindings = <&kp J>; };                     // j		
         combo_b { timeout-ms = <40>; key-positions = <19 21>; bindings = <&kp B>; };                     // b
 //
