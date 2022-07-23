@@ -89,8 +89,8 @@
         combo_winlck { timeout-ms = <50>; key-positions = <31 44>; bindings = <&kp SC_Lock>; };          // LGUI+L
         combo_numpad { timeout-ms = <50>; key-positions = <32 45>; bindings = <&tog PAD1>; };            // Toggle numpad
         combo_bt { timeout-ms = <50>; key-positions = <33 46>; bindings = <&mo BT>; };                   // BT layer, hold
-        combo_b { timeout-ms = <50>; key-positions = <14 16>; bindings = <&mo BT>; };                   // BT layer, hold
-        combo_j { timeout-ms = <50>; key-positions = <19 21>; bindings = <&mo BT>; };                   // BT layer, hold		
+        combo_b { timeout-ms = <50>; key-positions = <14 16>; bindings = <&kp B>; };                   // BT layer, hold
+        combo_j { timeout-ms = <50>; key-positions = <19 21>; bindings = <&kp J>; };                   // BT layer, hold		
     };
 };
 / {
@@ -134,18 +134,18 @@
 		
         ARR_layer { bindings = <
 /* ,-------------------------------------------.                                 ,--------------------------------------------------.
- * |   NA   |ClsDst|NewDst|PrvDst|NxtDst|TaskVw|                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
+ * |   NA   |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V| Redo |                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+-------+---------+---------+------+--------|
  * |   NA   |LShift|   ←  |Ctrl/↑|   →  | PgUp |                                 |  NA  |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+-------+---------+---------+------+--------|
- * |   NA   |LCtrl | Home |   ↓  |  End | PgDn |       |       |   |      | BASE |  NA  |ShwDstp|    NA   |    NA   |  NA  |   NA   |
+ * |   NA   |  NA  | Home |   ↓  |  End | PgDn |       |       |   |      | BASE |  NA  |ShwDstp|    NA   |    NA   |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+-------+---------+-------------------------'
  *                        |      |      |      |       |       |   |      |      |      |       |         |
  *                        `------------------------------------'   `--------------------------------------' */
-&none &kp ClsDstp &kp NewDstp &kp PrvDstp  &kp NxtDstp     &kp TskView               /**/                 &none  &none         &none          &none            &none    &none 
-&none &kp LSHFT   &kp LEFT    &mt LCTRL UP &kp RIGHT       &kp PG_UP                 /**/                 &none  &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK &none 
-&none &none       &kp HOME    &kp DOWN     &kp END         &kp PG_DN   &trans &trans /**/ &trans &to BASE &none  &kp ShwDstp   &none          &none            &none    &none 
-                              &trans       &trans          &trans      &trans &trans /**/ &trans &trans   &trans &trans        &trans
+&none &kp SC_Undo &kp SC_Cut &kp SC_Copy  &kp SC_Pste &kp SC_Redo               /**/                 &none  &none         &none          &none            &none    &none 
+&none &kp LSHFT   &kp LEFT   &mt LCTRL UP &kp RIGHT   &kp PG_UP                 /**/                 &none  &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK &none 
+&none &none       &kp HOME   &kp DOWN     &kp END     &kp PG_DN   &trans &trans /**/ &trans &to BASE &none  &kp ShwDstp   &none          &none            &none    &none 
+                             &trans       &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans        &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
@@ -168,16 +168,16 @@
 
         SHC_layer { bindings = <
 /* ,-------------------------------------------.                              ,-----------------------------------------.
- * |   NA   |ClsTab|RstTab|PrvTab|NxtTab|PrtScr|                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |   NA   |ClsDst|NewDst|PrvDst|NxtDst|PrtScr|                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |   NA   |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V| Redo |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |   NA   |ClsTab|RstTab|PrvTab|NxtTab|TaskVw|                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------| 
  * |   NA   |  NA  |Ctrl+F|Ctrl+S|LGUI+V| Snip |      |      |  |      | BASE |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&none &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp PSCRN                 /**/                 &none  &none  &none  &none  &none  &none  
-&none &kp SC_Undo &kp SC_Cut  &kp SC_Copy &kp SC_Pste &kp SC_Redo               /**/                 &none  &none  &none  &none  &none  &none  
+&none &kp ClsDstp &kp NewDstp &kp PrvDstp &kp NxtDstp &kp PSCRN                 /**/                 &none  &none  &none  &none  &none  &none  
+&none &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp TskView              /**/                 &none  &none  &none  &none  &none  &none  
 &none &none       &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Snip &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
                                        &trans      &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
