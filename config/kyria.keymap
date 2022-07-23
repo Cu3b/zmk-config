@@ -102,7 +102,7 @@
 /* ,------------------------------------------.                                     ,-----------------------------------------------.
  * |   NA  |   Q  |   W  |   F  |   P  |  NA  |                                     |   NA  |   L  |   U  |   Y   |   Ö    |   NA   |
  * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
- * |   NA  | MED/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E|RAlt/I |   O    |   NA   |
+ * |   NA  | MED/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E|RAlt/I | LGUI/O |   NA   |
  * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
  * |   NA  |   X  |  ,;  |   C  |   D  |   V  |  LGUI |  FKEYS   |  |RGB     | BASE |   K   |   H  |   Ä  |  .:   |   Z    |   NA   |  
  * |       |      |      |      |      |      |       |     GAME→|  |←GAME   |      |       |      |      |       |        |        |
@@ -111,7 +111,7 @@
                          |      |      |BSpace| Space |          |  |        |      | Delete|      |      |
                          `---------------------------------------'  `-------------------------------------' */
 &none &kp Q       &kp W      &kp F       &kp P       &none                                   /**/                   &none       &kp L       &kp U       &kp Y      &kp F_ODIA &none
-&none &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M       &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &none
+&none &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M       &mt RSHFT N &mt RCTRL E &mt RALT I &mt LGUI O &none
 &none &kp X       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K       &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &none
                              &kp LSHFT   &none       &lt SHC BSPC &lt ARR SPACE &sl PAD1     /**/ &none   &sk LSHFT &lt NUM DEL &none       &kp LC(D)
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
@@ -121,32 +121,32 @@
 /* ,-------------------------------------------.                                 ,-------------------------------------------.
  * |    NA  |   ½  |  @   |   #  |   &  |  NA  |                                 |  NA  |   £  |   $  |   §  |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+------+------+------+------+--------|
- * |    NA  |   1  | Alt/2|LCtl/3|LSft/4|   `  |                                 |   ´  |RSft/7|RCtl/8|RAlt/9|   0  |   NA   |  
+ * |    NA  |   1  | Alt/2|LCtl/3|LSft/4|   `  |                                 |   ´  |RSft/7|RCtl/8|RAlt/9|LGUI/0|   NA   |  
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+------+------+------+------+--------|
  * |    NA  |  NA  |   ,  |   %  |   5  |   |  |       |       |   |      | BASE |   ¤  |   6  |   €  |   .  |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+------+------+----------------------'
  *                        |      |      |      |       |       |   |      |      |      |      |      |
  *                        `------------------------------------'   `----------------------------------' */
-&none &kp F_HALF &kp F_AT    &kp F_HASH   &kp F_AMPR   &none                    /**/                  &none      &kp F_PND    &kp F_DLR   &kp F_SECT   &none  &none 
-&none &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_GRV                /**/                  &kp F_ACUT &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &kp N0 &none
-&none &none      &kp F_COMM  &kp F_PERC   &kp N5       &kp F_PIPE &trans &trans /**/ &trans  &to BASE &kp F_CURR &kp N6       &kp F_EURO   &kp F_DOT   &none  &none 
+&none &kp F_HALF &kp F_AT    &kp F_HASH   &kp F_AMPR   &none                    /**/                  &none      &kp F_PND    &kp F_DLR   &kp F_SECT   &none       &none 
+&none &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_GRV                /**/                  &kp F_ACUT &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &mt LGUI N0 &none
+&none &none      &kp F_COMM  &kp F_PERC   &kp N5       &kp F_PIPE &trans &trans /**/ &trans  &to BASE &kp F_CURR &kp N6       &kp F_EURO   &kp F_DOT   &none       &none 
                              &trans       &trans       &trans     &trans &trans /**/ &trans  &trans   &trans     &trans       &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
         ARR_layer { bindings = <
-/* ,-------------------------------------------.                                 ,--------------------------------------------------.
- * |   NA   |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V|  NA  |                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
- * |--------+------+------+------+------+------|                                 |------+-------+---------+---------+------+--------|
- * |   NA   |LShift|   ←  |Ctrl/↑|   →  | Redo |                                 | PgUp |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
- * |--------+------+------+------+------+------+---------------.   ,-------------+------+-------+---------+---------+------+--------|
- * |   NA   |  NA  | Home |   ↓  |  End | Snip |       |       |   |      | BASE | PgDn |ShwDstp|    NA   |    NA   |  NA  |   NA   |
- * `----------------------+------+------+------+-------+-------|   |------+------+------+-------+---------+-------------------------'
+/* ,-------------------------------------------.                                 ,-------------------------------------------------------.
+ * |   NA   |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V|  NA  |                                 |  NA  |   NA  |    NA   |    NA   |     NA    |   NA   |
+ * |--------+------+------+------+------+------|                                 |------+-------+---------+---------+-----------+--------|
+ * |   NA   |LShift|   ←  |Ctrl/↑|   →  | Redo |                                 | PgUp |Sft/Ins|RCtl/CLck|RAlt/NLck|LGUI/ScrLck|   NA   |   
+ * |--------+------+------+------+------+------+---------------.   ,-------------+------+-------+---------+---------+-----------+--------|
+ * |   NA   |  NA  | Home |   ↓  |  End | Snip |       |       |   |      | BASE | PgDn |ShwDstp|    NA   |    NA   |     NA    |   NA   |
+ * `----------------------+------+------+------+-------+-------|   |------+------+------+-------+---------+------------------------------'
  *                        |      |      |      |       |       |   |      |      |      |       |         |
  *                        `------------------------------------'   `--------------------------------------' */
-&none &kp SC_Undo &kp SC_Cut &kp SC_Copy  &kp SC_Pste &none                     /**/                 &none     &none         &none          &none            &none    &none 
-&none &kp LSHFT   &kp LEFT   &mt LCTRL UP &kp RIGHT   &kp SC_Redo               /**/                 &kp PG_UP &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK &none 
-&none &none       &kp HOME   &kp DOWN     &kp END     &kp PG_DN   &trans &trans /**/ &trans &to BASE &kp PG_DN &kp ShwDstp   &none          &none            &none    &none 
+&none &kp SC_Undo &kp SC_Cut &kp SC_Copy  &kp SC_Pste &none                     /**/                 &none     &none         &none          &none            &none         &none 
+&none &kp LSHFT   &kp LEFT   &mt LCTRL UP &kp RIGHT   &kp SC_Redo               /**/                 &kp PG_UP &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &mt LGUI SLCK &none 
+&none &none       &kp HOME   &kp DOWN     &kp END     &kp PG_DN   &trans &trans /**/ &trans &to BASE &kp PG_DN &kp ShwDstp   &none          &none            &none         &none 
                              &trans       &trans      &kp SC_Snip      &trans &trans /**/ &trans &trans   &trans    &trans        &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
@@ -155,15 +155,15 @@
 /* ,-------------------------------------------.                               ,-------------------------------------------.
  * |   NA   |  NA  |   7  |   8  |   9  |  NA  |                               |TaskVw|NxtDst|PrvDst|NewDst|ClsDst|   NA   |
  * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
- * |   NA   |   0  |LAlt/4|LCtl/5|LSft/6|   ,  |                               | PgUp |   ←  |Ctrl/↑|   →  |RShift|   NA   |
+ * |   NA   |LGUI/0|LAlt/4|LCtl/5|LSft/6|   ,  |                               | PgUp |   ←  |Ctrl/↑|   →  |RShift|   NA   |
  * |--------+------+------+------+------+------+-------------.   ,-------------+------+------+------+------+------+--------|
  * |   NA   |  NA  |   1  |   2  |   3  |   .  |      |      |   | BASE | BASE | PgDn | Home |   ↓  |  End |  NA  |   NA   |
  * `----------------------+------+------+------+------+------|   |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |   | BASE |      |      |      |      |
  *                        `----------------------------------'   `----------------------------------' */
-&none &none     &kp N7      &kp N8       &kp N9       &none                    /**/                   &kp TskView &kp NxtDstp &kp PrvDstp  &kp NewDstp &kp ClsDstp &none
-&none &kp KP_N0 &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp COMMA                /**/                   &kp PG_UP   &kp LEFT    &mt RCTRL UP &kp RIGHT   &kp RSHFT   &none
-&none &none     &kp N1      &kp N2       &kp N3       &kp KP_DOT &trans &trans /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &none       &none
+&none &none          &kp N7      &kp N8       &kp N9       &none                    /**/                   &kp TskView &kp NxtDstp &kp PrvDstp  &kp NewDstp &kp ClsDstp &none
+&none &mt LGUI KP_N0 &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp COMMA                /**/                   &kp PG_UP   &kp LEFT    &mt RCTRL UP &kp RIGHT   &kp RSHFT   &none
+&none &none          &kp N1      &kp N2       &kp N3       &kp KP_DOT &trans &trans /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &none       &none
                             &kp KP_NLCK     &trans    &trans     &trans &trans /**/ &to BASE &trans   &trans      &trans      &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
@@ -189,32 +189,32 @@
 /* ,-------------------------------------------.                              ,-----------------------------------------.
  * |   NA   |  NA  |  F7  |  F8  |  F9  |  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |   NA   |  F10 |  F4  |  F5  |  F6  |  F11 |                              |  NA  |RShift|RCtrl | RALT | LAlt |  NA  |
+ * |   NA   |  F10 |  F4  |  F5  |  F6  |  F11 |                              |  NA  |RShift|RCtrl | LALT | LGUI |  NA  |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
- * |   NA   |  NA  |  F1  |  F2  |  F3  |  F12 |      |      |  |← GAME| BASE |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |   NA   |  NA  |  F1  |  F2  |  F3  |  F12 |      |      |  |← GAME| BASE |  NA  |  NA  |  NA  | RALT |  NA  |  NA  |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
 &none  &none   &kp F7 &kp F8 &kp F9 &none                 /**/                    &none  &none     &none     &none    &none    &none  
-&none  &kp F10 &kp F4 &kp F5 &kp F6 &kp F11               /**/                    &none  &kp RSHFT &kp RCTRL &kp RALT &kp LALT &none  
-&none  &none   &kp F1 &kp F2 &kp F3 &kp F12 &trans &trans /**/ &to GAME1 &to BASE &none  &none     &none     &none    &none    &none  
+&none  &kp F10 &kp F4 &kp F5 &kp F6 &kp F11               /**/                    &none  &kp RSHFT &kp RCTRL &kp LALT &kp LGUI &none  
+&none  &none   &kp F1 &kp F2 &kp F3 &kp F12 &trans &trans /**/ &to GAME1 &to BASE &none  &none     &none     &kp RALT &none    &none  
                       &trans &trans &trans  &trans &trans /**/ &trans    &trans   &trans &trans    &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
         RGB_layer { bindings = <
 /* ,-----------------------------------------------------.                              ,------------------------------------------.
- * |   NA  | Brgth+ |    Sat+  |   Hue+  |RGBCycl→|Speed+|                              |PwrOff| Break|  NA  |  NA  |DBrgt+|  NA   |
+ * |   NA  | Brgth+ |    Sat+  |   Hue+  |RGBCycl→|  NA  |                              |  NA  |  NA  |  NA  |Speed+|DBrgt+|  NA   |
  * |-------+--------+----------+---------+--------+------|                              |------+------+------+------+------+-------|
- * |   NA  | Brgth- |    Sat-  |   Hue-  |RGBCycl←|Speed-|                              | Sleep| Pause|  NA  |  NA  |DBrgt-|  NA   |
+ * |   NA  | Brgth- |    Sat-  |   Hue-  |RGBCycl←|Speed+|                              | Sleep| Pause|  NA  |Speed-|DBrgt-|  NA   |
  * |-------+--------+----------+---------+--------+------+-------------.  ,-------------+------+------+------+------+------+-------|
- * |   NA  |   NA   |RGBPwrTggl|RGBoffSft|RGBonSft|  NA  |  NA  |GAME →|  |      | BASE |W Lock|  NA  |  NA  |  NA  |  NA  |  NA   |
+ * |   NA  |   NA   |RGBPwrTggl|RGBoffSft|RGBonSft|Speed-|  NA  |GAME →|  |      | BASE |PwrOff| Break|  NA  |  NA  |  NA  |  NA   |
  * `---------------------------+---------+--------+------+------+------|  |------+------+------+------+------+---------------------'
  *                             |         |        |      |      |      |  |      |      |      |      |      |
  *                             `---------------------------------------'  `----------------------------------' */
-&none  &rgb_ug RGB_BRI &rgb_ug RGB_SAI                 &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_SPI                  /**/                  &kp C_PWR   &kp F_BRK       &none  &none  &kp C_BRI_UP &none 
-&none  &rgb_ug RGB_BRD &rgb_ug RGB_SAD                 &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPD                  /**/                  &kp C_SLEEP &kp PAUSE_BREAK &none  &none  &kp C_BRI_DN &none 
-&none &none            &ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_OFF &rgb_ug RGB_ON  &none           &none  &to GAME1 /**/ &trans  &to BASE &kp SC_Lock &none           &none  &none  &none        &none  
+&none  &rgb_ug RGB_BRI &rgb_ug RGB_SAI                 &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none                            /**/                  &none       &none           &none  &none  &kp C_BRI_UP &none 
+&none  &rgb_ug RGB_BRD &rgb_ug RGB_SAD                 &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPI                  /**/                  &kp C_SLEEP &kp PAUSE_BREAK &none  &none  &kp C_BRI_DN &none 
+&none &none            &ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_SPD &none  &to GAME1 /**/ &trans  &to BASE &kp C_PWR   &kp F_BRK       &none  &none  &none        &none  
                                                        &trans          &trans          &trans          &trans &trans    /**/ &trans  &trans   &trans      &trans          &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
