@@ -91,7 +91,7 @@
         combo_bt { timeout-ms = <50>; key-positions = <33 46>; bindings = <&mo BT>; };                   // BT layer, hold
         combo_x { timeout-ms = <40>; key-positions = <13 14>; bindings = <&kp X>; };                     // z
         combo_z { timeout-ms = <40>; key-positions = <14 15>; bindings = <&kp Z>; };                     // x
-        combo_j { timeout-ms = <40>; key-positions = <16 17>; bindings = <&kp J>; };                     // j		
+        combo_j { timeout-ms = <40>; key-positions = <15 16>; bindings = <&kp J>; };                     // j		
         combo_b { timeout-ms = <40>; key-positions = <19 21>; bindings = <&kp B>; };                     // b
     };
 };
@@ -161,10 +161,10 @@
  * `----------------------+------+------+------+------+------|   |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |   | BASE |      |      |      |      |
  *                        `----------------------------------'   `----------------------------------' */
-&none &none          &kp N7      &kp N8       &kp N9       &none                    /**/                   &kp TskView &kp NxtDstp &kp PrvDstp  &kp NewDstp &kp ClsDstp &none
-&none &mt LGUI KP_N0 &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp COMMA                /**/                   &kp PG_UP   &kp LEFT    &mt RCTRL UP &kp RIGHT   &kp RSHFT   &none
-&none &none          &kp N1      &kp N2       &kp N3       &kp KP_DOT &trans &trans /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &none       &none
-                            &kp KP_NLCK     &trans    &trans     &trans &trans /**/ &to BASE &trans   &trans      &trans      &trans
+&none &none       &kp N7      &kp N8       &kp N9       &none                   /**/                   &kp TskView &kp NxtDstp &kp PrvDstp  &kp NewDstp &kp ClsDstp &none
+&none &mt LGUI N0 &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp COMMA               /**/                   &kp PG_UP   &kp LEFT    &mt RCTRL UP &kp RIGHT   &kp RSHFT   &none
+&none &none       &kp N1      &kp N2       &kp N3       &kp DOT   &trans &trans /**/ &to BASE &to BASE &kp PG_DN   &kp HOME    &kp DOWN     &kp END     &none       &none
+                              &kp KP_NLCK     &trans    &trans    &trans &trans /**/ &to BASE &trans   &trans      &trans      &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
