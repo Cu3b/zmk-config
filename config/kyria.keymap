@@ -53,7 +53,7 @@
  *                      |  40  |  41  |  42  |  43  |  44  |  |  45  |  46  |  47  |  48  |  49  |
  *                      |      |      |      |      |      |  |      |      |      |      |      |
  *                      `----------------------------------'  `----------------------------------' */
-/ { combos { compatible = "zmk,combos"; 
+/ { combos { compatible = "zmk,combos";
 	combo_circ { timeout-ms = <40>; key-positions = <2 13>; bindings = <&kp F_CIRC>; };                  // ^
         combo_tild { timeout-ms = <40>; key-positions = <13 26>; bindings = <&kp F_TILD>; };             // ~
         combo_mins { timeout-ms = <40>; key-positions = <2 3>; bindings = <&kp F_MINS>; };               // -
