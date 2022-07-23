@@ -9,7 +9,7 @@
 #define BASE  0
 #define NUM   1
 #define ARR   2
-#define PAD1  3
+#define NPAD  3
 #define SHC   4
 #define FKEYS 5
 #define RGB   6
