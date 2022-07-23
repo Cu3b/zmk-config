@@ -98,7 +98,7 @@
         
         default_layer { bindings = <
 /* ,------------------------------------------.                                     ,-----------------------------------------------.
- * |   NA  |   Q  |   W  |   F  |   P  |   B  |                                     |   J   |   L  |   U  |   Y   |   Ö    |   NA   |
+ * |   NA  |   Q  |   W  |   F  |   P  |  NA  |                                     |   NA  |   L  |   U  |   Y   |   Ö    |   NA   |
  * |-------+------+------+------+------+------|                                     |-------+------+------+-------+--------+--------|
  * |   NA  | MED/A| Alt/R|LCtl/S|Shft/T|   G  |                                     |   M   |RSft/N|RCtl/E|RAlt/I |   O    |   NA   |
  * |-------+------+------+------+------+------+------------------.  ,---------------+-------+------+------+-------+--------+--------|
@@ -108,7 +108,7 @@
                          | LShft|  NA  | SHC/ |  ARR/ | NumPad/  |  |  Tab   |OSShft| OS NUM|  NA  |Ctrl+D|
                          |      |      |BSpace| Space |  Enter   |  |        |      | Delete|      |      |
                          `---------------------------------------'  `-------------------------------------' */
-&none &kp Q       &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J       &kp L       &kp U       &kp Y      &kp F_ODIA &none
+&none &kp Q       &kp W      &kp F       &kp P       &none                                   /**/                   &none       &kp L       &kp U       &kp Y      &kp F_ODIA &none
 &none &lt MEDIA A &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M       &mt RSHFT N &mt RCTRL E &mt RALT I &kp O      &none
 &none &kp X       &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &sl FKEYS    /**/ &sl RGB &to BASE  &kp K       &kp H       &kp F_ADIA  &kp F_DOT  &kp Z      &none
                              &kp LSHFT   &none       &lt SHC BSPC &lt ARR SPACE &lt PAD1 RET /**/ &kp TAB &sk LSHFT &lt NUM DEL &none       &kp LC(D)
@@ -117,35 +117,35 @@
 		
         NUM_layer { bindings = <
 /* ,-------------------------------------------.                                 ,-------------------------------------------.
- * |    NA  |   ½  |  @   |   #  |   &  |  NA  |                                 |   ¤  |   £  |   $  |   §  |  NA  |   NA   |
+ * |    NA  |   ½  |  @   |   #  |   &  |  NA  |                                 |  NA  |   £  |   $  |   §  |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+------+------+------+------+--------|
  * |    NA  |   1  | Alt/2|LCtl/3|LSft/4|   `  |                                 |   ´  |RSft/7|RCtl/8|RAlt/9|   0  |   NA   |  
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+------+------+------+------+--------|
- * |    NA  |  NA  |   ,  |   %  |   5  |   |  |       |       |   |      | BASE |  NA  |   6  |   €  |   .  |  NA  |   NA   |
+ * |    NA  |  NA  |   ,  |   %  |   5  |   |  |       |       |   |      | BASE |   ¤  |   6  |   €  |   .  |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+------+------+----------------------'
  *                        |      |      |      |       |       |   |      |      |      |      |      |
  *                        `------------------------------------'   `----------------------------------' */
-&none &kp F_HALF &kp F_AT    &kp F_HASH   &kp F_AMPR   &none                    /**/                  &kp F_CURR &kp F_PND    &kp F_DLR   &kp F_SECT   &none  &none 
+&none &kp F_HALF &kp F_AT    &kp F_HASH   &kp F_AMPR   &none                    /**/                  &none      &kp F_PND    &kp F_DLR   &kp F_SECT   &none  &none 
 &none &kp N1     &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &kp F_GRV                /**/                  &kp F_ACUT &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &kp N0 &none
-&none &none      &kp F_COMM  &kp F_PERC   &kp N5       &kp F_PIPE &trans &trans /**/ &trans  &to BASE &none      &kp N6       &kp F_EURO   &kp F_DOT   &none  &none 
+&none &none      &kp F_COMM  &kp F_PERC   &kp N5       &kp F_PIPE &trans &trans /**/ &trans  &to BASE &kp F_CURR &kp N6       &kp F_EURO   &kp F_DOT   &none  &none 
                              &trans       &trans       &trans     &trans &trans /**/ &trans  &trans   &trans     &trans       &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
         ARR_layer { bindings = <
 /* ,-------------------------------------------.                                 ,--------------------------------------------------.
- * |   NA   |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V| Redo |                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
+ * |   NA   |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V|  NA  |                                 |  NA  |   NA  |    NA   |    NA   |  NA  |   NA   |
  * |--------+------+------+------+------+------|                                 |------+-------+---------+---------+------+--------|
- * |   NA   |LShift|   ←  |Ctrl/↑|   →  | PgUp |                                 |  NA  |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
+ * |   NA   |LShift|   ←  |Ctrl/↑|   →  | Redo |                                 | PgUp |Sft/Ins|RCtl/CLck|RAlt/NLck|ScrLck|   NA   |   
  * |--------+------+------+------+------+------+---------------.   ,-------------+------+-------+---------+---------+------+--------|
- * |   NA   |  NA  | Home |   ↓  |  End | PgDn |       |       |   |      | BASE |  NA  |ShwDstp|    NA   |    NA   |  NA  |   NA   |
+ * |   NA   |  NA  | Home |   ↓  |  End | Snip |       |       |   |      | BASE | PgDn |ShwDstp|    NA   |    NA   |  NA  |   NA   |
  * `----------------------+------+------+------+-------+-------|   |------+------+------+-------+---------+-------------------------'
  *                        |      |      |      |       |       |   |      |      |      |       |         |
  *                        `------------------------------------'   `--------------------------------------' */
-&none &kp SC_Undo &kp SC_Cut &kp SC_Copy  &kp SC_Pste &kp SC_Redo               /**/                 &none  &none         &none          &none            &none    &none 
-&none &kp LSHFT   &kp LEFT   &mt LCTRL UP &kp RIGHT   &kp PG_UP                 /**/                 &none  &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK &none 
-&none &none       &kp HOME   &kp DOWN     &kp END     &kp PG_DN   &trans &trans /**/ &trans &to BASE &none  &kp ShwDstp   &none          &none            &none    &none 
-                             &trans       &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans        &trans
+&none &kp SC_Undo &kp SC_Cut &kp SC_Copy  &kp SC_Pste &none                     /**/                 &none     &none         &none          &none            &none    &none 
+&none &kp LSHFT   &kp LEFT   &mt LCTRL UP &kp RIGHT   &kp SC_Redo               /**/                 &kp PG_UP &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &kp SLCK &none 
+&none &none       &kp HOME   &kp DOWN     &kp END     &kp PG_DN   &trans &trans /**/ &trans &to BASE &kp PG_DN &kp ShwDstp   &none          &none            &none    &none 
+                             &trans       &trans      &kp SC_Snip      &trans &trans /**/ &trans &trans   &trans    &trans        &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 		
@@ -168,18 +168,18 @@
 
         SHC_layer { bindings = <
 /* ,-------------------------------------------.                              ,-----------------------------------------.
- * |   NA   |ClsDst|NewDst|PrvDst|NxtDst|PrtScr|                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |   NA   |ClsDst|NewDst|PrvDst|NxtDst|  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |   NA   |ClsTab|RstTab|PrvTab|NxtTab|TaskVw|                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------| 
- * |   NA   |  NA  |Ctrl+F|Ctrl+S|LGUI+V| Snip |      |      |  |      | BASE |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |   NA   |  NA  |Ctrl+F|Ctrl+S|LGUI+V|PrtScr|      |      |  |      | BASE |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------' */
-&none &kp ClsDstp &kp NewDstp &kp PrvDstp &kp NxtDstp &kp PSCRN                 /**/                 &none  &none  &none  &none  &none  &none  
-&none &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp TskView              /**/                 &none  &none  &none  &none  &none  &none  
-&none &none       &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Snip &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
-                                       &trans      &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans &trans
+&none &kp ClsDstp &kp NewDstp &kp PrvDstp &kp NxtDstp &none                     /**/                 &none  &none  &none  &none  &none  &none  
+&none &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp TskView               /**/                 &none  &none  &none  &none  &none  &none  
+&none &none       &kp SC_Find &kp SC_Save &kp SC_Psth &kp PSCRN   &trans &trans /**/ &trans &to BASE &none  &none  &none  &none  &none  &none  
+                              &trans      &trans      &trans      &trans &trans /**/ &trans &trans   &trans &trans &trans
             >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
         };
 
