@@ -67,7 +67,7 @@
         combo_calc{ timeout-ms = <40>; key-positions = <28 29>; bindings = <&kp C_AL_CALC>; };           // Open calculator
         combo_tab { timeout-ms = <40>; key-positions = <13 15>; bindings = <&kp TAB>; };                 // Tab
         combo_esc { timeout-ms = <40>; key-positions = <14 16>; bindings = <&kp ESC>; };                 // Esc
-        combo_ent { timeout-ms = <40>; key-positions = <27 28>; bindings = <&kp ENT>; };                 // Enter
+        combo_ent { timeout-ms = <40>; key-positions = <27 28>; bindings = <&kp RET>; };                 // Enter
         combo_LPRN { timeout-ms = <40>; key-positions = <15 28>; bindings = <&kp F_LPRN>; };             // (
         combo_LBKT { timeout-ms = <40>; key-positions = <16 27>; bindings = <&kp F_LBKT>; };             // [
         combo_LBRC { timeout-ms = <40>; key-positions = <14 27>; bindings = <&kp F_LBRC>; };             // {
