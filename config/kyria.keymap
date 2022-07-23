@@ -94,7 +94,7 @@
 //
         combo_mycomp { timeout-ms= <40>; key-positions = <16 17>; bindings = <&kp C_AL_MY_COMPUTER >; }; // Open "This PC"
         combo_calc{ timeout-ms = <40>; key-positions = <28 29>; bindings = <&kp C_AL_CALC>; };           // Open calculator
-        combo_sleep { timeout-ms = <150>; key-positions = <1 2 3 4>; bindings = <&kp C_SLEEP>; };        // sleep
+        combo_sleep { timeout-ms = <150>; key-positions = <1 2 3 4>; bindings = <&win_sleep>; };         // sleep
         combo_winlck { timeout-ms = <150>; key-positions = <13 14 15 16>; bindings = <&kp SC_Lock>; };   // LGUI+L, lock windows
         combo_pwr { timeout-ms = <150>; key-positions = <13 26 27 28>; bindings = <&kp C_PWR>; };        // power off
         combo_game { timeout-ms = <150>; key-positions = <7 8 9 10>; bindings = <&to GAME1>; };          // Game layer
@@ -105,6 +105,19 @@
 
     };
 };
+
+   macros {
+        // Windows sleep key, refer to with &win_sleep
+        win_sleep: win_sleep {
+            wait-ms = <50>;
+            tap-ms = <5>;
+            compatible = "zmk,behavior-macro";
+            label = "WIN_SLEEP_KEY";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X) &kp U &kp S>;
+        };
+    };
+
 / {
     keymap { compatible = "zmk,keymap";
         
