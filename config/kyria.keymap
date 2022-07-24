@@ -115,8 +115,8 @@
         combo_numpad { timeout-ms = <50>; key-positions = <31 44>; bindings = <&tog NPAD>; };            // Toggle numpad
         combo_bt { timeout-ms = <50>; key-positions = <33 46>; bindings = <&mo BT>; };                   // BT layer, hold
 // These not on the map above:
-        combo_sleep { timeout-ms = <150>; key-positions = <1 2 3 4>; bindings = <&win_sleep>; };         // windows sleep
-        combo_rst { timeout-ms = <150>; key-positions = <1 2 3 4 43>; bindings = <&win_rst>; };         // windows restart
+        combo_sleep { timeout-ms = <150>; key-positions = <1 2 3 4> bindings = <&win_sleep>; };         // windows sleep
+        combo_rst { timeout-ms = <150>; key-positions = <13 2 3 4>; bindings = <&win_rst>; };         // windows restart
         combo_power { timeout-ms = <150>; key-positions = <13 26 27 28>; bindings = <&win_pwr>; };       // windows power off
         combo_winlck { timeout-ms = <150>; key-positions = <13 14 15 16>; bindings = <&kp SC_Lock>; };   // LGUI+L, lock windows
         combo_game { timeout-ms = <150>; key-positions = <7 8 9 10>; bindings = <&to GAME1>; };          // Game layer
