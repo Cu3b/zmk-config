@@ -15,6 +15,7 @@
 
 &lt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
 &mt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
+&ht { flavor = "tap-unless-interrupted"; tapping-term-ms = <HR_TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
 &sk { release-after-ms = <TAPPING_TERM>; quick-release; /delete-property/ ignore-modifiers; };
 &caps_word { continue-list = <F_UNDS F_MINS BSPC RSHFT LSHFT F_ADIA F_ODIA F_ARNG>; };
 
@@ -105,20 +106,7 @@
         combo_power { timeout-ms = <COMBO_TERM_L>; key-positions = <26 27 28 29>; bindings = <&win_pwr>; };
         combo_base { timeout-ms = <COMBO_TERM_L>; key-positions = <10 11 12 13>; bindings = <&to BASE>; };         // base layer
 //
-        combo_NPAD { timeout-ms = <COMBO_TERM_M>; key-positions = <35 36 37 38>; bindings = <&tog ARR>; };         // toggle arrow and numpad layer
-    };
-
-	behaviors {
-        ht: hold_tap {
-            label = "hold_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <HR_TAPPING_TERM>;
-            quick-tap-ms = <QUICK_TAP>;
-            global-quick-tap;
-            bindings = <&kp>, <&kp>;
-        };
+        combo_NPAD { timeout-ms = <COMBO_TERM_M>; key-positions = <11 12 13>; bindings = <&tog ARR>; };         // toggle arrow and numpad layer
     };
 
     keymap {
@@ -133,7 +121,7 @@
             HRML(A,        R,         S,         T)     &kp G           &kp M      HRMR(N,        E,         I,        O)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z/LGui  │  ,;      │  C       │  D       │  V       │    │  K       │  H       │  Ä       │ .:       │  X       │
-           &ht LGUI Z  &kp COMMA  &kp C      &kp D      &kp V          &kp K      &kp H     &kp F_ADIA  &kp DOT    &kp X 
+           &mt LGUI Z  &kp COMMA  &kp C      &kp D      &kp V          &kp K      &kp H     &kp F_ADIA  &kp DOT    &kp X 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                            &lt SYM RET &lt SHC SPACE  &lt ARR BSPC &lt NUM DEL
         //                                 ╰──────────┴──────────╯    ╰──────────┴──────────╯
@@ -150,7 +138,7 @@
            &kp F_PIPE     &kp F_AMPR   &kp F_HASH &kp F_AT     &trans         &trans    &kp F_QUES &kp F_EXLM &kp F_DIAE &kp F_TILD
         //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ^           │            │  ¤       |  `        │           │   │          │  ´       │  §       │  ½       │          │
-          &ht LGUI F_CIRC  &trans      &kp F_CURR &kp F_GRV    &trans         &trans    &kp F_ACUT &kp F_SECT &kp F_HALF  &trans
+          &mt LGUI F_CIRC  &trans      &kp F_CURR &kp F_GRV    &trans         &trans    &kp F_ACUT &kp F_SECT &kp F_HALF  &trans
         //╰──────────────┴────────────┴──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &trans       &trans          &trans     &trans
         //                                       ╰───────────┴───────────╯   ╰──────────┴──────────╯
@@ -164,7 +152,7 @@
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6    &kp F7      &kp F8     &kp F9    &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  1       │  2       │  3       │  4       │  F11     │   │  F12     │  7       │  8       │  9       │  0       │
-            HRNL(1,     2,         3,         4)        &kp F11       &kp F12     HRMR(7,     8,         9,         0)
+             &kp 1      &kp 2      &kp 3      &kp 4       &kp F11       &kp F12     &kp 7     &kp 8      &kp 9      &kp 0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ^       │          │  %       │  5       │          │   │  $       │  6       │  €       │          │          │
            &kp F_CIRC  &trans    &kp F_PERC  &trans     &trans         &kp F_DLR  &kp 6     &kp F_EURO   &trans    &trans
@@ -181,7 +169,7 @@
             &trans     &kp 7      &kp 8      &kp 9      &trans         &trans     &trans      &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0       │  4       │  5       │  6       │  ,       │   │  PgUp    │  ←       │  ↑/LCtrl │   →      │  RShft   │
-            HRNL(0,     4,         5,         6)        &kp COMMA      &kp PG_UP &kp LEFT  &ht LCTRL UP &kp RIGHT &kp RSHFT
+            HRNL(0,     4,         5,         6)        &kp COMMA      &kp PG_UP &kp LEFT  &mt LCTRL UP &kp RIGHT &kp RSHFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  .       │  1       │  2       │  3       │          │   │  PgDn    │  Home    │  ↓       │  End     │ LGUI     │
            &kp DOT     &kp 1     &kp 2       &kp 3      &trans         &kp PG_DN  &kp HOME  &kp DOWN    &kp END    &kp LGUI

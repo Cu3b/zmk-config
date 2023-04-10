@@ -14,7 +14,7 @@
 #define MEDIA 5
 
 // Hold tap key timers
-#define QUICK_TAP    300
+#define QUICK_TAP    250
 #define TAPPING_TERM 160
 #define HR_TAPPING_TERM 140
 #define COMBO_TERM_S 30
