@@ -18,7 +18,7 @@
 #define TAPPING_TERM 160
 #define HR_TAPPING_TERM 140
 #define COMBO_TERM_S 30
-#define COMBO_TERM_M 45
+#define COMBO_TERM_M 50
 #define COMBO_TERM_L 65
 
 // Aliases for FI and SWE characters for corresponding KC-codes, windows environment.
