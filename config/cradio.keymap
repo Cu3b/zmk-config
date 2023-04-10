@@ -211,8 +211,8 @@
         media_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │   BT 1   │   BT 2   │  BT 3    │  BT 4    │   │  BT 5    │ BT Prv   │ BT Nxt   │ BT Reset │          │
-            &trans   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_PRV &bt BT_NXT &bt BT_CLR  &trans
+        //│          │   BT 0   │   BT 1   │   BT 2   │  BT 3    │   │  BT 4    │ BT Prv   │ BT Nxt   │ BT Reset │          │
+            &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_PRV &bt BT_NXT &bt BT_CLR  &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │ M Play   │ Mute Mic │ Vol +    │ M Prev   │   │          │          │          │          │          │
             &trans    &kp C_PP  &kp SC_MicM &kp C_VOL_UP &kp C_PREV    &trans      &trans     &trans     &trans     &trans
