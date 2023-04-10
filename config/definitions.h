@@ -100,3 +100,4 @@
 #define SC_Find (LC(F))                  // Find
 #define SC_Redo (LC(LS(Z)))              // Redo
 #define SC_Save (LC(S))                  // Save
+#define SC_MicM (LC(LS(M)))              // Mute microphone in MS Teams

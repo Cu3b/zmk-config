@@ -69,8 +69,6 @@
  *                             |  41  |  42  |  |  45  |  46  |
  *                             |      |      |  |      |      |
  *                             '-------------'  '-------------' */
- 
-
 / { combos { compatible = "zmk,combos";
         combo_MINS { timeout-ms = <40>; key-positions = <1 2>; bindings = <&kp F_MINS>; };               // -
         combo_PLUS { timeout-ms = <40>; key-positions = <2 3>; bindings = <&kp F_PLUS>; };               // + 
@@ -160,7 +158,7 @@
             >;
         };
 
-        num_layer {
+        numbers_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  F1      │  F2      │  F3      │  F4      │  F5      │   │  F6      │  F7      │  F8      │  F9      │  F10     │
@@ -177,19 +175,52 @@
             >;
         };
 
-        tri_layer {
+        arrows_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+        //│          │  7       │  8       │  9       │          │   │          │          │          │          │          │
+            &trans     &kp 7      &kp 8      &kp 9      &trans         &trans     &trans      &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │  ←       │  ↑       │  →       │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+        //│  0       │  4       │  5       │  6       │  ,       │   │  PgUp    │  ←       │  ↑/LCtrl │   →      │  RShft   │
+            HRNL(0,     4,         5,         6)        &kp COMMA      &kp PG_UP &kp LEFT  &ht LCTRL UP &kp RIGHT &kp RSHFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │  ↓       │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+        //│  .       │  1       │  2       │  3       │          │   │  PgDn    │  Home    │  ↓       │  End     │ LGUI     │
+           &kp DOT     &kp 1     &kp 2       &kp 3      &trans         &kp PG_DN  &kp HOME  &kp DOWN    &kp END    &kp LGUI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+		
+        shortcuts_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ ClsTab   │  RstTab  │  PrvTab  │  NxtTab  │          │   │          │          │          │          │          │
+            &kp F1     &kp F2     &kp F3     &kp F4     &trans         &trans      &trans     &trans     &trans    &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Ctrl+Z  │  Ctrl+X  │  Ctrl+C  │  Ctrl+V  │  Redo    │   │          │          │          │          │          │
+         &kp SC_Undo &kp SC_Cut &kp SC_Copy &kp SC_Pste &kp SC_Redo    &trans     &trans     &trans     &trans     &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Ctrl+A  │ Ctrl+F   │  Ctrl+S  │  LGui+V  │          │   │          │          │          │          │          │
+          &kp SelA   &kp SC_Find &kp SC_Save &kp SC_Psth  &trans       &trans      &trans    &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans         &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+        media_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │   BT 1   │   BT 2   │  BT 3    │  BT 4    │   │  BT 5    │ BT Prv   │ BT Nxt   │ BT Reset │          │
+            &trans   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_PRV &bt BT_NXT &bt BT_CLR  &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │ M Play   │ Mute Mic │ Vol +    │ M Prev   │   │          │          │          │          │          │
+            &trans    &kp C_PP  &kp SC_MicM &kp C_VOL_UP &kp C_PREV    &trans      &trans     &trans     &trans     &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │ M Stop   │ Mute     │ Vol -    │ M Next   │   │          │          │          │          │          │
+            &trans   &kp C_STOP &kp C_MUTE &kp C_VOL_DN &kp C_NEXT      &trans     &trans     &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &kp DEL    &kp BSPC       &kp DEL    &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
