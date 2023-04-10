@@ -121,14 +121,6 @@
             bindings = <&kp>, <&kp>;
         };
     };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        numbers_layer {
-            if-layers = <ARR SHC>;
-            then-layer = <NUM>;
-        };
-    };
 	
     keymap {
         compatible = "zmk,keymap";
@@ -195,7 +187,7 @@
         //│  .       │  1       │  2       │  3       │          │   │  PgDn    │  Home    │  ↓       │  End     │ LGUI     │
            &kp DOT     &kp N1    &kp N2     &kp N3      &trans         &kp PG_DN  &kp HOME  &kp DOWN    &kp END    &kp LGUI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &mo NUM         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -212,7 +204,7 @@
         //│  Ctrl+A  │ Ctrl+F   │  Ctrl+S  │  LGui+V  │          │   │          │          │          │          │          │
           &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth  &trans       &trans      &trans    &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans         &trans     &mo NUM
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
