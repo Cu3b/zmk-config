@@ -136,7 +136,7 @@
         //│  Z/LGui  │  ,;      │  C       │  D       │  V       │    │  K       │  H       │  Ä       │ .:       │  X       │
            &mt LGUI Z  &kp COMMA  &kp C      &kp D      &kp V          &kp K      &kp H     &kp F_ADIA  &kp DOT    &kp X 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt SYM RET &lt SHC SPACE  &sk LSHFT  &lt ARR BSPC
+                                           &lt SYM RET &lt SHC SPACE &lt NUM BSPC &lt ARR DEL
         //                                 ╰──────────┴──────────╯    ╰──────────┴──────────╯
             >;
         };
@@ -204,7 +204,7 @@
         //│  Ctrl+A  │ Ctrl+F   │  Ctrl+S  │  LGui+V  │          │   │          │          │          │          │          │
           &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth  &trans       &trans      &trans    &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &mo NUM
+                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
