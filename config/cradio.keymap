@@ -12,10 +12,6 @@
 #define HRML(k1,k2,k3,k4) &lt MEDIA k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht RALT k3  &ht LGUI k4
 #define HRNL(k1,k2,k3,k4) &ht LGUI k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
- 
-&lt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
-&mt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
-&caps_word { continue-list = <F_UNDS F_MINS BSPC RSHFT LSHFT F_ADIA F_ODIA F_ARNG>; };
 
 /* Combos
  * .----------------------------------.                .----------------------------------.  .----------------------------------. .----------------------------------.
@@ -91,7 +87,13 @@
 //
         combo_NPAD { timeout-ms = <55>; key-positions = <35 36 37 38>; bindings = <&tog ARR>; };         // toggle arrow and numpad layer
     };
-	
+};
+
+&lt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
+&mt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
+&caps_word { continue-list = <F_UNDS F_MINS BSPC RSHFT LSHFT F_ADIA F_ODIA F_ARNG>; };
+
+/ {
 	behaviors {
         ht: hold_tap {
             label = "hold_tap";
