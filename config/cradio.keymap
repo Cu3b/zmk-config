@@ -6,6 +6,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include "definitions.h"
+
 #include "macroscombos.h"
 
 // Caps word interrupt exceptions
@@ -36,31 +37,38 @@
 
         symbol_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ClsDstp  │ NewDstp  │ PrvDstp  │ NxtDstp  │ TskView  │   │          │ Ins      │ CapsL    │ NumL     │ ScrLck   │
-            &kp INS    &kp N1     &kp N2     &kp N3     &trans         &trans    &kp INS     &kp CAPS  &kp KP_NLCK &kp SLCK
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  |       │  &       │  #       │  @       │          │   │          │  ?       │  !       │  ¨       │  ~       │
-           &kp F_PIPE &kp F_AMPR &kp F_HASH &kp F_AT     &trans        &trans    &kp F_QUES &kp F_EXLM &kp F_DIAE &kp F_TILD
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │  ¤       |  `       │          │   │          │  ´       │  §       │  ½       │          │
-            &trans     &trans    &kp F_CURR &kp F_GRV     &trans       &trans    &kp F_ACUT &kp F_SECT &kp F_HALF &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+        //╭──────────────┬────────────┬──────────┬───────────┬───────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ ClsDstp      │ NewDstp    │ PrvDstp  │ NxtDstp   │ TskView   │   │          │ Ins      │ CapsL    │ NumL     │ ScrLck   │
+           &kp ClsDstp    &kp NewDstp &kp PrvDstp &kp NxtDstp &kp TskView     &trans     &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
+        //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  |           │  &         │  #       │  @        │           │   │          │  ?       │  !       │  ¨       │  ~       │
+           &kp F_PIPE     &kp F_AMPR   &kp F_HASH &kp F_AT     &trans         &trans    &kp F_QUES &kp F_EXLM &kp F_DIAE &kp F_TILD
+        //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  ^           │            │  ¤       |  `        │           │   │          │  ´       │  §       │  ½       │          │
+          &ht LGUI F_CIRC  &trans      &kp F_CURR &kp F_GRV    &trans         &trans    &kp F_ACUT &kp F_SECT &kp F_HALF  &trans
+        //╰──────────────┴────────────┴──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                               &trans       &trans          &trans     &trans
+        //                                    ╰───────────┴───────────╯   ╰──────────┴──────────╯
             >;
         };
 
-        left_layer {
+
+#define SC_Clse (LA(F4))                 // Close window
+#define PrevTab  (LC(PG_UP))             // Previous tab (win), ctrl + pgup
+#define NextTab  (LC(PG_DN))             // Next tab (win), ctrl + pgdn
+#define RestTab  (LC(LS(T)))             // Restore tab (Browser), ctrl + shift + T  toimiiko???
+#define ClseTab  (LC(W))                 // Close tab (Ctrl + W)
+
+        num_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
+        //│  F1      │  F2      │  F3      │  F4      │  F5      │   │  F6      │  F7      │  F8      │  F9      │  F10     │
+            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6    &kp F7      &kp F8     &kp F9    &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
+        //│  1       │  2       │  3       │  4       │  F11     │   │  F12     │  -       │  =       │  \       │  `       │
+            &lt  EXCL   &kp AT     &kp HASH   &kp DLLR   &kp F11         &kp F12  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
+        //│          │          │  %       │  5       │          │   │  &       │  _       │  +       │  │       │          │
             &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans

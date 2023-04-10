@@ -1,0 +1,367 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+#include "definitions.h"
+
+&lt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
+&mt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
+&sk { release-after-ms = <TAPPING_TERM>; quick-release; /delete-property/ ignore-modifiers; };
+
+&caps_word { continue-list = <F_UNDS F_MINS BSPC RSHFT LSHFT F_UNDS F_ADIA F_ODIA F_ARNG>; };
+
+&left_encoder { resolution = <2>; };
+&right_encoder { resolution = <2>; };
+
+/ { macros {
+        // Windows sleep, power off and restart keys, refer to with &win_sleep, &win_pwr and &win_rst
+        win_sleep: win_sleep { wait-ms = <50>; tap-ms = <5>; compatible = "zmk,behavior-macro"; label = "WIN_SLEEP_KEY";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X) &kp U &kp S>;
+        };
+        win_pwr: win_pwr { wait-ms = <50>; tap-ms = <5>; compatible = "zmk,behavior-macro"; label = "WIN_POWER_KEY"; 
+		    #binding-cells = <0>; 
+			bindings = <&kp LG(X) &kp U &kp U>;
+        };
+        win_rst: win_rst { wait-ms = <50>; tap-ms = <5>; compatible = "zmk,behavior-macro"; label = "WIN_RST_KEY"; 
+		    #binding-cells = <0>; 
+			bindings = <&kp LG(X) &kp U &kp R>;
+        };
+    };
+};
+
+/* Combos
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * |   0  |   1  |   2  |  3   |   4  |   5  |                              |   6  |   7  |   8  |   9  |  10  |  11  | 
+ * |      |      |   ↓  -  ↓   +  ↓AltF4 ↓   |                              |      |      |   ↓---'--↓---Å---↓ |      |
+ * |      |      |     /   /  /   /   |      |                              |      |      |   \   \   \Cps\    |      |
+ * |------+------+----/ / /--/ * /----|------|                              |------+------+----\ \ \---\Wrd\---+------|
+ * |  12  |  13  |   /   /15/   / 16  |  17  |                              |  18  |  19  |  20 \   \   \   \  |  23  |
+ * |      |      |  14  |      |  ↓MyComp↓   |                              |      |      |      |      |      |      |
+ * |      |      |  \   \  \   \      |      |                              |      |     /   /  /   /21 |  22  |      |
+ * |------+------+---\ < \--\ [ \ ----+------+-------------.  ,-------------+------+----/ ] /--/ > /----+------+------|
+ * |  24  |      |    \   \  \   \    |  29  |  30  |  31  |  |  32  |  33  |  34  |   /   /  /   /     |      |  39  |
+ * |      |      |  ↓--;--↓--TAB--↓--Calc-↓  |      |      |  |      |      |      |      |   ↓--:--↓   |      |      |
+ * |      |  25  |  26  |  27  |  28  |      |      |     ←|  |     ←|    ← |      |  35  |  36  |  37  |  38  |      |
+ * `--------------------+------+------+------+------+  ESC |  |WinLck|  BT  +------+------+------+--------------------'
+ *                      |  40  |  41  |  42  |  43  |     ←|  |     ←|    ← |  47  |  48  |  49  |
+ *                      |      |      |      |      |  44  |  |  45  |  46  |      |      |      |
+ *                      `----------------------------------'  `----------------------------------' 
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * |   0  |   1  |   2  |  3   |   4  |   5  |                              |   6  |   7  |   8  |   9  |  10  |  11  | 
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |      |      |   \   \   \   \    |      |                              |      |      |      |      |      |      |
+ * |------+------+----\ _ \---\ = \---+------|                              |------+------+------+------+------+------|
+ * |  12  |      |     \   \   \   \  |  17  |                              |  18  |  19  |  20  |  21  |  22  |  23  |
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |      |  13  | 14 /   /15/   /16  |      |                              |      |   \   \  \   \     |      |      |
+ * |------+------+---/ { /--/ ( /-----+------+-------------.  ,-------------+------+----\ ) \--\ } \----+------+------|
+ * |  24  |  25  |  /   /  /   /      |  29  |  30  |  31  |  |  32  |  33  |  34  |     \   \  \   \   |  38  |  39  |
+ * |      |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |      |
+ * |      |      |  26  |  27  |  28  |      |      |      |  |      |      |      |  35  |  36  |  37  |      |      |
+ * `--------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
+ *                      |  40  |  41  |  42  |  43  |  44  |  |  45  |  46  |  47  |  48  |  49  |
+ *                      |      |      |      |      |      |  |      |      |      |      |      |
+ *                      `----------------------------------'  `----------------------------------' */
+/ { combos { compatible = "zmk,combos";
+        combo_MINS { timeout-ms = <40>; key-positions = <2 3>; bindings = <&kp F_MINS>; };               // -
+        combo_PLUS { timeout-ms = <40>; key-positions = <3 4>; bindings = <&kp F_PLUS>; };               // + 
+        combo_ASTR { timeout-ms = <40>; key-positions = <4 15>; bindings = <&kp F_ASTR>; };              // *
+        combo_FSLH { timeout-ms = <40>; key-positions = <3 14>; bindings = <&kp F_FSLH>; };              // / 
+        combo_UNDS { timeout-ms = <40>; key-positions = <2 15>; bindings = <&kp F_UNDS>; };              // _
+        combo_EQL { timeout-ms = <40>; key-positions = <3 16>; bindings = <&kp F_EQL>; };                // =
+        combo_BSLH { timeout-ms = <40>; key-positions = <8 21>; bindings = <&kp F_BSLH>; };              // Backslash	
+        combo_LPRN { timeout-ms = <40>; key-positions = <16 27>; bindings = <&kp F_LPRN>; };             // (
+        combo_LBKT { timeout-ms = <40>; key-positions = <15 28>; bindings = <&kp F_LBKT>; };             // [
+        combo_LBRC { timeout-ms = <40>; key-positions = <15 26>; bindings = <&kp F_LBRC>; };             // {
+        combo_LABK { timeout-ms = <40>; key-positions = <14 27>; bindings = <&kp F_LABK>; };             // <
+        combo_RPRN { timeout-ms = <40>; key-positions = <19 36>; bindings = <&kp F_RPRN>; };             // )
+        combo_RBKT { timeout-ms = <40>; key-positions = <20 35>; bindings = <&kp F_RBKT>; };             // ]
+        combo_RBRC { timeout-ms = <40>; key-positions = <20 37>; bindings = <&kp F_RBRC>; };             // }
+        combo_RABK { timeout-ms = <40>; key-positions = <21 36>; bindings = <&kp F_RABK>; };             // >
+//
+        combo_ARNG { timeout-ms = <40>; key-positions = <9 10>; bindings = <&kp F_ARNG>; };              // Å
+        combo_QUOTE { timeout-ms = <40>; key-positions = <8 9>; bindings = <&kp F_QUOT>; };              // '
+        combo_SCLN { timeout-ms = <40>; key-positions = <26 27>; bindings = <&kp F_SCLN>; };             // ;
+        combo_COLN { timeout-ms = <40>; key-positions = <36 37>; bindings = <&kp F_COLN>; };             // :
+//
+        combo_TAB { timeout-ms = <40>; key-positions = <27 28>; bindings = <&kp TAB>; };                 // TAB
+//
+        combo_clswin { timeout-ms = <40>; key-positions = <4 5>; bindings = <&kp SC_Clse>; };            // Alt+F4
+        combo_cpswrd { timeout-ms = <40>; key-positions = <9 22>; bindings = <&caps_word>; };            // &CapsWord
+        combo_mycomp { timeout-ms= <40>; key-positions = <16 17>; bindings = <&kp C_AL_MY_COMPUTER>; };  // Open "This PC"
+        combo_calc { timeout-ms = <40>; key-positions = <28 29>; bindings = <&kp C_AL_CALC>; };          // Open calculator
+        combo_BT { timeout-ms = <55>; key-positions = <33 46>; bindings = <&mo BT>; };                   // BT layer, hold
+        combo_WinLock { timeout-ms = <55>; key-positions = <32 45>; bindings = <&kp SC_Lock>; };         // Lock windows
+        combo_ESC { timeout-ms = <100>; key-positions = <31 44>; bindings = <&kp ESC>; };                // Esc		
+// These not on the map above:
+        combo_sleep { timeout-ms = <150>; key-positions = <13 14 15 16>; bindings = <&win_sleep>; };     // windows sleep
+        combo_rst { timeout-ms = <150>; key-positions = <1 2 3 4>; bindings = <&win_rst>; };             // windows restart
+        combo_power { timeout-ms = <150>; key-positions = <25 26 27 28>; bindings = <&win_pwr>; };       // windows power off
+        combo_GAME { timeout-ms = <150>; key-positions = <7 8 9 10>; bindings = <&to GAME1>; };          // to Game layer
+        combo_BASE { timeout-ms = <150>; key-positions = <19 20 21 22>; bindings = <&to BASE>; };        // to Base layer
+        combo_NPAD { timeout-ms = <150>; key-positions = <35 36 37 38>; bindings = <&to NPAD>; };        // to numpad layer
+    };
+};
+
+/ { 
+    keymap { compatible = "zmk,keymap";
+
+        default_layer { bindings = <
+/* ,------------------------------------------.                                  ,----------------------------------------------.
+ * |   NA  |   Q  |   W  |   F  |   P  |   B  |                                  |   J   |   L  |   U  |   Y  |   Ö    |   NA   |
+ * |-------+------+------+------+------+------|                                  |-------+------+------+------+--------+--------|
+ * |   NA  | CAD/A|LAlt/R|LCtl/S|Shft/T|   G  |                                  |   M   |Shft/N|RCtl/E|RAlt/I| LGUI/O |   NA   |
+ * |-------+------+------+------+------+------+---------------.  ,---------------+-------+------+------+------+--------+--------|
+ * |   NA  | MED/Z|   ,  |   C  |   D  |   V  | LGUI  | FKEYS |  |  RGB   | TAB  |   K   |   H  |   Ä  |   .  |    X   |   NA   | 
+ * |       |      |      |      |      |      |       |       |  |        |      |       |      |      |      |        |        |
+ * `---------------------+------+------+------+-------+-------|  |--------+------+-------+------+------+------------------------'
+                         | LShft|  NA  | SHC/ |  ARR/ | NPAD/ |  | OS SYM |OSShft| NUM/  |  NA  |  NA  |
+                         |      |      |BSpace| Space | Enter |  |        |      | Delete|      |      |
+                         `------------------------------------'  `-------------------------------------' */
+&none &kp Q       &kp W      &kp F       &kp P       &kp B                                   /**/                   &kp J        &kp L       &kp U       &kp Y       &kp F_ODIA &none
+&none &lt CAD A   &mt LALT R &mt LCTRL S &mt LSHFT T &kp G                                   /**/                   &kp M        &mt RSHFT N &mt RCTRL E &mt RALT I  &mt LGUI O &none
+&none &lt MEDIA Z &kp F_COMM &kp C       &kp D       &kp V        &kp LGUI      &mo FKEYS    /**/ &mo RGB &kp TAB   &kp K        &kp H       &kp F_ADIA  &kp F_DOT   &kp X      &none
+                             &kp LSHFT   &none       &lt SHC BSPC &lt ARR SPACE &lt NPAD RET /**/ &sl SYM &sk LSHFT &lt NUM DEL  &none       &none
+            >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
+        };
+		
+        NUM_layer { bindings = <
+/* ,-------------------------------------------.                                 ,-------------------------------------------.
+ * |    NA  |  NA  |   ~  |   ^  |   ½  |  NA  |                                 |  NA  |   £  |   $  |   §  |  NA  |   NA   |
+ * |--------+------+------+------+------+------|                                 |------+------+------+------+------+--------|
+ * |    NA  |CAD/1 |LAlt/2|LCtl/3|Shft/4|  NA  |                                 |   ¤  |Shft/7|RCtl/8|RAlt/9|LGUI/0|   NA   |  
+ * |--------+------+------+------+------+------+---------------.   ,-------------+------+------+------+------+------+--------|	
+ * |    NA  |  NA  |   ,  |   %  |   5  |  NA  |       |       |   |      |      |  NA  |   6  |   €  |   .  |  NA  |   NA   |
+ * `----------------------+------+------+------+-------+-------|   |------+------+------+------+------+----------------------'
+ *                        |      |      |      |       |       |   |      |      |      |      |      |
+ *                        `------------------------------------'   `----------------------------------' */
+&none &none      &kp F_TILD  &kp F_CIRC   &kp F_HALF   &none                /**/                &none      &kp F_PND    &kp F_DLR    &kp F_SECT  &none       &none 
+&none &lt CAD N1 &mt LALT N2 &mt LCTRL N3 &mt LSHFT N4 &none                /**/                &kp F_CURR &mt RSHFT N7 &mt RCTRL N8 &mt RALT N9 &mt LGUI N0 &none
+&none &none      &kp F_COMM  &kp F_PERC   &kp N5       &none  &trans &trans /**/ &trans  &trans &none      &kp N6       &kp F_EURO   &kp F_DOT   &none       &none 
+                             &trans       &trans       &trans &trans &trans /**/ &trans  &trans &trans     &trans       &trans
+            >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
+        };
+		
+        SYM_layer { bindings = <
+// To Do: add symbols
+/* ,-------------------------------------------.                              ,-------------------------------------------.
+ * |    NA  |  NA  |  NA  |  NA  |  NA  |  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |   NA   |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |    NA  |   |  |   &  |   #  |   @  |  NA  |                              |  NA  |  ?   |  !   |  "   |  NA  |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |    NA  |  NA  |  NA  |  NA  |   `  |  NA  |      |      |  |      |      |  NA  |  ´   |  NA  |  NA  |  NA  |   NA   |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------' */
+&none  &none      &none      &none      &none     &none                                   &none  &none      &none      &none      &none &none  
+&none  &kp F_PIPE &kp F_AMPR &kp F_HASH &kp F_AT  &none                                   &none  &kp F_QUES &kp F_EXLM &kp F_DQUO &none &none  
+&none  &none      &none      &none      &kp F_GRV &none  &trans &trans      &trans &trans &none  &kp F_ACUT &none      &none      &none &none  
+                         &trans     &trans    &trans &trans &trans      &trans &trans &trans &trans     &trans
+            >; sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
+        };
+        ARR_layer { bindings = <
+/* ,-------------------------------------------.                                 ,--------------------------------------------------------.
+ * |   NA   | LGUI |  NA  |  NA  |  NA  |  NA  |                                 |  NA  |   NA   |    NA   |    NA   |     NA    |   NA   |
+ * |--------+------+------+------+------+------|                                 |------+--------+---------+---------+-----------+--------|
+ * |   NA   |LShift|   ←  |Ctrl/↑|   →  |TaskVw|                                 | PgUp |Shft/Ins|Ctl/CLck |RAlt/NLck|LGUI/ScrLck|   NA   |   
+ * |--------+------+------+------+------+------+---------------.   ,-------------+------+--------+---------+---------+-----------+--------|
+ * |   NA   | LCtrl| Home |   ↓  |  End | Snip |       |       |   |      |      | PgDn |ShwDstp |    NA   |    NA   |     NA    |   NA   |
+ * `----------------------+------+------+------+-------+-------|   |------+------+------+--------+---------+------------------------------'
+ *                        |      |      |      |       |       |   |      |      |      |        |         |
+ *                        `------------------------------------'   `---------------------------------------' */
+&none &kp LGUI   &none      &none        &none       &none                      /**/               &none     &none         &none          &none             &none         &none 
+&none &kp LSHFT  &kp LEFT   &mt LCTRL UP &kp RIGHT   &kp TskView                /**/               &kp PG_UP &mt RSHFT INS &mt RCTRL CLCK &mt RALT KP_NLCK &mt LGUI SLCK &none 
+&none &kp LCTRL  &kp HOME   &kp DOWN     &kp END     &kp SC_Snip &trans &trans  /**/ &trans &trans &kp PG_DN &kp ShwDstp   &none          &none             &none         &none 
+                            &trans       &trans      &trans      &trans &trans  /**/ &trans &trans &trans    &trans        &trans
+            >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
+        };
+		
+        NPAD_layer { bindings = <
+/* ,-------------------------------------------.                               ,-------------------------------------------.
+ * |   NA   |  NA  |   7  |   8  |   9  |  NA  |                               |  NA  |  NA  |  NA  |  NA  |  NA  |   NA   |
+ * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
+ * |   NA   |LGUI/0|LAlt/4|LCtl/5|Shft/6|   ,x  |                               | PgUp |   ←  |Ctrl/↑|   →  |RShift|   NA   |
+ * |--------+------+------+------+------+------+-------------.   ,-------------+------+------+------+------+------+--------|
+ * |   NA   |  NA  |   1  |   2  |   3  |   .  |      |      |   |      |      | PgDn | Home |   ↓  |  End |  NA  |   NA   |
+ * `----------------------+------+------+------+------+------|   |------+------+------+------+------+----------------------'
+ *                        | NLock       |      |      |      |   |      |      |      |      |      |
+ *                        `----------------------------------'   `----------------------------------' */
+&none &none       &kp N7      &kp N8       &kp N9       &none                   /**/                 &none     &none    &none        &none     &none     &none
+&none &mt LGUI N0 &mt LALT N4 &mt LCTRL N5 &mt LSHFT N6 &kp COMMA               /**/                 &kp PG_UP &kp LEFT &mt RCTRL UP &kp RIGHT &kp RSHFT &none
+&none &none       &kp N1      &kp N2       &kp N3       &kp DOT   &trans &trans /**/ &trans &trans   &kp PG_DN &kp HOME &kp DOWN     &kp END   &none     &none
+                              &kp KP_NLCK  &trans       &trans    &trans &trans /**/ &trans &trans   &trans    &trans   &trans
+            >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
+        };
+
+        SHC_layer { bindings = <
+/* ,-------------------------------------------.                              ,-----------------------------------------.
+ * |   NA   |ClsDst|NewDst|PrvDst|NxtDst|  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |   NA   |Ctrl+Z|Ctrl+X|Ctrl+C|Ctrl+V|PrtScr|                              |  NA  |PrvTab|NxtTab|RstTab|ClsTab|  NA  |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------| 
+ * |   NA   |  NA  |Ctrl+F|Ctrl+S|LGUI+V| Redo |      |      |  |      |      |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------' */
+&none &kp ClsDstp &kp NewDstp &kp PrvDstp &kp NxtDstp &none                     /**/               &none  &none       &none       &none       &none       &none  
+&none &kp SC_Undo &kp SC_Cut &kp SC_Copy  &kp SC_Pste &kp PSCRN                 /**/               &none  &kp PrevTab &kp NextTab &kp RestTab &kp ClseTab &none  
+&none &none       &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Redo &trans &trans /**/ &trans &trans &none  &none       &none       &none       &none       &none  
+                              &trans      &trans      &trans      &trans &trans /**/ &trans &trans &trans &trans &trans
+            >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
+        };
+
+        FKEYS_layer { bindings = <
+/* ,-------------------------------------------.                              ,-----------------------------------------.
+ * |   NA   |  F11 |  F7  |  F8  |  F9  |  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |   NA   |  F10 |  F4  |  F5  |  F6  |  F12 |                              |Pause |RShift|RCtrl | RAlt | LGUI |  NA  |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------|
+ * |   NA   |  NA  |  F1  |  F2  |  F3  |  F13 |      |      |  |      |      |Break |  NA  |  NA  | LAlt |  NA  |  NA  |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------' */
+&none  &kp F11 &kp F7 &kp F8 &kp F9 &none                 /**/               &none           &none     &none     &none    &none    &none  
+&none  &kp F10 &kp F4 &kp F5 &kp F6 &kp F12               /**/               &kp PAUSE_BREAK &kp RSHFT &kp RCTRL &kp RALT &kp LGUI &none  
+&none  &none   &kp F1 &kp F2 &kp F3 &kp F13 &trans &trans /**/ &trans &trans &kp F_BRK       &none     &none     &kp LALT &none    &none  
+                      &trans &trans &trans  &trans &trans /**/ &trans &trans &trans          &trans    &trans
+            >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
+        };
+
+        RGB_layer { bindings = <
+/* ,-----------------------------------------------------.                              ,------------------------------------------.
+ * |   NA  | Brgth+ |    Sat+  |   Hue+  |RGBCycl→|  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA   |
+ * |-------+--------+----------+---------+--------+------|                              |------+------+------+------+------+-------|
+ * |   NA  | Brgth- |    Sat-  |   Hue-  |RGBCycl←|Speed+|                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA   |
+ * |-------+--------+----------+---------+--------+------+-------------.  ,-------------+------+------+------+------+------+-------|
+ * |   NA  |   NA   |RGBPwrTggl|RGBoffSft|RGBonSft|Speed-|DBrgt+|  NA  |  |      |      |  NA  |  NA  |  NA  |  NA  |  NA  |  NA   |
+ * `---------------------------+---------+--------+------+------+------|  |------+------+------+------+------+---------------------'
+ *                             |    NA   |   NA   |  NA  |DBrgt-|  NA  |  |      |      |      |      |      |
+ *                             `---------------------------------------'  `----------------------------------' */
+&none  &rgb_ug RGB_BRI &rgb_ug RGB_SAI                 &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none                              /**/                &none  &none  &none  &none &none &none 
+&none  &rgb_ug RGB_BRD &rgb_ug RGB_SAD                 &rgb_ug RGB_HUD &rgb_ug RGB_EFR &rgb_ug RGB_SPI                    /**/                &none  &none  &none  &none &none &none 
+&none &none            &ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_SPD &kp C_BRI_UP &none /**/ &trans  &trans &none  &none  &none  &none &none &none  
+                                                       &none           &none           &none           &kp C_BRI_DN &none /**/ &trans  &trans &trans &trans &trans
+            >; sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp C_BRI_DN C_BRI_UP>;
+        };
+
+        GAME1_layer { bindings = <
+/* ,-------------------------------------------.                               ,-------------------------------------------.
+ * |   Esc  |   1  |   2  |   3  |   4  |   5  |                               |   Y  |   U  |   I  |   O  |   P  |   Å    |
+ * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
+ * |    M   | Shift|   A  |   W  |   D  |   E  |                               |   H  |   J  |   K  |   L  |   Ö  |   Ä    |
+ * |--------+------+------+------+------+------+--------------.  ,-------------+------+------+------+------+------+--------|
+ * |   Tab  | Ctrl |   Q  |   S  |   R  |   F  |   T   | Ent  |  |FKEYS |      |   N  |   M  |  ,;  |  .:  |   '  |   §    |
+ * `----------------------+------+------+------+-------+------|  |------+------+------+------+------+----------------------'
+ *                        | Mute | LAlt |   I  | Space | OS   |  |      |      |BSpace|      |      |
+ *                        |      |      |      |       | Game2|  |      |      |      |      |      |
+ *                        `-----------------------------------'  `----------------------------------' */
+&kp ESC &kp N1    &kp N2 &kp N3     &kp N4   &kp N5                     /**/                  &kp Y    &kp U  &kp I      &kp O     &kp P      &kp F_ARNG 
+&kp M   &kp LSHFT &kp A  &kp W      &kp D    &kp E                      /**/                  &kp H    &kp J  &kp K      &kp L     &kp F_ODIA &kp F_ADIA 
+&kp TAB &kp LCTRL &kp Q  &kp S      &kp R    &kp F  &kp T     &kp RET   /**/ &mo FKEYS &trans &kp N    &kp M  &kp F_COMM &kp F_DOT &kp F_QUOT &kp F_SECT 
+                         &kp C_MUTE &kp LALT &kp I  &kp SPACE &sl GAME2 /**/ &trans    &trans &kp BSPC &trans &trans 
+            >; sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
+        };
+
+        GAME2_layer { bindings = <
+/* ,-------------------------------------------.                               ,-------------------------------------------.
+ * | BSpace |   0  |   9  |   8  |   7  |   6  |                               |  NA  |  NA  |  NA  |  NA  |  NA  |   NA   |
+ * |--------+------+------+------+------+------|                               |------+------+------+------+------+--------|
+ * |    N   |   Z  |   X  |   C  |   V  |   B  |                               |  NA  |  NA  |  NA  |  NA  |CpsLck|   NA   |   
+ * |--------+------+------+------+------+------+-------------.   ,-------------+------+------+------+------+------+--------|
+ * |    U   |   ←  |   ↓  |   ↑  |   →  |   G  |   P  |      |   |      |      |  NA  |  NA  |  NA  |  NA  |  NA  |   NA   |
+ * `----------------------+------+------+------+------+------|   |------+------+------+------+------+----------------------'
+ *                        | Mute |      |      |      |      |   |      |      |Delete|      |      |
+ *                        `----------------------------------'   `----------------------------------' */
+&kp BSPC &kp N0   &kp N9   &kp N8     &kp N7    &kp N6               /**/               &none   &none  &none  &none  &none    &none 
+&kp N    &kp Z    &kp X    &kp C      &kp V     &kp B                /**/               &none   &none  &none  &none  &kp CLCK &none 
+&kp U    &kp LEFT &kp DOWN &kp UP     &kp RIGHT &kp G  &kp P  &trans /**/ &trans &trans &none   &none  &none  &none  &none    &none
+                           &kp C_MUTE &trans    &trans &trans &trans /**/ &trans &trans &kp DEL &trans &trans 
+            >; sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
+        };
+
+        MEDIA_layer { bindings = <
+/* ,-------------------------------------------.                              ,-----------------------------------------.
+ * |   NA   |  NA  |Rewind|  NA  |FastFw|  NA  |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |   NA   |  NA  |M Prev|M Play|M Next| Vol+ |                              |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+------| 
+ * |   NA   |  NA  |  NA  |M Stop| Mute | Vol- |      |      |  |      |      |  NA  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+--------------------'
+ *                        | Mute |      |Delete|      |      |  |      |      |      |      |LShift|
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &none  &kp C_RW   &none      &kp C_FF   &none                      /**/               &none  &none  &none  &none  &none  &none 
+&trans &none  &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_VOL_UP               /**/               &none  &none  &none  &none  &none  &none  
+&trans &none  &none      &kp C_STOP &kp C_MUTE &kp C_VOL_DN &trans &trans /**/ &trans &trans &none  &none  &none  &none  &none  &none  
+                         &kp C_MUTE     &trans     &kp DEL  &trans &trans /**/ &trans &trans &trans &trans &kp LSHFT
+            >; sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
+        };
+		
+        CAD_layer { bindings = <
+// To Do: add shortcuts
+/* ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |Delete|      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------' */
+&trans &trans &trans &trans &trans &trans                                   &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                                   &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans  &trans &trans      &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &kp DEL &trans &trans      &trans &trans &trans &trans &trans
+            >; sensor-bindings = <&inc_dec_cp M_VOLD M_VOLU &inc_dec_kp PGUP PGDN>;
+        };
+
+        BT_layer { bindings = <
+/* ,------------------------------------------.                              ,------------------------------------------.
+ * |   NA  |BT Clr|  NA  |BT Prv|BT Nxt|  NA  |                              |  NA  |BT Prv|BT Nxt|  NA  |BT Clr|  NA   |
+ * |-------+------+------+------+------+------|                              |------+------+------+------+------+-------|
+ * |   NA  | BT 0 | BT 1 | BT 2 | BT 3 | BT 5 |                              | BT 5 | BT 1 | BT 2 | BT 3 | BT 4 |  NA   |
+ * |-------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+-------|
+ * |   NA  |  NA  |  NA  |  NA  | BT 4 |  NA  |  NA  |  NA  |  |  NA  |  NA  |  NA  | BT 0 |  NA  |  NA  |  NA  |  NA   |
+ * `---------------------+------+------+------+------+------|  |------+------+------+------+------+---------------------'
+ *                       |  NA  |  NA  |  NA  |  NA  |  NA  |  |  NA  |  NA  |  NA  |  NA  |  NA  |
+ *                       `----------------------------------'  `----------------------------------' */
+&none  &bt BT_CLR   &none        &bt BT_PRV   &bt BT_NXT   &none                      /**/             &none        &bt BT_PRV   &bt BT_NXT   &none        &bt BT_CLR   &none  
+&none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 5               /**/             &bt BT_SEL 5 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none  
+&none  &none        &none        &none        &bt BT_SEL 4 &none        &none  &none  /**/ &none &none &none        &bt BT_SEL 0 &bt BT_SEL 5 &none        &none        &none  
+                                 &none        &none        &none        &none  &none  /**/ &none &none &none        &none        &none 
+            >;
+        };
+		
+/* Layer tempate
+ * ,-------------------------------------------.                              ,-------------------------------------------.
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |                              |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |      |  |      |      |      |      |      |      |      |        |
+ * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        `----------------------------------'  `----------------------------------' */
+/* delete line
+        XXX_layer { bindings = <
+&trans &trans &trans &trans &trans &trans                                  &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans                                  &trans &trans &trans &trans &trans &trans 
+&trans &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans &trans 
+                     &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans
+            >;
+            sensor-bindings = <&inc_dec_cp PGUP PGDN &inc_dec_kp M_VOLD M_VOLU>;
+        };
+delete line */
+    };
+};
