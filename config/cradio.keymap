@@ -13,6 +13,10 @@
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht RALT k3  &ht LGUI k4
 #define HRNL(k1,k2,k3,k4) &ht LGUI k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
 
+&lt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
+&mt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
+&caps_word { continue-list = <F_UNDS F_MINS BSPC RSHFT LSHFT F_ADIA F_ODIA F_ARNG>; };
+
 /* Combos
  * .----------------------------------.                .----------------------------------.  .----------------------------------. .----------------------------------.
  * |   0  |   1  |   2  |  3   |   4  |                |  5   |   6  |   7  |   8  |   9  |  |   0  |   1  |   2  |  3   |   4  | |  5   |   6  |   7  |   8  |   9  |
@@ -80,20 +84,14 @@
 		combo_snip { timeout-ms = <40>; key-positions = <3 4>; bindings = <&kp SC_Snip>; };              // windows snipping tool
 //
         combo_WinLock { timeout-ms = <80>; key-positions = <6 7 8 9>; bindings = <&kp SC_Lock>; };       // Lock windows
-        combo_sleep { timeout-ms = <80>; key-positions = <17 18 19 20>; bindings = <&win_sleep>; };      // windows sleep
-        combo_rst { timeout-ms = <80>; key-positions = <21 22 23 24>; bindings = <&win_rst>; };          // windows restart
-        combo_power { timeout-ms = <80>; key-positions = <27 28 29 30>; bindings = <&win_pwr>; };        // windows power off
+        combo_sleep { timeout-ms = <80>; key-positions = <17 18 19 20>; bindings = <&kp win_sleep>; };      // windows sleep
+//        combo_rst { timeout-ms = <80>; key-positions = <21 22 23 24>; bindings = <&kp win_rst>; };          // windows restart
+        combo_power { timeout-ms = <80>; key-positions = <27 28 29 30>; bindings = <&kp C_PWR>; };
         combo_base { timeout-ms = <80>; key-positions = <11 12 13 14>; bindings = <&to BASE>; };         // base layer
 //
         combo_NPAD { timeout-ms = <55>; key-positions = <35 36 37 38>; bindings = <&tog ARR>; };         // toggle arrow and numpad layer
     };
-};
 
-&lt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
-&mt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
-&caps_word { continue-list = <F_UNDS F_MINS BSPC RSHFT LSHFT F_ADIA F_ODIA F_ARNG>; };
-
-/ {
 	behaviors {
         ht: hold_tap {
             label = "hold_tap";
