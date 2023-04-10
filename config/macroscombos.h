@@ -77,7 +77,7 @@
         combo_power { timeout-ms = <80>; key-positions = <27 28 29 30>; bindings = <&win_pwr>; };        // windows power off
         combo_base { timeout-ms = <80>; key-positions = <11 12 13 14>; bindings = <&to BASE>; };         // base layer
 //
-        combo_NPAD { timeout-ms = <55>; key-positions = <35 36 37 38>; bindings = <&tog NPAD>; };        // toggle numpad layer
+        combo_NPAD { timeout-ms = <55>; key-positions = <35 36 37 38>; bindings = <&tog ARR>; };         // toggle arrow and numpad layer
     };
 };
 

@@ -14,7 +14,7 @@
 // Home row mods
 #define HRML(k1,k2,k3,k4) &lt MEDIA k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht RALT k3  &ht LGUI k4
-
+#define HRNL(k1,k2,k3,k4) &ht LGUI k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
 
     keymap {
         compatible = "zmk,keymap";
@@ -65,11 +65,11 @@
         //│  F1      │  F2      │  F3      │  F4      │  F5      │   │  F6      │  F7      │  F8      │  F9      │  F10     │
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6    &kp F7      &kp F8     &kp F9    &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  1       │  2       │  3       │  4       │  F11     │   │  F12     │  -       │  =       │  \       │  `       │
-            &lt  EXCL   &kp AT     &kp HASH   &kp DLLR   &kp F11         &kp F12  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
+        //│  1       │  2       │  3       │  4       │  F11     │   │  F12     │  7       │  8       │  9       │  0       │
+            HRNL(1,     2,         3,         4)        &kp F11       &kp F12     HRMR(7,     8,         9,         0)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │  %       │  5       │          │   │  &       │  _       │  +       │  │       │          │
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
+        //│  ^       │          │  %       │  5       │          │   │  $       │  6       │  €       │          │          │
+           &kp F_CIRC  &trans    &kp F_PERC  &trans     &trans         &kp F_DLR  &kp 6     &kp F_EURO   &trans    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -82,10 +82,10 @@
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
            &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
+        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │  ←       │  ↑       │  →       │BOOTLOADER│
           &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
+        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │  ↓       │          │          │
             &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
