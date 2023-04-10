@@ -101,3 +101,5 @@
 #define SC_Redo (LC(LS(Z)))              // Redo
 #define SC_Save (LC(S))                  // Save
 
+// Caps word interrupt exceptions
+&caps_word { continue-list = <F_UNDS F_MINS BSPC RSHFT LSHFT F_UNDS F_ADIA F_ODIA F_ARNG>; };
