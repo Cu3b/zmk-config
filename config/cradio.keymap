@@ -7,7 +7,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 // #include <dt-bindings/zmk/mouse.h>
 #include "definitions.h"
-#include "macroscombos.h"
 
 // Home row mods
 #define HRML(k1,k2,k3,k4) &lt MEDIA k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
