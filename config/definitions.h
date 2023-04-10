@@ -16,7 +16,7 @@
 // Hold tap key timers
 #define QUICK_TAP    250
 #define TAPPING_TERM 200
-#define HR_TAPPING_TERM 170
+#define HR_TAPPING_TERM 200
 #define COMBO_TERM_S 30
 #define COMBO_TERM_M 50
 #define COMBO_TERM_L 65

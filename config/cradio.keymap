@@ -125,7 +125,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         numbers_layer {
-            if-layers = <SYM SHC>;
+            if-layers = <ARR SHC>;
             then-layer = <NUM>;
         };
     };
