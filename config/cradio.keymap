@@ -116,7 +116,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <HR_TAPPING_TERM>;
-            quick-tap-ms = <100>;
+            quick-tap-ms = <180>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
