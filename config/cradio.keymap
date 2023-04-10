@@ -84,7 +84,7 @@
 		combo_snip { timeout-ms = <40>; key-positions = <3 4>; bindings = <&kp SC_Snip>; };              // windows snipping tool
 //
         combo_WinLock { timeout-ms = <80>; key-positions = <6 7 8 9>; bindings = <&kp SC_Lock>; };       // Lock windows
-        combo_sleep { timeout-ms = <80>; key-positions = <17 18 19 20>; bindings = <&kp win_sleep>; };      // windows sleep
+        combo_sleep { timeout-ms = <80>; key-positions = <17 18 19 20>; bindings = <&kp C_SLEEP>; };      // windows sleep
 //        combo_rst { timeout-ms = <80>; key-positions = <21 22 23 24>; bindings = <&kp win_rst>; };          // windows restart
         combo_power { timeout-ms = <80>; key-positions = <27 28 29 30>; bindings = <&kp C_PWR>; };
         combo_base { timeout-ms = <80>; key-positions = <11 12 13 14>; bindings = <&to BASE>; };         // base layer
