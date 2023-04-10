@@ -202,7 +202,7 @@
          &kp SC_Undo &kp SC_Cut &kp SC_Copy &kp SC_Pste &kp SC_Redo    &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ctrl+A  │ Ctrl+F   │  Ctrl+S  │  LGui+V  │          │   │          │          │          │          │          │
-          &kp SelA   &kp SC_Find &kp SC_Save &kp SC_Psth  &trans       &trans      &trans    &trans     &trans     &trans
+          &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth  &trans       &trans      &trans    &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
