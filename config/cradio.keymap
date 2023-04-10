@@ -70,42 +70,42 @@
  *                             |      |      |  |      |      |
  *                             '-------------'  '-------------' */
 / { combos { compatible = "zmk,combos";
-        combo_MINS { timeout-ms = <40>; key-positions = <1 2>; bindings = <&kp F_MINS>; };               // -
-        combo_PLUS { timeout-ms = <40>; key-positions = <2 3>; bindings = <&kp F_PLUS>; };               // + 
-        combo_ASTR { timeout-ms = <40>; key-positions = <3 12>; bindings = <&kp F_ASTR>; };              // *
-        combo_FSLH { timeout-ms = <40>; key-positions = <2 11>; bindings = <&kp F_FSLH>; };              // / 
-        combo_UNDS { timeout-ms = <40>; key-positions = <1 12>; bindings = <&kp F_UNDS>; };              // _
-        combo_EQL { timeout-ms = <40>; key-positions = <2 13>; bindings = <&kp F_EQL>; };                // =
-        combo_BSLH { timeout-ms = <40>; key-positions = <7 18>; bindings = <&kp F_BSLH>; };              // Backslash	
-        combo_LPRN { timeout-ms = <40>; key-positions = <12 23>; bindings = <&kp F_LPRN>; };             // (
-        combo_LBKT { timeout-ms = <40>; key-positions = <11 22>; bindings = <&kp F_LBKT>; };             // [
-        combo_LBRC { timeout-ms = <40>; key-positions = <13 22>; bindings = <&kp F_LBRC>; };             // {
-        combo_LABK { timeout-ms = <40>; key-positions = <12 21>; bindings = <&kp F_LABK>; };             // <
-        combo_RPRN { timeout-ms = <40>; key-positions = <17 26>; bindings = <&kp F_RPRN>; };             // )
-        combo_RBKT { timeout-ms = <40>; key-positions = <18 27>; bindings = <&kp F_RBKT>; };             // ]
-        combo_RBRC { timeout-ms = <40>; key-positions = <16 27>; bindings = <&kp F_RBRC>; };             // }
-        combo_RABK { timeout-ms = <40>; key-positions = <17 28>; bindings = <&kp F_RABK>; };             // >
+        combo_MINS { timeout-ms = <COMBO_TERM_S>; key-positions = <1 2>; bindings = <&kp F_MINS>; };               // -
+        combo_PLUS { timeout-ms = <COMBO_TERM_S>; key-positions = <2 3>; bindings = <&kp F_PLUS>; };               // + 
+        combo_ASTR { timeout-ms = <COMBO_TERM_S>; key-positions = <3 12>; bindings = <&kp F_ASTR>; };              // *
+        combo_FSLH { timeout-ms = <COMBO_TERM_S>; key-positions = <2 11>; bindings = <&kp F_FSLH>; };              // / 
+        combo_UNDS { timeout-ms = <COMBO_TERM_S>; key-positions = <1 12>; bindings = <&kp F_UNDS>; };              // _
+        combo_EQL { timeout-ms = <COMBO_TERM_S>; key-positions = <2 13>; bindings = <&kp F_EQL>; };                // =
+        combo_BSLH { timeout-ms = <COMBO_TERM_S>; key-positions = <7 18>; bindings = <&kp F_BSLH>; };              // Backslash	
+        combo_LPRN { timeout-ms = <COMBO_TERM_S>; key-positions = <12 23>; bindings = <&kp F_LPRN>; };             // (
+        combo_LBKT { timeout-ms = <COMBO_TERM_S>; key-positions = <11 22>; bindings = <&kp F_LBKT>; };             // [
+        combo_LBRC { timeout-ms = <COMBO_TERM_S>; key-positions = <13 22>; bindings = <&kp F_LBRC>; };             // {
+        combo_LABK { timeout-ms = <COMBO_TERM_S>; key-positions = <12 21>; bindings = <&kp F_LABK>; };             // <
+        combo_RPRN { timeout-ms = <COMBO_TERM_S>; key-positions = <17 26>; bindings = <&kp F_RPRN>; };             // )
+        combo_RBKT { timeout-ms = <COMBO_TERM_S>; key-positions = <18 27>; bindings = <&kp F_RBKT>; };             // ]
+        combo_RBRC { timeout-ms = <COMBO_TERM_S>; key-positions = <16 27>; bindings = <&kp F_RBRC>; };             // }
+        combo_RABK { timeout-ms = <COMBO_TERM_S>; key-positions = <17 28>; bindings = <&kp F_RABK>; };             // >
 //
-        combo_ARNG { timeout-ms = <40>; key-positions = <8 9>; bindings = <&kp F_ARNG>; };               // Å
-        combo_QUOTE { timeout-ms = <40>; key-positions = <7 8>; bindings = <&kp F_QUOT>; };              // '
-        combo_DQUOTE { timeout-ms = <40>; key-positions = <6 7>; bindings = <&kp F_DQUO>; };             // "
+        combo_ARNG { timeout-ms = <COMBO_TERM_S>; key-positions = <8 9>; bindings = <&kp F_ARNG>; };               // Å
+        combo_QUOTE { timeout-ms = <COMBO_TERM_S>; key-positions = <7 8>; bindings = <&kp F_QUOT>; };              // '
+        combo_DQUOTE { timeout-ms = <COMBO_TERM_S>; key-positions = <6 7>; bindings = <&kp F_DQUO>; };             // "
 //
-        combo_TAB { timeout-ms = <40>; key-positions = <22 23>; bindings = <&kp TAB>; };                 // TAB
-        combo_ESC { timeout-ms = <40>; key-positions = <21 22>; bindings = <&kp ESC>; };                 // Esc		
+        combo_TAB { timeout-ms = <COMBO_TERM_S>; key-positions = <22 23>; bindings = <&kp TAB>; };                 // TAB
+        combo_ESC { timeout-ms = <COMBO_TERM_S>; key-positions = <21 22>; bindings = <&kp ESC>; };                 // Esc		
 //
-        combo_clswin { timeout-ms = <40>; key-positions = <0 1>; bindings = <&kp SC_Clse>; };            // Alt+F4
-        combo_cpswrd { timeout-ms = <40>; key-positions = <27 28>; bindings = <&caps_word>; };           // &CapsWord
-        combo_mycomp { timeout-ms= <40>; key-positions = <13 14>; bindings = <&kp C_AL_MY_COMPUTER>; };  // Open "This PC"
-        combo_calc { timeout-ms = <40>; key-positions = <23 24>; bindings = <&kp C_AL_CALC>; };          // Open calculator
-		combo_snip { timeout-ms = <40>; key-positions = <3 4>; bindings = <&kp SC_Snip>; };              // windows snipping tool
+        combo_clswin { timeout-ms = <COMBO_TERM_S>; key-positions = <0 1>; bindings = <&kp SC_Clse>; };            // Alt+F4
+        combo_cpswrd { timeout-ms = <COMBO_TERM_S>; key-positions = <27 28>; bindings = <&caps_word>; };           // &CapsWord
+        combo_mycomp { timeout-ms= <COMBO_TERM_S>; key-positions = <13 14>; bindings = <&kp C_AL_MY_COMPUTER>; };  // Open "This PC"
+        combo_calc { timeout-ms = <COMBO_TERM_S>; key-positions = <23 24>; bindings = <&kp C_AL_CALC>; };          // Open calculator
+		combo_snip { timeout-ms = <COMBO_TERM_S>; key-positions = <3 4>; bindings = <&kp SC_Snip>; };              // windows snipping tool
 //
-        combo_WinLock { timeout-ms = <80>; key-positions = <6 7 8 9>; bindings = <&kp SC_Lock>; };       // Lock windows
-        combo_sleep { timeout-ms = <80>; key-positions = <16 17 18 19>; bindings = <&win_sleep>; };      // windows sleep
-        combo_rst { timeout-ms = <80>; key-positions = <20 21 22 23>; bindings = <&win_rst>; };          // windows restart
-        combo_power { timeout-ms = <80>; key-positions = <26 27 28 29>; bindings = <&win_pwr>; };
-        combo_base { timeout-ms = <80>; key-positions = <10 11 12 13>; bindings = <&to BASE>; };         // base layer
+        combo_WinLock { timeout-ms = <COMBO_TERM_L>; key-positions = <6 7 8 9>; bindings = <&kp SC_Lock>; };       // Lock windows
+        combo_sleep { timeout-ms = <COMBO_TERM_L>; key-positions = <16 17 18 19>; bindings = <&win_sleep>; };      // windows sleep
+        combo_rst { timeout-ms = <COMBO_TERM_L>; key-positions = <20 21 22 23>; bindings = <&win_rst>; };          // windows restart
+        combo_power { timeout-ms = <COMBO_TERM_L>; key-positions = <26 27 28 29>; bindings = <&win_pwr>; };
+        combo_base { timeout-ms = <COMBO_TERM_L>; key-positions = <10 11 12 13>; bindings = <&to BASE>; };         // base layer
 //
-        combo_NPAD { timeout-ms = <55>; key-positions = <35 36 37 38>; bindings = <&tog ARR>; };         // toggle arrow and numpad layer
+        combo_NPAD { timeout-ms = <COMBO_TERM_M>; key-positions = <35 36 37 38>; bindings = <&tog ARR>; };         // toggle arrow and numpad layer
     };
 
 	behaviors {
@@ -114,7 +114,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <TAPPING_TERM>;
+            tapping-term-ms = <HR_TAPPING_TERM>;
             quick-tap-ms = <QUICK_TAP>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
