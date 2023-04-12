@@ -136,7 +136,7 @@
         //│  Z/LGui  │  ,;      │  C       │  D       │  V       │    │  K       │  H       │  Ä       │ .:       │  X       │
            &mt LGUI Z  &kp COMMA  &kp C      &kp D      &kp V          &kp K      &kp H     &kp F_ADIA  &kp DOT    &kp X 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt SPACE RET &lt SHC SYM &lt ARR BSPC &lt NUM DEL
+                                          &lt SHC RET &lt ARR SPACE  &lt SYM BSPC &lt NUM TAB
         //                                 ╰──────────┴──────────╯    ╰──────────┴──────────╯
             >;
         };
@@ -144,8 +144,8 @@
         symbol_layer {
             bindings = <
         //╭──────────────┬────────────┬──────────┬───────────┬───────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ClsDstp      │ NewDstp    │ PrvDstp  │ NxtDstp   │ TskView   │   │          │ Ins      │ CapsL    │ NumL     │ ScrLck   │
-           &kp ClsDstp    &kp NewDstp &kp PrvDstp &kp NxtDstp &kp TskView     &trans     &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
+        //│              │            │          │           │           │   │          │ Ins      │ CapsL    │ NumL     │ ScrLck   │
+            &trans           &trans      &trans     &trans       &trans         &trans     &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
         //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  |           │  &         │  #       │  @        │           │   │          │  ?       │  !       │  ¨       │  ~       │
            &kp F_PIPE     &kp F_AMPR   &kp F_HASH &kp F_AT     &trans         &trans    &kp F_QUES &kp F_EXLM &kp F_DIAE &kp F_TILD
@@ -153,7 +153,7 @@
         //│  ^           │            │  ¤       |  `        │           │   │          │  ´       │  §       │  ½       │          │
           &mt LGUI F_CIRC  &trans      &kp F_CURR &kp F_GRV    &trans         &trans    &kp F_ACUT &kp F_SECT &kp F_HALF  &trans
         //╰──────────────┴────────────┴──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                  &trans       &trans          &trans     &trans
+                                                  &trans        &kp DEL        &trans     &trans
         //                                       ╰───────────┴───────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -178,16 +178,16 @@
         arrows_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  7       │  8       │  9       │          │   │          │          │          │          │          │
-            &trans     &kp N7     &kp N8     &kp N9     &trans         &trans     &trans      &trans     &trans     &trans
+        //│          │  7       │  8       │  9       │ NxtDstp  │   │          │          │ TskView  │ NewDstp  │ ClsDstp  │
+            &trans     &kp N7     &kp N8     &kp N9   &kp NxtDstp      &trans     &trans   &kp TskView &kp NewDstp &kp ClsDstp 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0       │  4       │  5       │  6       │  ,       │   │  PgUp    │  ←       │  ↑/LCtrl │   →      │  RShft   │
             HRNL(N0,     N4,        N5,        N6)      &kp COMMA      &kp PG_UP &kp LEFT  &mt LCTRL UP &kp RIGHT &kp RSHFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  .       │  1       │  2       │  3       │          │   │  PgDn    │  Home    │  ↓       │  End     │ LGUI     │
-           &kp DOT     &kp N1    &kp N2     &kp N3      &trans         &kp PG_DN  &kp HOME  &kp DOWN    &kp END    &kp LGUI
+        //│  .       │  1       │  2       │  3       │ PrvDstp  │   │  PgDn    │  Home    │  ↓       │  End     │ LGUI     │
+           &kp DOT     &kp N1    &kp N2     &kp N3      &kp PrvDstp   &kp PG_DN  &kp HOME  &kp DOWN    &kp END    &kp LGUI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &mo NUM         &trans     &trans
+                                             &trans      &trans        &kp DEL    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -220,7 +220,7 @@
         //│          │ M Stop   │ Mute     │ Vol -    │ M Next   │   │          │          │          │          │          │
             &trans   &kp C_STOP &kp C_MUTE &kp C_VOL_DN &kp C_NEXT      &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp DEL    &kp BSPC       &kp DEL    &kp BSPC
+                                             &kp BSPC    &kp DEL       &kp DEL    &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
