@@ -136,7 +136,7 @@
         //│  Z/LGui  │  ,;      │  C       │  D       │  V       │    │  K       │  H       │  Ä       │ .:       │  X       │
            &mt LGUI Z  &kp COMMA  &kp C      &kp D      &kp V          &kp K      &kp H     &kp F_ADIA  &kp DOT    &kp X 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt SYM RET &lt SHC SPACE &lt ARR BSPC &lt NUM DEL
+                                           &lt SPACE RET &lt SHC SYM &lt ARR BSPC &lt NUM DEL
         //                                 ╰──────────┴──────────╯    ╰──────────┴──────────╯
             >;
         };
