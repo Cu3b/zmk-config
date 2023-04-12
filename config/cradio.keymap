@@ -178,8 +178,8 @@
         arrows_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  7       │  8       │  9       │ PrvDstp  │   │          │          │ TskView  │ NewDstp  │ ClsDstp  │
-            &trans     &kp N7     &kp N8     &kp N9   &kp PrvDstp     &trans     &trans   &kp TskView &kp NewDstp &kp ClsDstp 
+        //│          │  7       │  8       │  9       │ PrvDstp  │   │          │          │ TskView  │          │          │
+            &trans     &kp N7     &kp N8     &kp N9   &kp PrvDstp       &trans     &trans   &kp TskView   &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0       │  4       │  5       │  6       │  ,       │   │  PgUp    │  ←       │  ↑/LCtrl │   →      │  RShft   │
             HRNL(N0,     N4,        N5,        N6)      &kp COMMA      &kp PG_UP &kp LEFT  &mt LCTRL UP &kp RIGHT &kp RSHFT
@@ -195,14 +195,14 @@
         shortcuts_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ClsTab   │  RstTab  │  PrvTab  │  NxtTab  │          │   │          │          │          │          │          │
-            &kp F1     &kp F2     &kp F3     &kp F4     &trans         &trans      &trans     &trans     &trans    &trans
+        //│ ClsTab   │  RstTab  │  PrvTab  │  NxtTab  │  NewDstp │   │          │          │          │          │          │
+           &kp ClsTab &kp RstTab &kp PrvTab &kp NxtTab &kp NewDstp     &trans      &trans     &trans     &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ctrl+Z  │  Ctrl+X  │  Ctrl+C  │  Ctrl+V  │  Redo    │   │          │          │          │          │          │
          &kp SC_Undo &kp SC_Cut &kp SC_Copy &kp SC_Pste &kp SC_Redo    &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Ctrl+A  │ Ctrl+F   │  Ctrl+S  │  LGui+V  │          │   │          │          │          │          │          │
-          &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth  &trans       &trans      &trans    &trans     &trans     &trans
+        //│  Ctrl+A  │ Ctrl+F   │  Ctrl+S  │  LGui+V  │ ClsDstp  │   │          │          │          │          │          │
+          &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth &kp ClsDstp  &trans      &trans    &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
