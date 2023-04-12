@@ -196,7 +196,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ClsTab   │  RstTab  │  PrvTab  │  NxtTab  │  NewDstp │   │          │          │          │          │          │
-           &kp ClsTab &kp RstTab &kp PrvTab &kp NxtTab &kp NewDstp     &trans      &trans     &trans     &trans    &trans
+          &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &kp NewDstp     &trans      &trans     &trans     &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Ctrl+Z  │  Ctrl+X  │  Ctrl+C  │  Ctrl+V  │  Redo    │   │          │          │          │          │          │
          &kp SC_Undo &kp SC_Cut &kp SC_Copy &kp SC_Pste &kp SC_Redo    &trans     &trans     &trans     &trans     &trans
