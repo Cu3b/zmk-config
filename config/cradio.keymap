@@ -145,13 +145,13 @@
             bindings = <
         //╭──────────────┬────────────┬──────────┬───────────┬───────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│              │            │          │           │           │   │          │ Ins      │ CapsL    │ NumL     │ ScrLck   │
-            &trans           &trans      &trans     &trans       &trans         &trans     &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
+            &trans           &trans      &trans     &trans       &trans         &trans    &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
         //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  |           │  &         │  #       │  @        │           │   │          │  ?       │  !       │  ¨       │  ~       │
-           &kp F_PIPE     &kp F_AMPR   &kp F_HASH &kp F_AT     &trans         &trans    &kp F_QUES &kp F_EXLM &kp F_DIAE &kp F_TILD
+        //│  |           │  ¨         │  #       │  &        │           │   │  §       │  ?       │  !       │  @       │  ~       │
+           &kp F_PIPE     &kp F_DIAE   &kp F_HASH  &kp F_AMPR    &trans       &kp F_SECT &kp F_QUES &kp F_EXLM &kp F_AT   &kp F_TILD
         //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ^           │            │  ¤       |  `        │           │   │          │  ´       │  §       │  ½       │          │
-          &mt LGUI F_CIRC  &trans      &kp F_CURR &kp F_GRV    &trans         &trans    &kp F_ACUT &kp F_SECT &kp F_HALF  &trans
+        //│              │  ¤         │  £       |  `        │           │   │  ½       │  ´       │  €       │  $       │          │
+              &trans       &kp F_CURR  &kp F_PND   &kp F_GRV    &trans        &kp F_HALF &kp F_ACUT &kp F_EURO &kp F_DLR    &trans
         //╰──────────────┴────────────┴──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &trans        &kp DEL        &trans     &trans
         //                                       ╰───────────┴───────────╯   ╰──────────┴──────────╯
@@ -165,10 +165,10 @@
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6    &kp F7      &kp F8     &kp F9    &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  1       │  2       │  3       │  4       │  F11     │   │  F12     │  7       │  8       │  9       │  0       │
-             &kp N1     &kp N2     &kp N3     &kp N4     &kp G           &kp M      HRMR(N7,     N8,        N9,       N0)
+             &kp N1     &kp N2     &kp N3     &kp N4     &kp F11       &kp F12     HRMR(N7,     N8,        N9,       N0)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ^       │          │  %       │  5       │          │   │  £       │  6       │  €       │          │   $      │
-           &kp F_CIRC  &trans    &kp F_PERC  &kp N5     &trans         &kp F_PND  &kp N6     &kp F_EURO   &trans   &kp F_DLR
+        //│          │  ^       │  %       │  5       │          │   │  £       │  6       │  €       │  $       │          │
+             &trans   &kp F_CIRC &kp F_PERC  &kp N5     &trans         &trans     &kp N6    &kp F_EURO &kp F_DLR    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -178,14 +178,14 @@
         arrows_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  7       │  8       │  9       │ NxtDstp  │   │          │          │ TskView  │ NewDstp  │ ClsDstp  │
-            &trans     &kp N7     &kp N8     &kp N9   &kp NxtDstp      &trans     &trans   &kp TskView &kp NewDstp &kp ClsDstp 
+        //│          │  7       │  8       │  9       │ PrvDstp  │   │          │          │ TskView  │ NewDstp  │ ClsDstp  │
+            &trans     &kp N7     &kp N8     &kp N9   &kp PrvDstp     &trans     &trans   &kp TskView &kp NewDstp &kp ClsDstp 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0       │  4       │  5       │  6       │  ,       │   │  PgUp    │  ←       │  ↑/LCtrl │   →      │  RShft   │
             HRNL(N0,     N4,        N5,        N6)      &kp COMMA      &kp PG_UP &kp LEFT  &mt LCTRL UP &kp RIGHT &kp RSHFT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  .       │  1       │  2       │  3       │ PrvDstp  │   │  PgDn    │  Home    │  ↓       │  End     │ LGUI     │
-           &kp DOT     &kp N1    &kp N2     &kp N3      &kp PrvDstp   &kp PG_DN  &kp HOME  &kp DOWN    &kp END    &kp LGUI
+        //│  .       │  1       │  2       │  3       │ NxtDstp  │   │  PgDn    │  Home    │  ↓       │  End     │ LGUI     │
+           &kp DOT     &kp N1    &kp N2     &kp N3     &kp NxtDstp    &kp PG_DN  &kp HOME  &kp DOWN    &kp END    &kp LGUI
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans      &trans        &kp DEL    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
