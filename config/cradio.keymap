@@ -144,8 +144,8 @@
         symbol_layer {
             bindings = <
         //╭──────────────┬────────────┬──────────┬───────────┬───────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│              │  NewDstp   │ PrvDstp  │  NewDstp  │  NxtDstp  │   │          │ Ins      │ CapsL    │ NumL     │ ScrLck   │
-            &trans           &trans  &kp PrvDstp  &kp NewDstp  &NxtDstp         &trans    &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
+        //│   ClsDstp    │  NewDstp   │ PrvDstp  │  NxtDstp  │  ShwDstp  │   │          │ Ins      │ CapsL    │ NumL     │ ScrLck   │
+            &kp ClsDstp   &kp NewDstp  &kp PrvDstp  &kp NxtDstp &kp ShwDstp         &trans    &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
         //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  |           │  ¨         │  #       │  &        │           │   │  §       │  ?       │  !       │  @       │  ~       │
            &kp F_PIPE     &kp F_DIAE   &kp F_HASH  &kp F_AMPR    &trans       &kp F_SECT &kp F_QUES &kp F_EXLM &kp F_AT   &kp F_TILD
