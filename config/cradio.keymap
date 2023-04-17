@@ -9,9 +9,9 @@
 #include "definitions.h"
 
 // Home row mods
-#define HRML(k1,k2,k3,k4) &lt MEDIA k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
-#define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht RALT k3  &ht LGUI k4
-#define HRNL(k1,k2,k3,k4) &ht LGUI k1 &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
+#define HRML(k1,k2,k3,k4) &lt MEDIA k1 &ht LSHFT k2  &ht LCTRL k3  &ht LALT k4
+#define HRMR(k1,k2,k3,k4) &ht RALT k1 &ht RCTRL k2  &ht RSHFT k3  &ht LGUI k4
+#define HRNL(k1,k2,k3,k4) &ht LGUI k1 &ht LSHFT k2  &ht LCTRL k3  &ht LALT k4
 
 &lt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
 &mt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
@@ -165,10 +165,10 @@
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6    &kp F7      &kp F8     &kp F9    &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  1       │  2       │  3       │  4       │  F11     │   │  F12     │  7       │  8       │  9       │  0       │
-             &kp N1     &kp N2     &kp N3     &kp N4     &kp F11       &kp F12     HRMR(N7,     N8,        N9,       N0)
+            HRNL(N1,      N2,        N3,        N4)     &kp F11       &kp F12     HRMR(N7,     N8,        N9,       N0)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  lgui    │  ^       │  %       │  5       │          │   │  £       │  6       │  €       │  $       │  lgui    │
-            &kp LGUI  &kp F_CIRC &kp F_PERC  &kp N5     &trans         &trans     &kp N6    &kp F_EURO &kp F_DLR    &kp LGUI
+        //│          │          │  %       │  5       │   ^      │   │          │  6       │  €       │          │          │
+            &trans      &trans   &kp F_PERC  &kp N5     &kp F_CIRC      &trans    &kp N6    &kp F_EURO   &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
