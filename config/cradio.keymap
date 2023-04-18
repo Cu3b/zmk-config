@@ -149,8 +149,8 @@
         //│   ClsDstp    │  NewDstp   │ PrvDstp  │  NxtDstp  │  ShwDstp  │   │          │ Ins      │ CapsL    │ NumL     │ ScrLck   │
             &kp ClsDstp   &kp NewDstp  &kp PrvDstp  &kp NxtDstp &kp ShwDstp         &trans    &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
         //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  |           │  ¨         │  #       │  &        │           │   │  §       │  ?       │  !       │  @       │  ~       │
-           &kp F_PIPE     &kp F_DIAE   &kp F_HASH  &kp F_AMPR    &trans       &kp F_SECT &kp F_QUES &kp F_EXLM &kp F_AT   &kp F_TILD
+        //│  |           │  ¨         │  #       │  &        │           │   │  §       │  !       │  ?       │  @       │  ~       │
+           &kp F_PIPE     &kp F_DIAE   &kp F_HASH  &kp F_AMPR    &trans       &kp F_SECT &kp F_EXLM &kp F_QUES &kp F_AT   &kp F_TILD
         //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│              │  ¤         │  £       |  `        │           │   │  ½       │  ´       │  €       │  $       │          │
               &trans       &kp F_CURR  &kp F_PND   &kp F_GRV    &trans        &kp F_HALF &kp F_ACUT &kp F_EURO &kp F_DLR    &trans
