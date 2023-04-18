@@ -89,7 +89,7 @@
 //
         combo_ARNG { timeout-ms = <COMBO_TERM_S>; key-positions = <8 9>; bindings = <&kp F_ARNG>; };               // Å
         combo_QUOTE { timeout-ms = <COMBO_TERM_S>; key-positions = <7 8>; bindings = <&kp F_QUOT>; };              // '
-        combo_DQUOTE { timeout-ms = <COMBO_TERM_S>; key-positions = <8 19>; bindings = <&caps_word>; };            // "
+        combo_DQUOTE { timeout-ms = <COMBO_TERM_S>; key-positions = <8 19>; bindings = <&kp F_DQUO>; };            // "
 	combo_SCLN { timeout-ms = <COMBO_TERM_S>; key-positions = <21 22>; bindings = <&kp F_SCLN>; };             // ;
 	combo_COLN { timeout-ms = <COMBO_TERM_S>; key-positions = <27 28>; bindings = <&kp F_COLN>; };             // :
 //
