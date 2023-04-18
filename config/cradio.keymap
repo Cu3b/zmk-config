@@ -133,7 +133,7 @@
         //│  A/media │  R/alt   │  S/Ctrl  │  T/shift │  G       │    │  M       │  N/shift │  E/Ctrl  |  I/LGui  |  O       │
             HRML(A,        R,         S,         T)     &kp G           &kp M      HRMR(N,        E,         I,        O)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z/LGui  │  ,;      │  C       │  D       │  V       │    │  K       │  H       │  Ä       │ .:       │  X       │
+        //│  X/LGui  │  ,;      │  C       │  D       │  V       │    │  K       │  H       │  Ä       │ .:       │  Z       │
            &mt LGUI X  &kp COMMA  &kp C      &kp D      &kp V           &kp K      &kp H     &kp F_ADIA  &kp DOT    &kp Z 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                           &lt SYM RET &lt SHC SPACE   &lt ARR BSPC &lt NUM DEL
