@@ -9,9 +9,9 @@
 #include "definitions.h"
 
 // Home row mods
-#define HRML(k1,k2,k3,k4) &lt MEDIA k1 &ht LALT k2  &ht LSHFT k3  &ht LCTRL k4
-#define HRMR(k1,k2,k3,k4) &ht RCTRL k1 &ht RSHFT k2  &ht RALT k3  &ht LGUI k4
-#define HRNL(k1,k2,k3,k4) &ht LGUI k1 &ht LALT k2  &ht LSHFT k3  &ht LCTRL k4
+#define HRML(k1,k2,k3,k4) &lt MEDIA k1 &ht LCTRL k2  &ht LSHFT k3  &ht LALT k4
+#define HRMR(k1,k2,k3,k4) &ht RALT k1 &ht RSHFT k2  &ht RCTRL k3  &ht LGUI k4
+#define HRNL(k1,k2,k3,k4) &ht LGUI k1 &ht LCTRL k2  &ht LSHFT k3  &ht LALT k4
 
 &lt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
 &mt { flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP>; };
@@ -129,14 +129,11 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮    ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  B       │    │  J       │  L       │  U       │  Y       │  Ö       │
-            &kp Q      &kp W      &kp F      &kp P      &kp B           &kp J      &kp L      &kp U      &kp Y     &kp F_ODIA
+             &kp Q      &kp W      &kp F      &kp P      &kp B           &kp J      &kp L      &kp U      &kp Y    &kp F_ODIA
         //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A/media │  R/alt   │  S/Ctrl  │  T/shift │  G       │    │  M       │  N/shift │  E/Ctrl  |  I/LGui  |  O       │
             HRML(A,        R,         S,         T)     &kp G           &kp M      HRMR(N,        E,         I,        O)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  X/LGui  │  ,;      │  C       │  D       │  V       │    │  K       │  H       │  Ä       │ .:       │  Z       │
-           &mt LGUI X  &kp COMMA  &kp C      &kp D      &kp V           &kp K      &kp H     &kp F_ADIA  &kp DOT    &kp Z 
+           &mt LGUI X  &kp COMMA  &kp C      &kp D      &kp V           &kp K      &kp H     &kp F_ADIA   &kp DOT    &kp Z 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤    ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                           &lt SYM RET &lt SHC SPACE   &lt ARR BSPC &lt NUM TAB
         //                                 ╰──────────┴──────────╯    ╰──────────┴──────────╯
@@ -146,8 +143,7 @@
         symbol_layer {
             bindings = <
         //╭──────────────┬────────────┬──────────┬───────────┬───────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│   ClsDstp    │  NewDstp   │ PrvDstp  │  NxtDstp  │  ShwDstp  │   │          │ Ins      │ CapsL    │ NumL     │ ScrLck   │
-            &kp ClsDstp   &kp NewDstp  &kp PrvDstp  &kp NxtDstp &kp ShwDstp         &trans    &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
+            &kp ClsDstp   &kp NewDstp  &kp PrvDstp  &kp NxtDstp &kp ShwDstp     &trans    &kp INS    &kp CAPS  &kp KP_NLCK &kp SLCK
         //├──────────────┼────────────┼──────────┼───────────┼───────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  |           │  ¨         │  #       │  &        │           │   │  §       │  !       │  ?       │  @       │  ~       │
            &kp F_PIPE     &kp F_DIAE   &kp F_HASH  &kp F_AMPR    &trans       &kp F_SECT &kp F_EXLM &kp F_QUES &kp F_AT   &kp F_TILD
@@ -163,10 +159,8 @@
         numbers_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  F1      │  F2      │  F3      │  F4      │  F5      │   │  F6      │  F7      │  F8      │  F9      │  F10     │
             &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6    &kp F7      &kp F8     &kp F9    &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  1       │  2       │  3       │  4       │  F11     │   │  F12     │  7       │  8       │  9       │  0       │
             HRNL(N1,      N2,        N3,        N4)     &kp F11       &kp F12     HRMR(N7,     N8,        N9,       N0)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │  %       │  5       │   ^      │   │          │  6       │  €       │          │          │
@@ -180,7 +174,6 @@
         arrows_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  7       │  8       │  9       │          │   │          │          │ TskView  │          │          │
             &trans     &kp N7     &kp N8     &kp N9      &trans         &trans     &trans   &kp TskView   &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  0       │  4       │  5       │  6       │  ,       │   │  PgUp    │  ←       │  ↑/LCtrl │   →      │  RShft   │
@@ -197,13 +190,10 @@
         shortcuts_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ClseTab  │  RestTab │  PrevTab │  NextTab │          │   │          │          │          │          │          │
-        &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &trans          &trans      &trans     &trans     &trans    &trans
+        &kp ClseTab &kp RestTab &kp PrevTab &kp NextTab &trans          &trans     &trans     &trans     &trans    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Ctrl+Z  │  Ctrl+X  │  Ctrl+C  │  Ctrl+V  │  Redo    │   │          │          │          │          │          │
          &kp SC_Undo &kp SC_Cut &kp SC_Copy &kp SC_Pste &kp SC_Redo    &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Ctrl+A  │ Ctrl+F   │  Ctrl+S  │  LGui+V  │     Snip │   │          │          │          │          │          │
           &kp SC_SelA &kp SC_Find &kp SC_Save &kp SC_Psth &kp SC_Snip  &trans      &trans    &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
