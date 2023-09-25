@@ -86,8 +86,8 @@
         combo_RBKT { timeout-ms = <COMBO_TERM_S>; key-positions = <18 27>; bindings = <&kp F_RBKT>; };             // ]
         combo_RBRC { timeout-ms = <COMBO_TERM_S>; key-positions = <16 27>; bindings = <&kp F_RBRC>; };             // }
         combo_RABK { timeout-ms = <COMBO_TERM_S>; key-positions = <17 28>; bindings = <&kp F_RABK>; };             // >
-        combo_x { timeout-ms = <COMBO_TERM_S>; key-positions = <10 11>; bindings = <&kp X>; };                      // X
-        combo_z { timeout-ms = <COMBO_TERM_S>; key-positions = <18 19>; bindings = <&kp Z>; };                      // Z
+        combo_z { timeout-ms = <COMBO_TERM_S>; key-positions = <10 11>; bindings = <&kp Z>; };                      // Z
+        combo_x { timeout-ms = <COMBO_TERM_S>; key-positions = <18 19>; bindings = <&kp X>; };                      // X
 //
         combo_ARNG { timeout-ms = <COMBO_TERM_S>; key-positions = <8 9>; bindings = <&kp F_ARNG>; };               // Å
         combo_QUOTE { timeout-ms = <COMBO_TERM_S>; key-positions = <7 8>; bindings = <&kp F_QUOT>; };              // '
