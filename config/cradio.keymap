@@ -47,7 +47,7 @@
  * |      |  \   \  \   \      |      |                |      |     /   /  /   /   |      |  |  ↓---------BASE---------↓ |      | |      |      |      |      |      |
  * |------+---\ [ \--\ ( \ ----+------|                |------+----/ ) /--/ ] /----+------|  |------+------+------+------+------| |------+------+------+------+------|
  * |      |    \   \  \   \    |      |                |      |   /   /  /   /     |      |  |  ↓---Windows restart---↓  |      | |      |  ↓--Windows Power off--↓  |
- * |      |  ↓--esc--↓--tab--↓-Calc-↓ |                |      |   ↓CpsWrd↓---:--↓  |      |  |      |      |      |      |      | |      |      |      |      |      |
+ * |      |  ↓--tab--↓--esc--↓-Calc-↓ |                |      |   ↓CpsWrd↓---:--↓  |      |  |      |      |      |      |      | |      |      |      |      |      |
  * |  20  |  21  |  22  |  23  |  24  |                |  25  |  26  |  27  |  28  |  29  |  |  20  |  21  |  22  |  23  |  24  | |  25  |  26  |  27  |  28  |  29  |
  * '---------↑-----TAB-----↑---+------+------.  .------+------+---------------------------'  '------+---------------------------' '------+---------------------------'
  *                             |  30  |  32  |  |  33  |  34  | 
@@ -95,8 +95,8 @@
 		combo_SCLN { timeout-ms = <COMBO_TERM_S>; key-positions = <21 23>; bindings = <&kp F_SCLN>; };     // ;
 		combo_COLN { timeout-ms = <COMBO_TERM_S>; key-positions = <26 28>; bindings = <&kp F_COLN>; };     // :
 //
-        combo_TAB { timeout-ms = <COMBO_TERM_S>; key-positions = <22 23>; bindings = <&kp TAB>; };                 // TAB
-        combo_ESC { timeout-ms = <COMBO_TERM_S>; key-positions = <21 22>; bindings = <&kp ESC>; };                 // Esc		
+        combo_TAB { timeout-ms = <COMBO_TERM_S>; key-positions = <22 23>; bindings = <&kp ESC>; };                 // TAB
+        combo_ESC { timeout-ms = <COMBO_TERM_S>; key-positions = <21 22>; bindings = <&kp TAB>; };                 // Esc		
 //
         combo_clswin { timeout-ms = <COMBO_TERM_S>; key-positions = <0 1>; bindings = <&kp SC_Clse>; };            // Alt+F4
         combo_cpswrd { timeout-ms = <COMBO_TERM_S>; key-positions = <26 27>; bindings = <&caps_word>; };           // &CapsWord
