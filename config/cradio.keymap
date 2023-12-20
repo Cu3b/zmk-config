@@ -41,7 +41,7 @@
  * |   0  |   1  |   2  |  3   |   4  |                |  5   |   6  |   7  |   8  |   9  |  |   0  |   1  |   2  |  3   |   4  | |  5   |   6  |   7  |   8  |   9  |
  * |   ↓AltF4 ↓  -  ↓   +  ↓   |      |                |      |   ↓--"--↓--'--↓---å---↓   |  |      |      |      |      |      | |      |  ↓----Windows lock-----↓  |
  * |      |     /   /  /   /   |      |                |      |      |   \   \     |      |  |      |      |      |      |      | |      |      |      |      |      |
- * |------+----/ / /--/ * /----|------|                |------+------+----\ \ \-----------|  |------+------+------+------+------| |------+------+------+------+------|
+ * |------+----/ / /--/ = /----|------|                |------+------+----\ \ \-----------|  |------+------+------+------+------| |------+------+------+------+------|
  * |      |   /   /  /   / 13  |  14  |                |  15  |  16  |  17 \   \   |      |  |  11  |  11  |  12  |  13  |  14  | |  15  |  16  |  17  |  18  |  19  |
  * |  10  |  11  |  12  |  ↓MyComp↓   |                |      |      |      |  18  |  19  |  |      |  ↓-Numpad toggle-↓ |      | |      |  ↓----Windows sleep----↓  |
  * |      |  \   \  \   \      |      |                |      |     /   /  /   /   |      |  |  ↓---------BASE---------↓ |      | |      |      |      |      |      |
@@ -57,7 +57,7 @@
  * |   0  |   1  |   2  |  3   |   4  |                |  5   |   6  |   7  |   8  |   9  |
  * |      |      |      |      |      |                |      |      |      |      |      |
  * |      |   \   \   \   \    |      |                |      |      |      |      |      |
- * |------+----\ _ \---\ = \---+------|                |------+------+------+------+------|
+ * |------+----\ _ \---\ * \---+------|                |------+------+------+------+------|
  * |  10  |     \   \   \   \  |  14  |                |  15  |  16  |  17  |  18  |  19  |
  * |      |  11  |  12  |  13  |      |                |      |      |      |      |      |
  * |      |     /   /  /   /   |      |                |      |   \   \  \   \     |      |
@@ -73,10 +73,10 @@
  / { combos { compatible = "zmk,combos";
         combo_MINS { timeout-ms = <COMBO_TERM_S>; key-positions = <1 2>; bindings = <&kp F_MINS>; };               // -
         combo_PLUS { timeout-ms = <COMBO_TERM_S>; key-positions = <2 3>; bindings = <&kp F_PLUS>; };               // + 
-        combo_ASTR { timeout-ms = <COMBO_TERM_S>; key-positions = <3 12>; bindings = <&kp F_ASTR>; };              // *
+        combo_ASTR { timeout-ms = <COMBO_TERM_S>; key-positions = <2 13>; bindings = <&kp F_ASTR>; };              // *
         combo_FSLH { timeout-ms = <COMBO_TERM_S>; key-positions = <2 11>; bindings = <&kp F_FSLH>; };              // / 
         combo_UNDS { timeout-ms = <COMBO_TERM_S>; key-positions = <1 12>; bindings = <&kp F_UNDS>; };              // _
-        combo_EQL { timeout-ms = <COMBO_TERM_S>; key-positions = <2 13>; bindings = <&kp F_EQL>; };                // =
+        combo_EQL { timeout-ms = <COMBO_TERM_S>; key-positions = <3 12>; bindings = <&kp F_EQL>; };                // =
         combo_BSLH { timeout-ms = <COMBO_TERM_S>; key-positions = <7 18>; bindings = <&kp F_BSLH>; };              // Backslash	
         combo_LPRN { timeout-ms = <COMBO_TERM_S>; key-positions = <12 23>; bindings = <&kp F_LPRN>; };             // (
         combo_LBKT { timeout-ms = <COMBO_TERM_S>; key-positions = <11 22>; bindings = <&kp F_LBKT>; };             // [
